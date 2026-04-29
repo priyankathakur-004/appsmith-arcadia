@@ -1,0 +1,16 @@
+SELECT DISTINCT
+    aa.IdClient,
+    c.ClientName,
+    aa.AccountNumber,
+    aa.ArcadiaAccountId,
+    aa.ProviderName,
+    aa.NormalizedAccountNumber,
+    aa.Status
+FROM dbo.ArcadiaAccounts aa
+INNER JOIN dbo.Client c ON aa.IdClient = c.IdClient
+WHERE aa.ArcadiaAccountId IS NOT NULL
+  AND (
+    '{{ ClientSelect.selectedOptionValue || "" }}' = ''
+    OR aa.IdClient = {{ ClientSelect.selectedOptionValue || 0 }}
+  )
+ORDER BY c.ClientName, aa.AccountNumber;

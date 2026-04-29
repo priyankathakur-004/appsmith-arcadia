@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "69b3a04bd659a362092919a3_fcefab38-f388-49b7-ab49-ccba556a0464",
+  "id": "Meter-Intervals_TokenManager",
+  "unpublishedCollection": {
+    "name": "TokenManager",
+    "pageId": "Meter-Intervals",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "tokenData",
+        "value": "{}"
+      },
+      {
+        "name": "_tokenIntervalId",
+        "value": "null"
+      }
+    ]
+  }
+}

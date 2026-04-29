@@ -1,0 +1,16 @@
+SELECT DISTINCT
+    c.clientname AS client_name,
+    c.ProviderClientId AS Client_ID_DS,
+		c.IdClient AS id_client
+FROM dbo.ClientAccount ca
+INNER JOIN dbo.Client c 
+    ON ca.IdClient = c.IdClient
+INNER JOIN dbo.Vendor v 
+    ON v.IdVendor = ca.IdVendor 
+    AND v.IsInactive = 0
+INNER JOIN dbo.VendorCredential vc 
+    ON vc.IdVendorCredential = ca.IdVendorCredential
+		
+WHERE ca.IsInactive = 0
+  AND c.IdProvider = 7
+ORDER BY Client_ID_DS;

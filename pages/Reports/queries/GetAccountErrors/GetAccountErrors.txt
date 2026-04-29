@@ -1,0 +1,29 @@
+SELECT
+    aa.AccountNumber AS account_number,
+    aa.NormalizedAccountNumber AS normalized_account_number,
+    aa.ArcadiaAccountId AS arcadia_account_id,
+    aa.Status AS status,
+    aa.StatusDetail AS status_detail,
+    aa.ProviderName AS provider_name,
+    aa.ProviderId AS provider_id,
+    aa.AccountType AS account_type,
+    aa.LatestStatementDate AS latest_statement_date,
+    aa.NextExpectedPostDate AS next_expected_post_date,
+    aa.SummaryAccountId AS summary_account_id,
+    aa.SummaryAccountNumber AS summary_account_number,
+    aa.SyncedOn AS synced_on,
+    aa.VoidedAt AS voided_at,
+    c.ClientName AS client_name
+FROM dbo.ArcadiaAccounts aa
+INNER JOIN dbo.Client c ON aa.IdClient = c.IdClient
+WHERE c.ProviderClientId = '{{appsmith.store.accountsSearch?.clientId || ""}}'
+  AND (
+    ('{{appsmith.store.accountsSearch?.source || ""}}' = 'US'
+      AND aa.Status IN ('DATA_ACCESS_FAILURE', 'CONNECTION_IN_PROGRESS'))
+    OR
+    ('{{appsmith.store.accountsSearch?.source || ""}}' = 'Arcadia'
+      AND aa.Status IN ('INACTIVE', 'CONNECTION_DEACTIVATED', 'CONNECTION_IN_PROGRESS'))
+  )
+ORDER BY aa.Status, aa.AccountNumber
+OFFSET {{ErrorsTable.pageOffset}} ROWS
+FETCH NEXT {{ErrorsTable.pageSize}} ROWS ONLY;;

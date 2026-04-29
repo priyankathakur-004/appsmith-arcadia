@@ -1,0 +1,61 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 11,
+  "defaultOptionValue": "SHEETZCORP_P",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "options"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "w_csel01",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 200,
+  "mobileBottomRow": 13,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 20,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "onOptionChange": "{{resetWidget(\"AccountNumberSelect\", true);}}",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "options": "{{DS_GetClients.data?.map(c => ({ label: c.client_name, value: c.id_client })) || []}}",
+  "originalBottomRow": 11,
+  "originalTopRow": 4,
+  "parentColumnSpace": 16.765625,
+  "parentId": "pf10dkccmu",
+  "parentRowSpace": 10,
+  "placeholderText": "Select a client",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 20,
+  "serverSideFiltering": false,
+  "sourceData": "{{DS_AllCustomers.data.map( (obj) =>{ return  {'label': obj.client_name, 'value': obj.client_id_DS } })}}",
+  "topRow": 4,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "jx1fp59r54",
+  "widgetName": "ClientSelect"
+}

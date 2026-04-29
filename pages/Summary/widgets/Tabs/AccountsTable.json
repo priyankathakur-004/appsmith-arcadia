@@ -1,0 +1,669 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 51,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "cachedTableData": {},
+  "canFreezeColumn": true,
+  "childStylesheet": {
+    "button": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "editActions": {
+      "discardBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "discardButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "saveBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "saveButtonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "iconButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "menuButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "menuColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "columnOrder": [
+    "Customers",
+    "ID",
+    "Accounts",
+    "ArcadiaFeed",
+    "Possible",
+    "Synced",
+    "Percentage",
+    "ToFix",
+    "US",
+    "Arcadia"
+  ],
+  "columnUpdatedAt": 1774957254052,
+  "columnWidthMap": {},
+  "customIsLoading": false,
+  "customIsLoadingValue": "",
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "defaultSelectedRowIndices": [
+    0
+  ],
+  "delimiter": ",",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "totalRecordsCount"
+    },
+    {
+      "key": "primaryColumns.Customers.computedValue"
+    },
+    {
+      "key": "primaryColumns.US.computedValue"
+    },
+    {
+      "key": "primaryColumns.Arcadia.computedValue"
+    },
+    {
+      "key": "primaryColumns.US.borderRadius"
+    },
+    {
+      "key": "primaryColumns.US.boxShadow"
+    },
+    {
+      "key": "primaryColumns.US.buttonLabel"
+    },
+    {
+      "key": "primaryColumns.Arcadia.borderRadius"
+    },
+    {
+      "key": "primaryColumns.Arcadia.boxShadow"
+    },
+    {
+      "key": "primaryColumns.Arcadia.buttonLabel"
+    },
+    {
+      "key": "primaryColumns.ID.computedValue"
+    },
+    {
+      "key": "primaryColumns.Accounts.computedValue"
+    },
+    {
+      "key": "primaryColumns.ArcadiaFeed.computedValue"
+    },
+    {
+      "key": "primaryColumns.Possible.computedValue"
+    },
+    {
+      "key": "primaryColumns.Synced.computedValue"
+    },
+    {
+      "key": "primaryColumns.Percentage.computedValue"
+    },
+    {
+      "key": "primaryColumns.ToFix.computedValue"
+    },
+    {
+      "key": "primaryColumns.ID.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.Accounts.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.ArcadiaFeed.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.Possible.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.Synced.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.Percentage.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.ToFix.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.US.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.Arcadia.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.ArcadiaFeed.buttonColor"
+    },
+    {
+      "key": "primaryColumns.ArcadiaFeed.borderRadius"
+    },
+    {
+      "key": "primaryColumns.ArcadiaFeed.boxShadow"
+    },
+    {
+      "key": "primaryColumns.ArcadiaFeed.buttonLabel"
+    },
+    {
+      "key": "primaryColumns.Accounts.buttonColor"
+    },
+    {
+      "key": "primaryColumns.Accounts.borderRadius"
+    },
+    {
+      "key": "primaryColumns.Accounts.boxShadow"
+    },
+    {
+      "key": "primaryColumns.Accounts.buttonLabel"
+    },
+    {
+      "key": "primaryColumns.Synced.buttonColor"
+    },
+    {
+      "key": "primaryColumns.Synced.borderRadius"
+    },
+    {
+      "key": "primaryColumns.Synced.boxShadow"
+    },
+    {
+      "key": "primaryColumns.Synced.buttonLabel"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.US.onClick"
+    },
+    {
+      "key": "primaryColumns.Arcadia.onClick"
+    },
+    {
+      "key": "primaryColumns.ID.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.Accounts.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.ArcadiaFeed.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.Possible.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.Synced.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.Percentage.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.ToFix.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.US.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.Arcadia.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.ArcadiaFeed.onClick"
+    },
+    {
+      "key": "primaryColumns.Accounts.onClick"
+    },
+    {
+      "key": "primaryColumns.Synced.onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onPageChange"
+    },
+    {
+      "key": "primaryColumns.US.onClick"
+    },
+    {
+      "key": "primaryColumns.Arcadia.onClick"
+    },
+    {
+      "key": "primaryColumns.ArcadiaFeed.onClick"
+    },
+    {
+      "key": "primaryColumns.Accounts.onClick"
+    },
+    {
+      "key": "primaryColumns.Synced.onClick"
+    }
+  ],
+  "enableClientSideSearch": true,
+  "endOfData": false,
+  "flexVerticalAlignment": "start",
+  "horizontalAlignment": "LEFT",
+  "inlineEditingSaveOption": "ROW_LEVEL",
+  "isLoading": false,
+  "isSortable": true,
+  "isVisible": true,
+  "isVisibleDownload": true,
+  "isVisibleFilters": false,
+  "isVisiblePagination": true,
+  "isVisibleSearch": true,
+  "key": "y3hqait1fk",
+  "label": "Data",
+  "leftColumn": 0,
+  "minWidth": 450,
+  "mobileBottomRow": 34,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 18,
+  "mobileTopRow": 6,
+  "needsErrorInfo": false,
+  "onPageChange": "{{AccountsUtils.fetchAccounts();}}",
+  "originalBottomRow": 66,
+  "originalTopRow": 38,
+  "parentColumnSpace": 16.453125,
+  "parentId": "ylf1jx8qe6",
+  "parentRowSpace": 10,
+  "primaryColumns": {
+    "Accounts": {
+      "alias": "Accounts",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{AccountsTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{AccountsTable.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "{{AccountsTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
+      "buttonLabel": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Accounts\"] || \"0\")) : currentRow[\"Accounts\"] || \"0\" })()}}",
+      "buttonVariant": "TERTIARY",
+      "cellBackground": "",
+      "columnType": "button",
+      "computedValue": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Accounts\"])) : currentRow[\"Accounts\"] })()}}",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "Accounts",
+      "index": 4,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !CustomerStats.isLoading )) :  !CustomerStats.isLoading  })()}}",
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Accounts",
+      "notation": "standard",
+      "onClick": "{{\n  currentRow[\"Accounts\"] && currentRow[\"Accounts\"] !== \" \"\n    ? (\n        storeValue(\"accountsSearch\", {\n          clientId: currentRow[\"ID\"],\n          source: \"DS_ClientAccounts\"\n        }),\n\t\t\t\nDS_ClientAccountsCount.run({\n          clientId: currentRow[\"ID\"]\n        }),\t\t\t\n        DS_ClientAccounts.run({\n          clientId: currentRow[\"ID\"]\n        }).then(() => {\n          showModal(AccountsModel.name);\n        })\n      )\n    : showAlert(\"No Accounts records to show\", \"info\")\n}}\n",
+      "originalId": "Accounts",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "Arcadia": {
+      "alias": "Arcadia",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{AccountsTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{AccountsTable.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "#1d4ed8",
+      "buttonLabel": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Arcadia\"] || \"0\")) : currentRow[\"Arcadia\"] || \"0\" })()}}",
+      "buttonVariant": "TERTIARY",
+      "cellBackground": "#dcfce7",
+      "columnType": "button",
+      "computedValue": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Arcadia\"])) : Arcadia })()}}",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "Arcadia",
+      "index": 9,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !CustomerStats.isLoading )) :  !CustomerStats.isLoading  })()}}",
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Arcadia",
+      "notation": "standard",
+      "onClick": "{{ \n  currentRow[\"Arcadia\"] && currentRow[\"Arcadia\"] !== \" \"\n    ? (\n        storeValue(\"accountsSearch\", {\n          clientId: currentRow[\"ID\"],\n          source: \"Arcadia\"\n        }),\n        Api_ListAccountsArcadiaFix.run({\n          clientId: currentRow[\"ID\"]\n        }).then(() => {\n          showModal(ErrorModel.name);\n        })\n      )\n    : showAlert(\"No Arcadia records to show\", \"info\")\n}}",
+      "originalId": "Arcadia",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "ArcadiaFeed": {
+      "alias": "ArcadiaFeed",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{AccountsTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{AccountsTable.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "{{AccountsTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
+      "buttonLabel": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"ArcadiaFeed\"] || \"0\")) : currentRow[\"ArcadiaFeed\"] || \"0\" })()}}",
+      "buttonVariant": "TERTIARY",
+      "cellBackground": "",
+      "columnType": "button",
+      "computedValue": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"ArcadiaFeed\"])) : ArcadiaFeed })()}}",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "ArcadiaFeed",
+      "index": 5,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !CustomerStats.isLoading )) :  !CustomerStats.isLoading  })()}}",
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "ArcadiaFeed",
+      "notation": "standard",
+      "onClick": "{{\n  currentRow[\"ArcadiaFeed\"] && currentRow[\"ArcadiaFeed\"] !== \" \"\n    ? (\n        storeValue(\"accountsSearch\", {\n          clientId: currentRow[\"ID\"],\n          source: \"ArcadiaFeed\"\n        }),\n        Api_ListAccounts.run({\n          clientId: currentRow[\"ID\"]\n        }).then(() => {\n          showModal(AccountsModel.name);\n        })\n      )\n    : showAlert(\"No ArcadiaFeed records to show\", \"info\")\n}}\n",
+      "originalId": "ArcadiaFeed",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "Customers": {
+      "alias": "Customers",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Customers\"])) : Customers })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "Customers",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Customers",
+      "notation": "standard",
+      "originalId": "Customers",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "ID": {
+      "alias": "ID",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"ID\"])) : ID })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "ID",
+      "index": 3,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !CustomerStats.isLoading )) :  !CustomerStats.isLoading  })()}}",
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "ID",
+      "notation": "standard",
+      "originalId": "ID",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "Percentage": {
+      "alias": "Percentage",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Percentage\"])) : Percentage })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "Percentage",
+      "index": 8,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !CustomerStats.isLoading )) :  !CustomerStats.isLoading  })()}}",
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Percentage",
+      "notation": "standard",
+      "originalId": "Percentage",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "Possible": {
+      "alias": "Possible",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Possible\"])) : Possible })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "Possible",
+      "index": 6,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !CustomerStats.isLoading )) :  !CustomerStats.isLoading  })()}}",
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Possible",
+      "notation": "standard",
+      "originalId": "Possible",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "Synced": {
+      "alias": "Synced",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{AccountsTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{AccountsTable.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "{{AccountsTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
+      "buttonLabel": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Synced\"] || \"0\")) : currentRow[\"Synced\"] || \"0\" })()}}",
+      "buttonVariant": "TERTIARY",
+      "cellBackground": "",
+      "columnType": "button",
+      "computedValue": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Synced\"])) : Synced })()}}",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "Synced",
+      "index": 7,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !CustomerStats.isLoading )) :  !CustomerStats.isLoading  })()}}",
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Synced",
+      "notation": "standard",
+      "onClick": "{{\n  currentRow[\"Accounts\"] && currentRow[\"Accounts\"] !== \" \"\n    ? (\n        storeValue(\"accountsSearch\", {\n          clientId: currentRow[\"ID\"],\n          source: \"ArcadiaSuccess\"\n        }),\n        Api_ListAccountsSuccess.run({\n          clientId: currentRow[\"ID\"]\n        }).then(() => {\n          showModal(AccountsModel.name);\n        })\n      )\n    : showAlert(\"No Accounts records to show\", \"info\")\n}}\n",
+      "originalId": "Synced",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "ToFix": {
+      "alias": "ToFix",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"ToFix\"])) : ToFix })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "ToFix",
+      "index": 9,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !CustomerStats.isLoading )) :  !CustomerStats.isLoading  })()}}",
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "ToFix",
+      "notation": "standard",
+      "originalId": "ToFix",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "US": {
+      "alias": "US",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{AccountsTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{AccountsTable.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "#1d4ed8",
+      "buttonLabel": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"US\"] || \"0\")) : currentRow[\"US\"] || \"0\" })()}}",
+      "buttonVariant": "TERTIARY",
+      "cellBackground": "#fee2e2",
+      "columnType": "button",
+      "computedValue": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"US\"])) : US })()}}",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "US",
+      "index": 8,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = AccountsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !CustomerStats.isLoading )) :  !CustomerStats.isLoading  })()}}",
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "US",
+      "notation": "standard",
+      "onClick": "{{\n  currentRow[\"US\"] && currentRow[\"US\"] !== \" \"\n    ? (\n        storeValue(\"accountsSearch\", {\n          clientId: currentRow[\"ID\"],\n          source: \"US\"\n        }),\n        Api_ListAccountsUSFix.run({\n          clientId: currentRow[\"ID\"]\n        }).then(() => {\n          showModal(ErrorModel.name);\n        })\n      )\n    : showAlert(\"No US records to show\", \"info\")\n}}\n",
+      "originalId": "US",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    }
+  },
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "searchKey": "",
+  "serverSidePaginationEnabled": true,
+  "tableData": "{{CustomerStats.customerTotals}}",
+  "textSize": "0.875rem",
+  "topRow": 1,
+  "totalRecordsCount": "{{ DS_CustomersCount.data[0].TotalCustomers\n}}",
+  "type": "TABLE_WIDGET_V2",
+  "version": 2,
+  "verticalAlignment": "CENTER",
+  "widgetId": "ke2z2gsfnk",
+  "widgetName": "AccountsTable"
+}

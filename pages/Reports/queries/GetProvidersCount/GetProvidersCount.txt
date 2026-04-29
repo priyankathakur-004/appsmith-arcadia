@@ -1,0 +1,8 @@
+SELECT COUNT(1) AS total
+FROM dbo.ArcadiaProviders ap
+WHERE 1=1
+  AND (
+    '{{ProvVendorInput.text || ""}}' = ''
+    OR LOWER(LTRIM(RTRIM(ISNULL(ap.VendorName, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || ""}}') + '%'
+    OR LOWER(LTRIM(RTRIM(ISNULL(ap.ArcadiaProviderName, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || ""}}') + '%'
+  );

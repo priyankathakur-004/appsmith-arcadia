@@ -1,0 +1,15 @@
+SELECT COUNT(1) AS total
+FROM dbo.ArcadiaAccounts aa
+WHERE 1=1
+  AND (
+    '{{AccClientSelect.selectedOptionValues?.join(",") || ""}}' = ''
+    OR aa.IdClient IN (
+      SELECT CAST(value AS INT) FROM STRING_SPLIT('{{AccClientSelect.selectedOptionValues?.join(",") || ""}}', ',')
+    )
+  )
+  AND (
+    '{{AccStatusSelect.selectedOptionValues?.join(",") || ""}}' = ''
+    OR aa.Status IN (
+      SELECT value FROM STRING_SPLIT('{{AccStatusSelect.selectedOptionValues?.join(",") || ""}}', ',')
+    )
+  );

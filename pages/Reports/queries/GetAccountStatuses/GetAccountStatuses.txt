@@ -1,0 +1,5 @@
+SELECT DISTINCT
+    aa.Status AS status
+FROM dbo.ArcadiaAccounts aa
+WHERE aa.Status IS NOT NULL
+ORDER BY aa.Status;

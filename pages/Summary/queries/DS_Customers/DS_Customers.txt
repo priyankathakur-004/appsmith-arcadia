@@ -1,0 +1,41 @@
+WITH UniqueCustomers AS (
+    SELECT  
+        c.clientname       AS Customer_DS,
+        c.ProviderClientId AS Client_ID_DS,
+        COUNT(DISTINCT ca.AccountNumber_Raw) AS Total_Account_Count
+    FROM dbo.ClientAccount ca
+    INNER JOIN dbo.Client c 
+        ON ca.IdClient = c.IdClient
+    INNER JOIN dbo.Vendor v 
+        ON v.IdVendor = ca.IdVendor 
+        AND v.IsInactive = 0
+    INNER JOIN dbo.VendorCredential vc 
+        ON vc.IdVendorCredential = ca.IdVendorCredential
+    WHERE ca.IsInactive = 0
+      AND c.IdProvider = 7
+	
+      AND (
+        '{{ CustomerSelect.selectedOptionValues?.join(",") || "" }}' = ''
+        OR c.ProviderClientId IN (
+            SELECT value
+            FROM STRING_SPLIT('{{ CustomerSelect.selectedOptionValues?.join(",") || "" }}', ',')
+        )
+      )
+
+
+    GROUP BY 
+        c.clientname,
+        c.ProviderClientId
+)
+
+SELECT  
+    ROW_NUMBER() OVER (ORDER BY Client_ID_DS)
+      + {{ 10 * (AccountsTable.pageNo - 1) }} AS rowIndex,
+
+    Customer_DS,
+    Client_ID_DS,
+    Total_Account_Count
+FROM UniqueCustomers
+ORDER BY Client_ID_DS
+OFFSET {{ 10 * (AccountsTable.pageNo - 1) }} ROWS
+FETCH NEXT 10 ROWS ONLY;

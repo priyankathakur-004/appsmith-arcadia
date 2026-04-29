@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "69b3a04bd659a362092919a3_68404c72-17e2-4c42-83ee-1ac52983d5b4",
+  "id": "Statements_AccessTokenManager",
+  "unpublishedCollection": {
+    "name": "AccessTokenManager",
+    "pageId": "Statements",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "tokenData",
+        "value": "{}"
+      },
+      {
+        "name": "_tokenIntervalId",
+        "value": "null"
+      }
+    ]
+  }
+}

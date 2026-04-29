@@ -1,0 +1,43 @@
+WITH UniqueAccounts AS (
+    SELECT 
+        c.clientname       AS Client_Name,
+        c.ProviderClientId AS Client_ID,
+        ca.AccountNumber_Raw,
+        ca.IdClientAccount,
+        v.VendorName,
+
+        ROW_NUMBER() OVER (
+            PARTITION BY c.ProviderClientId, ca.AccountNumber_Raw
+            ORDER BY ca.IdClientAccount
+        ) AS rn
+
+    FROM dbo.ClientAccount ca
+    INNER JOIN dbo.Client c 
+        ON ca.IdClient = c.IdClient
+    INNER JOIN dbo.Vendor v 
+        ON v.IdVendor = ca.IdVendor 
+        AND v.IsInactive = 0
+    INNER JOIN dbo.VendorCredential vc 
+        ON vc.IdVendorCredential = ca.IdVendorCredential
+
+    WHERE ca.IsInactive = 0
+      AND c.IdProvider = 7
+
+      AND (
+        {{ this.params.clientId || appsmith.store.accountsSearch.clientId ? 1 : 0 }} = 0
+        OR c.ProviderClientId = '{{ this.params.clientId || appsmith.store.accountsSearch.clientId}}'
+      )
+)
+
+SELECT  
+    ROW_NUMBER() OVER (ORDER BY Client_ID) AS rowIndex,
+    Client_Name,
+    Client_ID,
+    AccountNumber_Raw,
+    IdClientAccount,
+    VendorName
+FROM UniqueAccounts
+WHERE rn = 1
+ORDER BY Client_ID
+OFFSET {{ (ArcadiaAccountsTable.pageNo - 1) * 10 }} ROWS
+FETCH NEXT 10 ROWS ONLY;

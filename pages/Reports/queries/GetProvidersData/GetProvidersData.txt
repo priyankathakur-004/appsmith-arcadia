@@ -1,0 +1,19 @@
+SELECT
+    ap.IdVendor AS id_vendor,
+    ap.VendorName AS vendor_name,
+    ap.ArcadiaProviderName AS arcadia_provider_name,
+    ap.Country AS country,
+    ap.Region AS region,
+    ap.Website AS website,
+    ap.ArcadiaProviderId AS arcadia_provider_id,
+    ap.SyncedOn AS synced_on
+FROM dbo.ArcadiaProviders ap
+WHERE 1=1
+  AND (
+    '{{ProvVendorInput.text || ""}}' = ''
+    OR LOWER(LTRIM(RTRIM(ISNULL(ap.VendorName, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || ""}}') + '%'
+    OR LOWER(LTRIM(RTRIM(ISNULL(ap.ArcadiaProviderName, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || ""}}') + '%'
+  )
+ORDER BY ap.VendorName
+OFFSET {{(ProvidersTable.pageNo - 1) * 50}} ROWS
+FETCH NEXT 50 ROWS ONLY;

@@ -1,0 +1,36 @@
+SELECT
+    aa.IdClient AS id_client,
+    c.ClientName AS client_name,
+    aa.IdClientAccount AS id_client_account,
+    aa.AccountNumber AS account_number,
+    aa.ArcadiaAccountId AS arcadia_account_id,
+    aa.ProviderId AS provider_id,
+    aa.ProviderName AS provider_name,
+    aa.LatestStatementDate AS latest_statement_date,
+    aa.NextExpectedPostDate AS next_expected_post_date,
+    aa.NormalizedAccountNumber AS normalized_account_number,
+    aa.Status AS status,
+    aa.StatusDetail AS status_detail,
+    aa.SummaryAccountId AS summary_account_id,
+    aa.SummaryAccountNumber AS summary_account_number,
+    aa.AccountType AS account_type,
+    aa.VoidedAt AS voided_at,
+    aa.SyncedOn AS synced_on
+FROM dbo.ArcadiaAccounts aa
+INNER JOIN dbo.Client c ON aa.IdClient = c.IdClient
+WHERE 1=1
+  AND (
+    '{{AccClientSelect.selectedOptionValues?.join(",") || ""}}' = ''
+    OR aa.IdClient IN (
+      SELECT CAST(value AS INT) FROM STRING_SPLIT('{{AccClientSelect.selectedOptionValues?.join(",") || ""}}', ',')
+    )
+  )
+  AND (
+    '{{AccStatusSelect.selectedOptionValues?.join(",") || ""}}' = ''
+    OR aa.Status IN (
+      SELECT value FROM STRING_SPLIT('{{AccStatusSelect.selectedOptionValues?.join(",") || ""}}', ',')
+    )
+  )
+ORDER BY c.ClientName, aa.AccountNumber
+OFFSET {{(AccountsTable.pageNo - 1) *  50}} ROWS
+FETCH NEXT 50 ROWS ONLY;

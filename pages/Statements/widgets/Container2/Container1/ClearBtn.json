@@ -1,0 +1,45 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 16,
+  "buttonColor": "#ffffff",
+  "buttonVariant": "SECONDARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isLoading": false,
+  "isVisible": true,
+  "key": "w_cbtn01",
+  "leftColumn": 57,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 120,
+  "mobileBottomRow": 13,
+  "mobileLeftColumn": 55,
+  "mobileRightColumn": 62,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "onClick": "{{resetWidget(\"ClientSelect\");\nresetWidget(\"AccountNumberSelect\");\nresetWidget(\"StartDate\", true);\nresetWidget(\"EndDate\", true);}}",
+  "originalBottomRow": 16,
+  "originalTopRow": 12,
+  "parentColumnSpace": 16.765625,
+  "parentId": "eqj1ukufzl",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "text": "Clear",
+  "topRow": 12,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "hfgs9yp9hn",
+  "widgetName": "ClearBtn"
+}

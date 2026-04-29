@@ -1,0 +1,498 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 56,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "cachedTableData": {},
+  "canFreezeColumn": true,
+  "childStylesheet": {
+    "button": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "editActions": {
+      "discardBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "discardButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+      "saveBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "saveButtonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "iconButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    },
+    "menuButton": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "menuColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "columnOrder": [
+    "Customers",
+    "ID",
+    "ArcadiaFeed",
+    "Synced",
+    "Percentage",
+    "ToFix",
+    "US",
+    "Arcadia"
+  ],
+  "columnUpdatedAt": 1774962884914,
+  "columnWidthMap": {},
+  "customIsLoading": false,
+  "customIsLoadingValue": "",
+  "defaultPageSize": 0,
+  "defaultSelectedRowIndex": 0,
+  "defaultSelectedRowIndices": [
+    0
+  ],
+  "delimiter": ",",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.Percentage.computedValue"
+    },
+    {
+      "key": "primaryColumns.Customers.computedValue"
+    },
+    {
+      "key": "primaryColumns.ID.computedValue"
+    },
+    {
+      "key": "primaryColumns.ArcadiaFeed.computedValue"
+    },
+    {
+      "key": "primaryColumns.Synced.computedValue"
+    },
+    {
+      "key": "primaryColumns.ToFix.computedValue"
+    },
+    {
+      "key": "primaryColumns.US.computedValue"
+    },
+    {
+      "key": "primaryColumns.Arcadia.computedValue"
+    },
+    {
+      "key": "primaryColumns.US.borderRadius"
+    },
+    {
+      "key": "primaryColumns.US.boxShadow"
+    },
+    {
+      "key": "primaryColumns.US.buttonLabel"
+    },
+    {
+      "key": "primaryColumns.Arcadia.buttonLabel"
+    },
+    {
+      "key": "primaryColumns.Arcadia.borderRadius"
+    },
+    {
+      "key": "primaryColumns.Arcadia.boxShadow"
+    },
+    {
+      "key": "primaryColumns.ID.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.ArcadiaFeed.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.Synced.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.Percentage.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.ToFix.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.US.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.Arcadia.isCellVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.US.onClick"
+    },
+    {
+      "key": "primaryColumns.ArcadiaFeed.onClick"
+    },
+    {
+      "key": "primaryColumns.Arcadia.onClick"
+    },
+    {
+      "key": "primaryColumns.ID.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.ArcadiaFeed.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.Synced.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.Percentage.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.ToFix.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.US.isCellVisible"
+    },
+    {
+      "key": "primaryColumns.Arcadia.isCellVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "primaryColumns.US.onClick"
+    },
+    {
+      "key": "primaryColumns.Arcadia.onClick"
+    }
+  ],
+  "enableClientSideSearch": true,
+  "endOfData": false,
+  "flexVerticalAlignment": "start",
+  "horizontalAlignment": "LEFT",
+  "inlineEditingSaveOption": "ROW_LEVEL",
+  "isLoading": false,
+  "isSortable": true,
+  "isVisible": true,
+  "isVisibleDownload": true,
+  "isVisibleFilters": false,
+  "isVisiblePagination": true,
+  "isVisibleSearch": true,
+  "key": "e7c9a1r8wk",
+  "label": "Data",
+  "leftColumn": 0,
+  "minWidth": 450,
+  "mobileBottomRow": 29,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 9,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "parentColumnSpace": 16.453125,
+  "parentId": "6ln1posbmg",
+  "parentRowSpace": 10,
+  "primaryColumns": {
+    "Arcadia": {
+      "alias": "Arcadia",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{CrendentialsTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{CrendentialsTable.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "#1d4ed8",
+      "buttonLabel": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Arcadia\"] || \"0\")) : currentRow[\"Arcadia\"] || \"0\" })()}}",
+      "buttonVariant": "TERTIARY",
+      "cellBackground": "#dcfce7",
+      "columnType": "button",
+      "computedValue": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Arcadia\"])) : Arcadia })()}}",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "Arcadia",
+      "index": 9,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !CredentialsStats.isLoading )) :  !CredentialsStats.isLoading  })()}}",
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Arcadia",
+      "notation": "standard",
+      "onClick": "{{\n  currentRow[\"Arcadia\"] && currentRow[\"Arcadia\"] !== \" \"\n    ? (\n        storeValue(\"credentialSearch\", {\n          clientId: currentRow[\"ID\"],\n          source: \"Arcadia\"\n        }),\n        Api_ListCredentialsArcadiaFix.run({\n          clientId: currentRow[\"ID\"]\n        }).then(() => {\n          showModal(CredErrorModel.name);\n        })\n      )\n    : showAlert(\"No Arcadia credential records to show\", \"info\")\n}}\n",
+      "originalId": "Arcadia",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "ArcadiaFeed": {
+      "alias": "ArcadiaFeed",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"ArcadiaFeed\"])) : ArcadiaFeed })()}}",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "ArcadiaFeed",
+      "index": 3,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !CredentialsStats.isLoading )) :  !CredentialsStats.isLoading  })()}}",
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "ArcadiaFeed",
+      "notation": "standard",
+      "onClick": "{{}}",
+      "originalId": "ArcadiaFeed",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "Customers": {
+      "alias": "Customers",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Customers\"])) : Customers })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "Customers",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Customers",
+      "notation": "standard",
+      "originalId": "Customers",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "ID": {
+      "alias": "ID",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"ID\"])) : ID })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "ID",
+      "index": 1,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !CredentialsStats.isLoading )) :  !CredentialsStats.isLoading  })()}}",
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "ID",
+      "notation": "standard",
+      "originalId": "ID",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "Percentage": {
+      "alias": "Percentage",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Percentage\"])) : Percentage })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "Percentage",
+      "index": 3,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !CredentialsStats.isLoading )) :  !CredentialsStats.isLoading  })()}}",
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Percentage",
+      "notation": "standard",
+      "originalId": "Percentage",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "Synced": {
+      "alias": "Synced",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"Synced\"])) : Synced })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "Synced",
+      "index": 5,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !CredentialsStats.isLoading )) :  !CredentialsStats.isLoading  })()}}",
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Synced",
+      "notation": "standard",
+      "originalId": "Synced",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "ToFix": {
+      "alias": "ToFix",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"ToFix\"])) : ToFix })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "ToFix",
+      "index": 7,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !CredentialsStats.isLoading )) :  !CredentialsStats.isLoading  })()}}",
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "ToFix",
+      "notation": "standard",
+      "originalId": "ToFix",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "US": {
+      "alias": "US",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{CrendentialsTable.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{CrendentialsTable.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "#1d4ed8",
+      "buttonLabel": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"US\"] || \"0\")) : currentRow[\"US\"] || \"0\" })()}}",
+      "buttonVariant": "TERTIARY",
+      "cellBackground": "#fee2e2",
+      "columnType": "button",
+      "computedValue": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"US\"])) : US })()}}",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "US",
+      "index": 8,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = CrendentialsTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !CredentialsStats.isLoading )) :  !CredentialsStats.isLoading  })()}}",
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "US",
+      "notation": "standard",
+      "onClick": "{{\n  currentRow[\"US\"] && currentRow[\"US\"] !== \" \"\n    ? (\n        storeValue(\"credentialSearch\", {\n          clientId: currentRow[\"ID\"],\n          source: \"US\"\n        }),\n        Api_ListCredentialsUSFix.run({\n          clientId: currentRow[\"ID\"]\n        }).then(() => {\n          showModal(CredErrorModel.name);\n        })\n      )\n    : showAlert(\"No US credential records to show\", \"info\")\n}}\n",
+      "originalId": "US",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    }
+  },
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "searchKey": "",
+  "tableData": "{{ CredentialsStats.credentialTotals }}",
+  "textSize": "0.875rem",
+  "topRow": 0,
+  "totalRecordsCount": 0,
+  "type": "TABLE_WIDGET_V2",
+  "version": 2,
+  "verticalAlignment": "CENTER",
+  "widgetId": "u0haniv1va",
+  "widgetName": "CrendentialsTable"
+}

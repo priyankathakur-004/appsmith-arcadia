@@ -1,0 +1,6 @@
+SELECT DISTINCT
+    aa.IdClient AS id_client,
+    c.ClientName AS client_name
+FROM dbo.ArcadiaAccounts aa
+INNER JOIN dbo.Client c ON aa.IdClient = c.IdClient
+ORDER BY c.ClientName;

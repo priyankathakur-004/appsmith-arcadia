@@ -1,0 +1,62 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 12,
+  "boxShadow": "none",
+  "defaultOptionValue": "[]",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "k",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "",
+  "labelTextColor": "#f4f4f5",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 21,
+  "minWidth": 450,
+  "mobileBottomRow": 11,
+  "mobileLeftColumn": 21,
+  "mobileRightColumn": 40,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "optionLabel": "status",
+  "optionValue": "status",
+  "originalBottomRow": 12,
+  "originalTopRow": 5,
+  "parentColumnSpace": 15,
+  "parentId": "o19crntpr9",
+  "parentRowSpace": 10,
+  "placeholderText": "Select...",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 40,
+  "serverSideFiltering": false,
+  "sourceData": "{{StatusUtils.getAccountOptions()}}",
+  "topRow": 5,
+  "type": "MULTI_SELECT_WIDGET_V2",
+  "version": 1,
+  "widgetId": "zdzjq0fiur",
+  "widgetName": "AccStatusSelect"
+}

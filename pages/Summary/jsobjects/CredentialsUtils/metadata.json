@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "69b3a04bd659a362092919a3_ea29e910-8de8-4bfa-81f1-6d45a5090ac0",
+  "id": "Summary_CredentialsUtils",
+  "unpublishedCollection": {
+    "name": "CredentialsUtils",
+    "pageId": "Summary",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "statusFilterMap",
+        "value": "{\n  Arcadia: {\n    All: [\"CONNECTION_DEACTIVATED\", \"CONNECTION_IN_PROGRESS\", \"CONNECTION_FAILURE\"],\n    \"Connection In progress\": [\"CONNECTION_IN_PROGRESS\"],\n    \"Connection Failure\": [\"CONNECTION_FAILURE\"],\n    \"Connection Deactivated\": [\"CONNECTION_DEACTIVATED\"]\n  },\n  US: {\n    All: [\"CONNECTION_FAILURE\", \"CONNECTION_IN_PROGRESS\"],\n    \"Connection In progress\": [\"CONNECTION_IN_PROGRESS\"],\n    \"Connection Failure\": [\"CONNECTION_FAILURE\"]\n  }\n}"
+      }
+    ]
+  }
+}

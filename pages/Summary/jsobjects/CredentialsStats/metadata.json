@@ -1,0 +1,24 @@
+{
+  "gitSyncId": "69b3a04bd659a362092919a3_a5127429-cb95-453c-a20a-d95fa434e848",
+  "id": "Summary_CredentialsStats",
+  "unpublishedCollection": {
+    "name": "CredentialsStats",
+    "pageId": "Summary",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "credentialTotals",
+        "value": "[]"
+      },
+      {
+        "name": "isLoading",
+        "value": "false"
+      },
+      {
+        "name": "error",
+        "value": "null"
+      }
+    ]
+  }
+}

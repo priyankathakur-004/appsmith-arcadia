@@ -1,0 +1,39 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 12,
+  "dateFormat": "YYYY-MM-DD",
+  "defaultDate": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "firstDayOfWeek": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "w_edat01",
+  "leftColumn": 14,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 150,
+  "mobileBottomRow": 13,
+  "mobileLeftColumn": 37,
+  "mobileRightColumn": 50,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "originalBottomRow": 23,
+  "originalTopRow": 16,
+  "parentColumnSpace": 16.765625,
+  "parentId": "owposxdfeo",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 27,
+  "topRow": 5,
+  "type": "DATE_PICKER_WIDGET2",
+  "version": 1,
+  "widgetId": "tqq1r58ao9",
+  "widgetName": "IntervalEndDate"
+}

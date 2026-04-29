@@ -1,0 +1,13 @@
+SELECT
+    aa.Status AS status,
+    COUNT(1) AS cnt
+FROM dbo.ArcadiaAccounts aa
+WHERE aa.Status IS NOT NULL
+  AND (
+    '{{AccClientSelect.selectedOptionValues?.join(",") || ""}}' = ''
+    OR aa.IdClient IN (
+      SELECT CAST(value AS INT) FROM STRING_SPLIT('{{AccClientSelect.selectedOptionValues?.join(",") || ""}}', ',')
+    )
+  )
+GROUP BY aa.Status
+ORDER BY aa.Status;

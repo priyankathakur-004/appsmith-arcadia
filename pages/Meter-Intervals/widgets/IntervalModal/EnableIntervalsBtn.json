@@ -1,0 +1,56 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 11,
+  "buttonColor": "#f59e0b",
+  "buttonVariant": "PRIMARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": "{{MeterIntervalsUtils.getSelectedMeter().status!=\"INTERVALS_SUCCESS\";}}",
+  "key": "w_ebtn01",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 120,
+  "mobileBottomRow": 70,
+  "mobileLeftColumn": 44,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 62,
+  "needsErrorInfo": false,
+  "onClick": "{{MeterIntervalsUtils.enableIntervals()}}",
+  "originalBottomRow": 68,
+  "originalTopRow": 62,
+  "parentColumnSpace": 16.765625,
+  "parentId": "l4upfsbtnq",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 20,
+  "text": "Enable Intervals for Selected Meter",
+  "topRow": 7,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "0vr5yonp0l",
+  "widgetName": "EnableIntervalsBtn"
+}
