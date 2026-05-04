@@ -25,7 +25,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "rest/public/tariffs/{{Inp_GetTariffHistory_masterTariffId.text}}/history",
+      "path": "rest/public/tariffs/{{appsmith.store.selectedMasterTariffId}}/history",
       "pluginSpecifiedTemplates": [
         {
           "value": true

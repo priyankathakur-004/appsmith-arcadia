@@ -3,7 +3,7 @@
   "borderColor": "#334155",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 15,
+  "bottomRow": 17,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
@@ -60,7 +60,7 @@
   "minDynamicHeight": 10,
   "minWidth": 450,
   "needsErrorInfo": false,
-  "originalBottomRow": 15,
+  "originalBottomRow": 17,
   "originalTopRow": 1,
   "parentColumnSpace": 15,
   "parentId": "tab_canvas_GetSeasons",
@@ -74,7 +74,7 @@
   "version": 1,
   "widgetId": "fc_GetSeasons",
   "widgetName": "FilterContainer_GetSeasons",
-  "mobileBottomRow": 15,
+  "mobileBottomRow": 17,
   "mobileTopRow": 1,
   "mobileLeftColumn": 0,
   "mobileRightColumn": 64,

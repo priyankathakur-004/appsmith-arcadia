@@ -1,6 +1,6 @@
 {
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 26,
+  "bottomRow": 29,
   "boxShadow": "none",
   "buttonColor": "#475569",
   "buttonVariant": "PRIMARY",
@@ -10,6 +10,7 @@
       "key": "borderRadius"
     }
   ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -22,10 +23,14 @@
   "key": "btn_clear_GetProperties",
   "leftColumn": 53,
   "minWidth": 450,
+  "mobileBottomRow": 29,
+  "mobileLeftColumn": 53,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 25,
   "needsErrorInfo": false,
   "onClick": "{{ resetWidget('Inp_GetProperties_dataType', false); resetWidget('Inp_GetProperties_family', false); resetWidget('Inp_GetProperties_keySpace', false); resetWidget('Inp_GetProperties_entityId', false); resetWidget('Inp_GetProperties_entityType', false); resetWidget('Inp_GetProperties_excludeGlobal', false) }}",
-  "originalBottomRow": 26,
-  "originalTopRow": 22,
+  "originalBottomRow": 29,
+  "originalTopRow": 25,
   "parentColumnSpace": 15,
   "parentId": "fcc_GetProperties",
   "parentRowSpace": 10,
@@ -36,14 +41,9 @@
   "rightColumn": 63,
   "text": "Clear",
   "tooltip": "",
-  "topRow": 22,
+  "topRow": 25,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "btn_clear_GetProperties",
-  "widgetName": "Btn_Clear_GetProperties",
-  "mobileBottomRow": 26,
-  "mobileTopRow": 22,
-  "mobileLeftColumn": 53,
-  "mobileRightColumn": 63,
-  "dynamicPropertyPathList": []
+  "widgetName": "Btn_Clear_GetProperties"
 }

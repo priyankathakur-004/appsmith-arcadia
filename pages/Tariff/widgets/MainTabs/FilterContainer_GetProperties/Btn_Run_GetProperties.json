@@ -1,6 +1,6 @@
 {
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 26,
+  "bottomRow": 29,
   "boxShadow": "none",
   "buttonColor": "#3b82f6",
   "buttonVariant": "PRIMARY",
@@ -10,6 +10,7 @@
       "key": "borderRadius"
     }
   ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -22,10 +23,14 @@
   "key": "btn_run_GetProperties",
   "leftColumn": 42,
   "minWidth": 450,
+  "mobileBottomRow": 29,
+  "mobileLeftColumn": 42,
+  "mobileRightColumn": 52,
+  "mobileTopRow": 25,
   "needsErrorInfo": false,
   "onClick": "{{GetProperties.run()}}",
-  "originalBottomRow": 26,
-  "originalTopRow": 22,
+  "originalBottomRow": 29,
+  "originalTopRow": 25,
   "parentColumnSpace": 15,
   "parentId": "fcc_GetProperties",
   "parentRowSpace": 10,
@@ -36,14 +41,9 @@
   "rightColumn": 52,
   "text": "Run",
   "tooltip": "",
-  "topRow": 22,
+  "topRow": 25,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "btn_run_GetProperties",
-  "widgetName": "Btn_Run_GetProperties",
-  "mobileBottomRow": 26,
-  "mobileTopRow": 22,
-  "mobileLeftColumn": 42,
-  "mobileRightColumn": 52,
-  "dynamicPropertyPathList": []
+  "widgetName": "Btn_Run_GetProperties"
 }

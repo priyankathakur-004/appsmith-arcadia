@@ -76,11 +76,7 @@ export default {
 	},
 
 	qsPropertyLookups() {
-		return this.qs({
-			subKeyName: Inp_GetPropertyLookups_subKeyName.text,
-			fromDateTime: Inp_GetPropertyLookups_fromDateTime.text,
-			toDateTime: Inp_GetPropertyLookups_toDateTime.text,
-		});
+		return "";
 	},
 
 	qsPropertyStats() {

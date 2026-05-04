@@ -1,6 +1,6 @@
 {
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 13,
   "boxShadow": "none",
   "buttonColor": "#3b82f6",
   "buttonVariant": "PRIMARY",
@@ -10,6 +10,7 @@
       "key": "borderRadius"
     }
   ],
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -22,10 +23,14 @@
   "key": "btn_run_GetSeasons",
   "leftColumn": 42,
   "minWidth": 450,
+  "mobileBottomRow": 13,
+  "mobileLeftColumn": 42,
+  "mobileRightColumn": 52,
+  "mobileTopRow": 9,
   "needsErrorInfo": false,
   "onClick": "{{GetSeasons.run()}}",
-  "originalBottomRow": 12,
-  "originalTopRow": 8,
+  "originalBottomRow": 13,
+  "originalTopRow": 9,
   "parentColumnSpace": 15,
   "parentId": "fcc_GetSeasons",
   "parentRowSpace": 10,
@@ -36,14 +41,9 @@
   "rightColumn": 52,
   "text": "Run",
   "tooltip": "",
-  "topRow": 8,
+  "topRow": 9,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "btn_run_GetSeasons",
-  "widgetName": "Btn_Run_GetSeasons",
-  "mobileBottomRow": 12,
-  "mobileTopRow": 8,
-  "mobileLeftColumn": 42,
-  "mobileRightColumn": 52,
-  "dynamicPropertyPathList": []
+  "widgetName": "Btn_Run_GetSeasons"
 }

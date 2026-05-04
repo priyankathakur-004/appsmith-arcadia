@@ -6,7 +6,9 @@
   "bottomRow": 85,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
-  "columnOrder": [],
+  "columnOrder": [
+    "_action"
+  ],
   "columnUpdatedAt": 0,
   "defaultPageSize": 10,
   "defaultSelectedRowIndex": 0,
@@ -26,6 +28,9 @@
     },
     {
       "key": "tableData"
+    },
+    {
+      "key": "primaryColumns._action.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -33,7 +38,11 @@
       "key": "tableData"
     }
   ],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "primaryColumns._action.onClick"
+    }
+  ],
   "enableClientSideSearch": true,
   "horizontalAlignment": "LEFT",
   "isLoading": false,
@@ -56,7 +65,33 @@
   "parentColumnSpace": 15,
   "parentId": "rcc_GetProperties",
   "parentRowSpace": 10,
-  "primaryColumns": {},
+  "primaryColumns": {
+    "_action": {
+      "alias": "_action",
+      "allowCellWrapping": false,
+      "buttonColor": "#3b82f6",
+      "buttonLabel": "View Details",
+      "buttonVariant": "PRIMARY",
+      "columnType": "button",
+      "computedValue": "View Details",
+      "horizontalAlignment": "CENTER",
+      "id": "_action",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Action",
+      "labelColor": "#ffffff",
+      "onClick": "{{ storeValue('selectedPropertyKey', currentRow.keyName).then(() => GetOneProperty.run()).then(() => showModal('OnePropertyModal')) }}",
+      "originalId": "_action",
+      "sticky": "right",
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    }
+  },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 64,
