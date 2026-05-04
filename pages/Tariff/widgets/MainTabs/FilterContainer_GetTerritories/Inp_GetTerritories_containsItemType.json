@@ -50,7 +50,7 @@
   "parentColumnSpace": 15,
   "parentId": "fcc_GetTerritories",
   "parentRowSpace": 10,
-  "placeholderText": "STATE / COUNTY / CITY / ZIPCODE",
+  "placeholderText": "Select item type",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 47,

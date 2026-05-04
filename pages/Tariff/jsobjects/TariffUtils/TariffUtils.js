@@ -11,7 +11,7 @@ export default {
 			lseId: Inp_GetTariffs_lseId.text,
 			masterTariffId: Inp_GetTariffs_masterTariffId.text,
 			zipCode: Inp_GetTariffs_zipCode.text,
-			effectiveOn: Inp_GetTariffs_effectiveOn.text,
+			effectiveOn: Inp_GetTariffs_effectiveOn.formattedDate,
 			customerClasses: (Inp_GetTariffs_customerClasses.selectedOptionValues || []).join(','),
 			serviceTypes: (Inp_GetTariffs_serviceTypes.selectedOptionValues || []).join(','),
 			populateRates: Inp_GetTariffs_populateRates.selectedOptionValue,

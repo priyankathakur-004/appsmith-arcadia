@@ -50,7 +50,7 @@
   "parentColumnSpace": 15,
   "parentId": "fcc_GetTerritories",
   "parentRowSpace": 10,
-  "placeholderText": "true / false",
+  "placeholderText": "Select",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 31,
