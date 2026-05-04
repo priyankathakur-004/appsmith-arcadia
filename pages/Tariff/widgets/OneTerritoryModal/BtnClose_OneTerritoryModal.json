@@ -10,7 +10,6 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [
     {
       "key": "onClick"
@@ -20,7 +19,7 @@
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "btn_close_OneTerritoryModal",
+  "key": "bilc3288he",
   "leftColumn": 54,
   "minWidth": 450,
   "mobileBottomRow": 5,
@@ -29,13 +28,7 @@
   "mobileTopRow": 1,
   "needsErrorInfo": false,
   "onClick": "{{ closeModal('OneTerritoryModal') }}",
-  "originalBottomRow": 5,
-  "originalTopRow": 1,
-  "parentColumnSpace": 15,
-  "parentId": "mdc_OneTerritoryModal",
-  "parentRowSpace": 10,
-  "placement": "CENTER",
-  "recaptchaType": "V3",
+  "parentId": "kah19q2dad",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 63,
@@ -44,6 +37,6 @@
   "topRow": 1,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "btn_close_OneTerritoryModal",
+  "widgetId": "6glkt6df91",
   "widgetName": "BtnClose_OneTerritoryModal"
 }

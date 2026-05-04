@@ -4,50 +4,45 @@
   "bottomRow": 5,
   "dynamicBindingPathList": [
     {
-      "key": "fontFamily"
+      "key": "truncateButtonColor"
     },
     {
-      "key": "truncateButtonColor"
+      "key": "fontFamily"
     },
     {
       "key": "borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "1.125rem",
+  "fontSize": "1.25rem",
   "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
-  "key": "hdr_TariffHistoryModal",
+  "key": "gaszrn315g",
   "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
   "mobileBottomRow": 5,
   "mobileLeftColumn": 1,
-  "mobileRightColumn": 63,
+  "mobileRightColumn": 41,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 5,
-  "originalTopRow": 1,
   "overflow": "NONE",
-  "parentColumnSpace": 15,
-  "parentId": "mdc_TariffHistoryModal",
-  "parentRowSpace": 10,
+  "parentId": "399o56sok1",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 63,
+  "rightColumn": 41,
   "shouldTruncate": false,
-  "text": "View History",
+  "text": "View Tariff History",
   "textAlign": "LEFT",
   "textColor": "#ffffff",
   "topRow": 1,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "hdr_TariffHistoryModal",
+  "widgetId": "kax6lvc6ms",
   "widgetName": "Header_TariffHistoryModal"
 }
