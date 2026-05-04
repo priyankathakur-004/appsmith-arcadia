@@ -3,13 +3,14 @@
   "borderColor": "#334155",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 30,
+  "bottomRow": 29,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
-      "bottomRow": 270,
+      "bottomRow": 280,
       "canExtend": true,
       "dynamicBindingPathList": [],
+      "dynamicPropertyPathList": [],
       "dynamicTriggerPathList": [],
       "flexLayers": [],
       "isCanvas": true,
@@ -19,6 +20,10 @@
       "leftColumn": 0,
       "minHeight": 270,
       "minWidth": 450,
+      "mobileBottomRow": 270,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 960,
+      "mobileTopRow": 0,
       "needsErrorInfo": false,
       "originalBottomRow": 270,
       "originalTopRow": 0,
@@ -32,23 +37,19 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "fcc_GetTerritories",
-      "widgetName": "fcc_GetTerritories",
-      "mobileBottomRow": 270,
-      "mobileTopRow": 0,
-      "mobileLeftColumn": 0,
-      "mobileRightColumn": 960,
-      "dynamicPropertyPathList": []
+      "widgetName": "fcc_GetTerritories"
     }
   ],
   "dynamicBindingPathList": [
     {
-      "key": "boxShadow"
+      "key": "borderRadius"
     },
     {
-      "key": "borderRadius"
+      "key": "boxShadow"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "start",
   "isCanvas": true,
@@ -59,8 +60,12 @@
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 10,
   "minWidth": 450,
+  "mobileBottomRow": 30,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 30,
+  "originalBottomRow": 27,
   "originalTopRow": 1,
   "parentColumnSpace": 15,
   "parentId": "tab_canvas_GetTerritories",
@@ -73,10 +78,5 @@
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "fc_GetTerritories",
-  "widgetName": "FilterContainer_GetTerritories",
-  "mobileBottomRow": 30,
-  "mobileTopRow": 1,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 64,
-  "dynamicPropertyPathList": []
+  "widgetName": "FilterContainer_GetTerritories"
 }

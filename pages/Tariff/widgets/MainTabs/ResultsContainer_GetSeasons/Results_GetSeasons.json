@@ -16,6 +16,9 @@
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
+      "key": "tableData"
+    },
+    {
       "key": "accentColor"
     },
     {
@@ -23,9 +26,6 @@
     },
     {
       "key": "boxShadow"
-    },
-    {
-      "key": "tableData"
     }
   ],
   "dynamicPropertyPathList": [
@@ -67,8 +67,8 @@
   "topRow": 5,
   "totalRecordsCount": "",
   "type": "TABLE_WIDGET_V2",
-  "verticalAlignment": "CENTER",
   "version": 1,
+  "verticalAlignment": "CENTER",
   "widgetId": "res_GetSeasons",
   "widgetName": "Results_GetSeasons"
 }

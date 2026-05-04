@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFill": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 17,
+  "bottomRow": 19,
   "boxShadow": "none",
   "defaultText": "",
   "dynamicBindingPathList": [
@@ -51,7 +51,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 15,
   "showStepArrows": false,
-  "topRow": 12,
+  "topRow": 14,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "inp_GetTerritories_masterTariffId",

@@ -7,9 +7,10 @@
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
-      "bottomRow": 350,
+      "bottomRow": 370,
       "canExtend": true,
       "dynamicBindingPathList": [],
+      "dynamicPropertyPathList": [],
       "dynamicTriggerPathList": [],
       "flexLayers": [],
       "isCanvas": true,
@@ -19,6 +20,10 @@
       "leftColumn": 0,
       "minHeight": 350,
       "minWidth": 450,
+      "mobileBottomRow": 350,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 960,
+      "mobileTopRow": 0,
       "needsErrorInfo": false,
       "originalBottomRow": 350,
       "originalTopRow": 0,
@@ -32,23 +37,19 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "fcc_GetTariffs",
-      "widgetName": "fcc_GetTariffs",
-      "mobileBottomRow": 350,
-      "mobileTopRow": 0,
-      "mobileLeftColumn": 0,
-      "mobileRightColumn": 960,
-      "dynamicPropertyPathList": []
+      "widgetName": "fcc_GetTariffs"
     }
   ],
   "dynamicBindingPathList": [
     {
-      "key": "boxShadow"
+      "key": "borderRadius"
     },
     {
-      "key": "borderRadius"
+      "key": "boxShadow"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "start",
   "isCanvas": true,
@@ -59,6 +60,10 @@
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 10,
   "minWidth": 450,
+  "mobileBottomRow": 38,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 1,
   "needsErrorInfo": false,
   "originalBottomRow": 38,
   "originalTopRow": 1,
@@ -73,10 +78,5 @@
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "fc_GetTariffs",
-  "widgetName": "FilterContainer_GetTariffs",
-  "mobileBottomRow": 38,
-  "mobileTopRow": 1,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 64,
-  "dynamicPropertyPathList": []
+  "widgetName": "FilterContainer_GetTariffs"
 }

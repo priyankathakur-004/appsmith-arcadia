@@ -51,7 +51,7 @@
     ],
     "name": "GetOneLse",
     "pageId": "Tariff",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

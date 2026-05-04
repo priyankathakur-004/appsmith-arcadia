@@ -5,15 +5,10 @@
   "dynamicBindingPathList": [
     {
       "key": "fontFamily"
-    },
-    {
-      "key": "truncateButtonColor"
-    },
-    {
-      "key": "borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "fontSize": "0.875rem",
@@ -25,6 +20,10 @@
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
+  "mobileBottomRow": 10,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 6,
   "needsErrorInfo": false,
   "originalBottomRow": 10,
   "originalTopRow": 6,
@@ -44,10 +43,5 @@
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "subtitle_tariff",
-  "widgetName": "PageSubtitle",
-  "mobileBottomRow": 10,
-  "mobileTopRow": 6,
-  "mobileLeftColumn": 1,
-  "mobileRightColumn": 63,
-  "dynamicPropertyPathList": []
+  "widgetName": "PageSubtitle"
 }

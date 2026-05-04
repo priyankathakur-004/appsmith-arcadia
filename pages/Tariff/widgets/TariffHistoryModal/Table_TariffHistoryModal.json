@@ -16,6 +16,9 @@
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
+      "key": "tableData"
+    },
+    {
       "key": "accentColor"
     },
     {
@@ -23,9 +26,6 @@
     },
     {
       "key": "boxShadow"
-    },
-    {
-      "key": "tableData"
     }
   ],
   "dynamicPropertyPathList": [
@@ -63,8 +63,8 @@
   "topRow": 6,
   "totalRecordsCount": "",
   "type": "TABLE_WIDGET_V2",
-  "verticalAlignment": "CENTER",
   "version": 1,
+  "verticalAlignment": "CENTER",
   "widgetId": "fqe6n627nz",
   "widgetName": "Table_TariffHistoryModal"
 }
