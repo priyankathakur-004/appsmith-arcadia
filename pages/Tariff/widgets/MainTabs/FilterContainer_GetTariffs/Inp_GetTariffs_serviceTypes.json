@@ -1,45 +1,48 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
-  "animateLoading": true,
-  "autoFill": false,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 25,
   "boxShadow": "none",
-  "defaultText": "",
+  "defaultOptionValue": "[]",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
   "dynamicTriggerPathList": [],
-  "iconAlign": "left",
-  "inputType": "TEXT",
   "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
   "isRequired": false,
-  "isSpellCheck": false,
   "isVisible": true,
   "key": "inp_GetTariffs_serviceTypes",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelStyle": "",
   "labelText": "",
   "labelTextColor": "#cbd5e1",
   "labelTextSize": "0.875rem",
   "labelWidth": 0,
   "leftColumn": 32,
-  "maxDynamicHeight": 9000,
-  "minDynamicHeight": 4,
   "minWidth": 450,
   "mobileBottomRow": 25,
   "mobileLeftColumn": 32,
   "mobileRightColumn": 62,
   "mobileTopRow": 20,
   "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
   "originalBottomRow": 25,
   "originalTopRow": 20,
   "parentColumnSpace": 15,
@@ -47,13 +50,13 @@
   "parentRowSpace": 10,
   "placeholderText": "ELECTRICITY,GAS",
   "renderMode": "CANVAS",
-  "resetOnSubmit": true,
   "responsiveBehavior": "fill",
   "rightColumn": 62,
-  "showStepArrows": false,
+  "serverSideFiltering": false,
+  "sourceData": "{{[{\"label\": \"ELECTRICITY\", \"value\": \"ELECTRICITY\"}, {\"label\": \"SOLAR_PV\", \"value\": \"SOLAR_PV\"}, {\"label\": \"GAS\", \"value\": \"GAS\"}]}}",
   "topRow": 20,
-  "type": "INPUT_WIDGET_V2",
-  "version": 2,
+  "type": "MULTI_SELECT_WIDGET_V2",
+  "version": 1,
   "widgetId": "inp_GetTariffs_serviceTypes",
   "widgetName": "Inp_GetTariffs_serviceTypes"
 }

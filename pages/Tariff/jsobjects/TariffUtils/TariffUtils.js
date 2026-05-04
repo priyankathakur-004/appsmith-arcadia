@@ -12,10 +12,10 @@ export default {
 			masterTariffId: Inp_GetTariffs_masterTariffId.text,
 			zipCode: Inp_GetTariffs_zipCode.text,
 			effectiveOn: Inp_GetTariffs_effectiveOn.text,
-			customerClasses: Inp_GetTariffs_customerClasses.text,
-			serviceTypes: Inp_GetTariffs_serviceTypes.text,
-			populateRates: Inp_GetTariffs_populateRates.text,
-			populateProperties: Inp_GetTariffs_populateProperties.text,
+			customerClasses: (Inp_GetTariffs_customerClasses.selectedOptionValues || []).join(','),
+			serviceTypes: (Inp_GetTariffs_serviceTypes.selectedOptionValues || []).join(','),
+			populateRates: Inp_GetTariffs_populateRates.isSwitchedOn || undefined,
+			populateProperties: Inp_GetTariffs_populateProperties.isSwitchedOn || undefined,
 			pageStart: ((Results_GetTariffs.pageNo || 1) - 1) * (Results_GetTariffs.pageSize || 25) + 1,
 			pageCount: Results_GetTariffs.pageSize || 25,
 		});
@@ -30,8 +30,8 @@ export default {
 			searchOn: Inp_GetLses_searchOn.text,
 			zipCode: Inp_GetLses_zipCode.text,
 			country: Inp_GetLses_country.text,
-			ownerships: Inp_GetLses_ownerships.text,
-			serviceTypes: Inp_GetLses_serviceTypes.text,
+			ownerships: (Inp_GetLses_ownerships.selectedOptionValues || []).join(','),
+			serviceTypes: (Inp_GetLses_serviceTypes.selectedOptionValues || []).join(','),
 			pageStart: ((Results_GetLses.pageNo || 1) - 1) * (Results_GetLses.pageSize || 25) + 1,
 			pageCount: Results_GetLses.pageSize || 25,
 		});
@@ -48,8 +48,8 @@ export default {
 			addressString: Inp_GetTerritories_addressString.text,
 			lseId: Inp_GetTerritories_lseId.text,
 			masterTariffId: Inp_GetTerritories_masterTariffId.text,
-			populateLses: Inp_GetTerritories_populateLses.text,
-			containsItemType: Inp_GetTerritories_containsItemType.text,
+			populateLses: Inp_GetTerritories_populateLses.isSwitchedOn || undefined,
+			containsItemType: Inp_GetTerritories_containsItemType.selectedOptionValue,
 			containsItemValue: Inp_GetTerritories_containsItemValue.text,
 			pageStart: ((Results_GetTerritories.pageNo || 1) - 1) * (Results_GetTerritories.pageSize || 25) + 1,
 			pageCount: Results_GetTerritories.pageSize || 25,
@@ -68,12 +68,12 @@ export default {
 
 	qsProperties() {
 		return this.qs({
-			dataType: Inp_GetProperties_dataType.text,
+			dataType: Inp_GetProperties_dataType.selectedOptionValue,
 			family: Inp_GetProperties_family.text,
 			keySpace: Inp_GetProperties_keySpace.text,
 			entityId: Inp_GetProperties_entityId.text,
-			entityType: Inp_GetProperties_entityType.text,
-			excludeGlobal: Inp_GetProperties_excludeGlobal.text,
+			entityType: Inp_GetProperties_entityType.selectedOptionValue,
+			excludeGlobal: Inp_GetProperties_excludeGlobal.isSwitchedOn || undefined,
 			pageStart: ((Results_GetProperties.pageNo || 1) - 1) * (Results_GetProperties.pageSize || 25) + 1,
 			pageCount: Results_GetProperties.pageSize || 25,
 		});
