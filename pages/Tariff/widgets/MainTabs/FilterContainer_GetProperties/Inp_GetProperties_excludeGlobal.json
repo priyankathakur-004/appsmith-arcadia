@@ -2,18 +2,15 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 17,
+  "bottomRow": 19,
   "boxShadow": "none",
   "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
+      "key": "sourceData"
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "sourceData"
     }
   ],
   "dynamicPropertyPathList": [
@@ -56,7 +53,7 @@
   "rightColumn": 31,
   "serverSideFiltering": false,
   "sourceData": "{{[{\"label\": \"true\", \"value\": \"true\"}, {\"label\": \"false\", \"value\": \"false\"}]}}",
-  "topRow": 12,
+  "topRow": 14,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "inp_GetProperties_excludeGlobal",

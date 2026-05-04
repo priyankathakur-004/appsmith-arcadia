@@ -55,7 +55,7 @@
     "dynamicBindingPathList": [],
     "name": "CreateAccessToken",
     "pageId": "Summary",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

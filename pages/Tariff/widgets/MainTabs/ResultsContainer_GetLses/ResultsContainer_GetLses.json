@@ -7,7 +7,7 @@
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
-      "bottomRow": 850,
+      "bottomRow": 870,
       "canExtend": true,
       "dynamicBindingPathList": [],
       "dynamicPropertyPathList": [],
@@ -43,10 +43,10 @@
   ],
   "dynamicBindingPathList": [
     {
-      "key": "boxShadow"
+      "key": "borderRadius"
     },
     {
-      "key": "borderRadius"
+      "key": "boxShadow"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -66,8 +66,8 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 30,
   "needsErrorInfo": false,
-  "originalBottomRow": 115,
-  "originalTopRow": 30,
+  "originalBottomRow": 114,
+  "originalTopRow": 27,
   "parentColumnSpace": 15,
   "parentId": "tab_canvas_GetLses",
   "parentRowSpace": 10,
@@ -75,7 +75,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "shouldScrollContents": true,
-  "topRow": 30,
+  "topRow": 28,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "rc_GetLses",

@@ -51,7 +51,7 @@
     ],
     "name": "GetLses",
     "pageId": "Tariff",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": true
   }
 }

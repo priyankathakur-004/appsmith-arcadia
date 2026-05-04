@@ -2,14 +2,14 @@
   "animateLoading": true,
   "backgroundColor": "{{appsmith.theme.colors.backgroundColor}}",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 79,
+  "bottomRow": 624,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
   "canOutsideClickClose": true,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 690,
+      "bottomRow": 620,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -54,15 +54,15 @@
   "detachFromLayout": true,
   "dynamicBindingPathList": [
     {
-      "key": "borderRadius"
+      "key": "backgroundColor"
     },
     {
-      "key": "backgroundColor"
+      "key": "borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
-  "height": 690,
+  "height": 620,
   "isCanvas": true,
   "isLoading": false,
   "key": "hplbg5ob0f",

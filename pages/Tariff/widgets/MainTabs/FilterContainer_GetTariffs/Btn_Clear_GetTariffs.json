@@ -1,6 +1,6 @@
 {
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 32,
+  "bottomRow": 35,
   "boxShadow": "none",
   "buttonColor": "#475569",
   "buttonVariant": "PRIMARY",
@@ -41,7 +41,7 @@
   "rightColumn": 47,
   "text": "Clear",
   "tooltip": "",
-  "topRow": 27,
+  "topRow": 30,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "btn_clear_GetTariffs",

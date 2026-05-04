@@ -5,15 +5,10 @@
   "dynamicBindingPathList": [
     {
       "key": "fontFamily"
-    },
-    {
-      "key": "truncateButtonColor"
-    },
-    {
-      "key": "borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
   "fontSize": "1.25rem",
@@ -25,6 +20,10 @@
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 1,
   "needsErrorInfo": false,
   "originalBottomRow": 5,
   "originalTopRow": 1,
@@ -44,10 +43,5 @@
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "heading_tariff",
-  "widgetName": "Heading",
-  "mobileBottomRow": 5,
-  "mobileTopRow": 1,
-  "mobileLeftColumn": 1,
-  "mobileRightColumn": 63,
-  "dynamicPropertyPathList": []
+  "widgetName": "Heading"
 }

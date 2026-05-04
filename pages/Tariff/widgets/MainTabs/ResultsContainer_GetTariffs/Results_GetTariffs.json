@@ -18,6 +18,12 @@
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
+      "key": "tableData"
+    },
+    {
+      "key": "totalRecordsCount"
+    },
+    {
       "key": "accentColor"
     },
     {
@@ -25,15 +31,6 @@
     },
     {
       "key": "boxShadow"
-    },
-    {
-      "key": "tableData"
-    },
-    {
-      "key": "primaryColumns._action.computedValue"
-    },
-    {
-      "key": "totalRecordsCount"
     }
   ],
   "dynamicPropertyPathList": [
@@ -69,6 +66,8 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
+  "onPageChange": "{{GetTariffs.run()}}",
+  "onPageSizeChange": "{{GetTariffs.run()}}",
   "originalBottomRow": 85,
   "originalTopRow": 5,
   "parentColumnSpace": 15,
@@ -111,10 +110,8 @@
   "topRow": 5,
   "totalRecordsCount": "{{GetTariffs.data.count || 0}}",
   "type": "TABLE_WIDGET_V2",
-  "verticalAlignment": "CENTER",
   "version": 1,
+  "verticalAlignment": "CENTER",
   "widgetId": "res_GetTariffs",
-  "widgetName": "Results_GetTariffs",
-  "onPageChange": "{{GetTariffs.run()}}",
-  "onPageSizeChange": "{{GetTariffs.run()}}"
+  "widgetName": "Results_GetTariffs"
 }
