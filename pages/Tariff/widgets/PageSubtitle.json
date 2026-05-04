@@ -44,5 +44,10 @@
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "subtitle_tariff",
-  "widgetName": "PageSubtitle"
+  "widgetName": "PageSubtitle",
+  "mobileBottomRow": 10,
+  "mobileTopRow": 6,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 63,
+  "dynamicPropertyPathList": []
 }

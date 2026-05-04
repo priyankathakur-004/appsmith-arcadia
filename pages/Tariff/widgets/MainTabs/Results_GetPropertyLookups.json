@@ -44,5 +44,10 @@
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "res_GetPropertyLookups",
-  "widgetName": "Results_GetPropertyLookups"
+  "widgetName": "Results_GetPropertyLookups",
+  "mobileBottomRow": 108,
+  "mobileTopRow": 28,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "dynamicPropertyPathList": []
 }

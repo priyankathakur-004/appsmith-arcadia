@@ -44,5 +44,10 @@
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "res_GetOneProperty",
-  "widgetName": "Results_GetOneProperty"
+  "widgetName": "Results_GetOneProperty",
+  "mobileBottomRow": 101,
+  "mobileTopRow": 21,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "dynamicPropertyPathList": []
 }

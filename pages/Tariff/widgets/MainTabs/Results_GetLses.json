@@ -44,5 +44,10 @@
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "res_GetLses",
-  "widgetName": "Results_GetLses"
+  "widgetName": "Results_GetLses",
+  "mobileBottomRow": 115,
+  "mobileTopRow": 35,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "dynamicPropertyPathList": []
 }

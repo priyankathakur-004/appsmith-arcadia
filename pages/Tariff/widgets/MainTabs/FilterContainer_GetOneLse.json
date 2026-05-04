@@ -32,7 +32,12 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "fcc_GetOneLse",
-      "widgetName": "fcc_GetOneLse"
+      "widgetName": "fcc_GetOneLse",
+      "mobileBottomRow": 140,
+      "mobileTopRow": 0,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 960,
+      "dynamicPropertyPathList": []
     }
   ],
   "dynamicBindingPathList": [
@@ -68,5 +73,10 @@
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "fc_GetOneLse",
-  "widgetName": "FilterContainer_GetOneLse"
+  "widgetName": "FilterContainer_GetOneLse",
+  "mobileBottomRow": 15,
+  "mobileTopRow": 1,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "dynamicPropertyPathList": []
 }

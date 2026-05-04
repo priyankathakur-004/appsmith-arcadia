@@ -32,7 +32,12 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "fcc_GetProperties",
-      "widgetName": "fcc_GetProperties"
+      "widgetName": "fcc_GetProperties",
+      "mobileBottomRow": 280,
+      "mobileTopRow": 0,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 960,
+      "dynamicPropertyPathList": []
     }
   ],
   "dynamicBindingPathList": [
@@ -68,5 +73,10 @@
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "fc_GetProperties",
-  "widgetName": "FilterContainer_GetProperties"
+  "widgetName": "FilterContainer_GetProperties",
+  "mobileBottomRow": 29,
+  "mobileTopRow": 1,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "dynamicPropertyPathList": []
 }

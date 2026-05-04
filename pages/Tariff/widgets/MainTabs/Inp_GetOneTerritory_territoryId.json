@@ -50,5 +50,10 @@
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "inp_GetOneTerritory_territoryId",
-  "widgetName": "Inp_GetOneTerritory_territoryId"
+  "widgetName": "Inp_GetOneTerritory_territoryId",
+  "mobileBottomRow": 7,
+  "mobileTopRow": 1,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 30,
+  "dynamicPropertyPathList": []
 }

@@ -44,5 +44,10 @@
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "res_GetTerritories",
-  "widgetName": "Results_GetTerritories"
+  "widgetName": "Results_GetTerritories",
+  "mobileBottomRow": 122,
+  "mobileTopRow": 42,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "dynamicPropertyPathList": []
 }

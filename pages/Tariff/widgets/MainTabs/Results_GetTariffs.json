@@ -44,5 +44,10 @@
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "res_GetTariffs",
-  "widgetName": "Results_GetTariffs"
+  "widgetName": "Results_GetTariffs",
+  "mobileBottomRow": 122,
+  "mobileTopRow": 42,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "dynamicPropertyPathList": []
 }

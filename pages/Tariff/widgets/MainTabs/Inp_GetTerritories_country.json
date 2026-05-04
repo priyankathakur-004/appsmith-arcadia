@@ -50,5 +50,10 @@
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "inp_GetTerritories_country",
-  "widgetName": "Inp_GetTerritories_country"
+  "widgetName": "Inp_GetTerritories_country",
+  "mobileBottomRow": 7,
+  "mobileTopRow": 1,
+  "mobileLeftColumn": 32,
+  "mobileRightColumn": 62,
+  "dynamicPropertyPathList": []
 }

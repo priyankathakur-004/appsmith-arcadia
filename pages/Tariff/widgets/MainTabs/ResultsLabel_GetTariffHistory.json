@@ -44,5 +44,10 @@
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "rt_GetTariffHistory",
-  "widgetName": "ResultsLabel_GetTariffHistory"
+  "widgetName": "ResultsLabel_GetTariffHistory",
+  "mobileBottomRow": 20,
+  "mobileTopRow": 16,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "dynamicPropertyPathList": []
 }

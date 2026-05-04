@@ -50,5 +50,10 @@
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "inp_GetTerritories_populateLses",
-  "widgetName": "Inp_GetTerritories_populateLses"
+  "widgetName": "Inp_GetTerritories_populateLses",
+  "mobileBottomRow": 21,
+  "mobileTopRow": 15,
+  "mobileLeftColumn": 32,
+  "mobileRightColumn": 62,
+  "dynamicPropertyPathList": []
 }

@@ -40,5 +40,10 @@
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "btn_run_GetProperties",
-  "widgetName": "Btn_Run_GetProperties"
+  "widgetName": "Btn_Run_GetProperties",
+  "mobileBottomRow": 26,
+  "mobileTopRow": 22,
+  "mobileLeftColumn": 42,
+  "mobileRightColumn": 52,
+  "dynamicPropertyPathList": []
 }

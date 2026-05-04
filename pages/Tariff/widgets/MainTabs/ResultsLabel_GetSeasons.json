@@ -44,5 +44,10 @@
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "rt_GetSeasons",
-  "widgetName": "ResultsLabel_GetSeasons"
+  "widgetName": "ResultsLabel_GetSeasons",
+  "mobileBottomRow": 20,
+  "mobileTopRow": 16,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "dynamicPropertyPathList": []
 }

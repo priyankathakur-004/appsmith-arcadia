@@ -50,5 +50,10 @@
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "inp_GetLses_country",
-  "widgetName": "Inp_GetLses_country"
+  "widgetName": "Inp_GetLses_country",
+  "mobileBottomRow": 14,
+  "mobileTopRow": 8,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 30,
+  "dynamicPropertyPathList": []
 }

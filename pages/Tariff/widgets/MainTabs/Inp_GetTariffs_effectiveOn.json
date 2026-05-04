@@ -50,5 +50,10 @@
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "inp_GetTariffs_effectiveOn",
-  "widgetName": "Inp_GetTariffs_effectiveOn"
+  "widgetName": "Inp_GetTariffs_effectiveOn",
+  "mobileBottomRow": 14,
+  "mobileTopRow": 8,
+  "mobileLeftColumn": 32,
+  "mobileRightColumn": 62,
+  "dynamicPropertyPathList": []
 }

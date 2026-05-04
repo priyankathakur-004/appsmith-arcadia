@@ -32,7 +32,12 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "fcc_GetTerritories",
-      "widgetName": "fcc_GetTerritories"
+      "widgetName": "fcc_GetTerritories",
+      "mobileBottomRow": 350,
+      "mobileTopRow": 0,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 960,
+      "dynamicPropertyPathList": []
     }
   ],
   "dynamicBindingPathList": [
@@ -68,5 +73,10 @@
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "fc_GetTerritories",
-  "widgetName": "FilterContainer_GetTerritories"
+  "widgetName": "FilterContainer_GetTerritories",
+  "mobileBottomRow": 36,
+  "mobileTopRow": 1,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "dynamicPropertyPathList": []
 }

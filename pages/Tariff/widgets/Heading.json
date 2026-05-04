@@ -44,5 +44,10 @@
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "heading_tariff",
-  "widgetName": "Heading"
+  "widgetName": "Heading",
+  "mobileBottomRow": 5,
+  "mobileTopRow": 1,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 63,
+  "dynamicPropertyPathList": []
 }

@@ -50,5 +50,10 @@
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "inp_GetTerritories_masterTariffId",
-  "widgetName": "Inp_GetTerritories_masterTariffId"
+  "widgetName": "Inp_GetTerritories_masterTariffId",
+  "mobileBottomRow": 21,
+  "mobileTopRow": 15,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 30,
+  "dynamicPropertyPathList": []
 }

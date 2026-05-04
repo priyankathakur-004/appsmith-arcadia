@@ -50,5 +50,10 @@
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "inp_GetTerritories_containsItemType",
-  "widgetName": "Inp_GetTerritories_containsItemType"
+  "widgetName": "Inp_GetTerritories_containsItemType",
+  "mobileBottomRow": 28,
+  "mobileTopRow": 22,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 30,
+  "dynamicPropertyPathList": []
 }

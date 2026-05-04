@@ -50,5 +50,10 @@
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "inp_GetLses_serviceTypes",
-  "widgetName": "Inp_GetLses_serviceTypes"
+  "widgetName": "Inp_GetLses_serviceTypes",
+  "mobileBottomRow": 21,
+  "mobileTopRow": 15,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 30,
+  "dynamicPropertyPathList": []
 }

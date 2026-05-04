@@ -48,7 +48,13 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "tab_canvas_GetTariffs",
-      "widgetName": "tab_canvas_GetTariffs"
+      "widgetName": "tab_canvas_GetTariffs",
+      "mobileBottomRow": 1300,
+      "mobileTopRow": 0,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1073,
+      "dynamicPropertyPathList": [],
+      "isDisabled": false
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -90,7 +96,13 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "tab_canvas_GetTariffHistory",
-      "widgetName": "tab_canvas_GetTariffHistory"
+      "widgetName": "tab_canvas_GetTariffHistory",
+      "mobileBottomRow": 1300,
+      "mobileTopRow": 0,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1073,
+      "dynamicPropertyPathList": [],
+      "isDisabled": false
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -132,7 +144,13 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "tab_canvas_GetLses",
-      "widgetName": "tab_canvas_GetLses"
+      "widgetName": "tab_canvas_GetLses",
+      "mobileBottomRow": 1300,
+      "mobileTopRow": 0,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1073,
+      "dynamicPropertyPathList": [],
+      "isDisabled": false
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -174,7 +192,13 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "tab_canvas_GetOneLse",
-      "widgetName": "tab_canvas_GetOneLse"
+      "widgetName": "tab_canvas_GetOneLse",
+      "mobileBottomRow": 1300,
+      "mobileTopRow": 0,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1073,
+      "dynamicPropertyPathList": [],
+      "isDisabled": false
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -216,7 +240,13 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "tab_canvas_GetTerritories",
-      "widgetName": "tab_canvas_GetTerritories"
+      "widgetName": "tab_canvas_GetTerritories",
+      "mobileBottomRow": 1300,
+      "mobileTopRow": 0,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1073,
+      "dynamicPropertyPathList": [],
+      "isDisabled": false
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -258,7 +288,13 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "tab_canvas_GetOneTerritory",
-      "widgetName": "tab_canvas_GetOneTerritory"
+      "widgetName": "tab_canvas_GetOneTerritory",
+      "mobileBottomRow": 1300,
+      "mobileTopRow": 0,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1073,
+      "dynamicPropertyPathList": [],
+      "isDisabled": false
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -300,7 +336,13 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "tab_canvas_GetSeasons",
-      "widgetName": "tab_canvas_GetSeasons"
+      "widgetName": "tab_canvas_GetSeasons",
+      "mobileBottomRow": 1300,
+      "mobileTopRow": 0,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1073,
+      "dynamicPropertyPathList": [],
+      "isDisabled": false
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -342,7 +384,13 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "tab_canvas_GetProperties",
-      "widgetName": "tab_canvas_GetProperties"
+      "widgetName": "tab_canvas_GetProperties",
+      "mobileBottomRow": 1300,
+      "mobileTopRow": 0,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1073,
+      "dynamicPropertyPathList": [],
+      "isDisabled": false
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -384,7 +432,13 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "tab_canvas_GetOneProperty",
-      "widgetName": "tab_canvas_GetOneProperty"
+      "widgetName": "tab_canvas_GetOneProperty",
+      "mobileBottomRow": 1300,
+      "mobileTopRow": 0,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1073,
+      "dynamicPropertyPathList": [],
+      "isDisabled": false
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -426,7 +480,13 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "tab_canvas_GetPropertyLookups",
-      "widgetName": "tab_canvas_GetPropertyLookups"
+      "widgetName": "tab_canvas_GetPropertyLookups",
+      "mobileBottomRow": 1300,
+      "mobileTopRow": 0,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1073,
+      "dynamicPropertyPathList": [],
+      "isDisabled": false
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
@@ -468,7 +528,13 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "tab_canvas_GetPropertyStats",
-      "widgetName": "tab_canvas_GetPropertyStats"
+      "widgetName": "tab_canvas_GetPropertyStats",
+      "mobileBottomRow": 1300,
+      "mobileTopRow": 0,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1073,
+      "dynamicPropertyPathList": [],
+      "isDisabled": false
     }
   ],
   "defaultTab": "Tariffs",
@@ -591,5 +657,10 @@
   "type": "TABS_WIDGET",
   "version": 3,
   "widgetId": "tariff_maintabs",
-  "widgetName": "MainTabs"
+  "widgetName": "MainTabs",
+  "mobileBottomRow": 153,
+  "mobileTopRow": 13,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "dynamicPropertyPathList": []
 }

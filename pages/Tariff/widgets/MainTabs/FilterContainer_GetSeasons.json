@@ -32,7 +32,12 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "fcc_GetSeasons",
-      "widgetName": "fcc_GetSeasons"
+      "widgetName": "fcc_GetSeasons",
+      "mobileBottomRow": 140,
+      "mobileTopRow": 0,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 960,
+      "dynamicPropertyPathList": []
     }
   ],
   "dynamicBindingPathList": [
@@ -68,5 +73,10 @@
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "fc_GetSeasons",
-  "widgetName": "FilterContainer_GetSeasons"
+  "widgetName": "FilterContainer_GetSeasons",
+  "mobileBottomRow": 15,
+  "mobileTopRow": 1,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "dynamicPropertyPathList": []
 }

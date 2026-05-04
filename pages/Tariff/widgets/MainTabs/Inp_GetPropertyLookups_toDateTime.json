@@ -50,5 +50,10 @@
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "inp_GetPropertyLookups_toDateTime",
-  "widgetName": "Inp_GetPropertyLookups_toDateTime"
+  "widgetName": "Inp_GetPropertyLookups_toDateTime",
+  "mobileBottomRow": 14,
+  "mobileTopRow": 8,
+  "mobileLeftColumn": 32,
+  "mobileRightColumn": 62,
+  "dynamicPropertyPathList": []
 }

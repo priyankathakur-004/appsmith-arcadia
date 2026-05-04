@@ -50,5 +50,10 @@
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "inp_GetTariffs_populateProperties",
-  "widgetName": "Inp_GetTariffs_populateProperties"
+  "widgetName": "Inp_GetTariffs_populateProperties",
+  "mobileBottomRow": 28,
+  "mobileTopRow": 22,
+  "mobileLeftColumn": 32,
+  "mobileRightColumn": 62,
+  "dynamicPropertyPathList": []
 }

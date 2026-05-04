@@ -44,5 +44,10 @@
   "type": "TEXT_WIDGET",
   "version": 1,
   "widgetId": "rt_GetOneTerritory",
-  "widgetName": "ResultsLabel_GetOneTerritory"
+  "widgetName": "ResultsLabel_GetOneTerritory",
+  "mobileBottomRow": 20,
+  "mobileTopRow": 16,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "dynamicPropertyPathList": []
 }
