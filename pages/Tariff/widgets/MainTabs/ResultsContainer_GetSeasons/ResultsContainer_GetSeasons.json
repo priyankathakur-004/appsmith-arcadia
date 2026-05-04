@@ -47,6 +47,9 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -55,7 +58,7 @@
   "flexVerticalAlignment": "start",
   "isCanvas": true,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{!!Inp_GetSeasons_lseId.text}}",
   "key": "rc_GetSeasons",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,

@@ -16,6 +16,8 @@ export default {
 			serviceTypes: Inp_GetTariffs_serviceTypes.text,
 			populateRates: Inp_GetTariffs_populateRates.text,
 			populateProperties: Inp_GetTariffs_populateProperties.text,
+			pageStart: ((Results_GetTariffs.pageNo || 1) - 1) * (Results_GetTariffs.pageSize || 25) + 1,
+			pageCount: Results_GetTariffs.pageSize || 25,
 		});
 	},
 
@@ -30,6 +32,8 @@ export default {
 			country: Inp_GetLses_country.text,
 			ownerships: Inp_GetLses_ownerships.text,
 			serviceTypes: Inp_GetLses_serviceTypes.text,
+			pageStart: ((Results_GetLses.pageNo || 1) - 1) * (Results_GetLses.pageSize || 25) + 1,
+			pageCount: Results_GetLses.pageSize || 25,
 		});
 	},
 
@@ -47,6 +51,8 @@ export default {
 			populateLses: Inp_GetTerritories_populateLses.text,
 			containsItemType: Inp_GetTerritories_containsItemType.text,
 			containsItemValue: Inp_GetTerritories_containsItemValue.text,
+			pageStart: ((Results_GetTerritories.pageNo || 1) - 1) * (Results_GetTerritories.pageSize || 25) + 1,
+			pageCount: Results_GetTerritories.pageSize || 25,
 		});
 	},
 
@@ -68,6 +74,8 @@ export default {
 			entityId: Inp_GetProperties_entityId.text,
 			entityType: Inp_GetProperties_entityType.text,
 			excludeGlobal: Inp_GetProperties_excludeGlobal.text,
+			pageStart: ((Results_GetProperties.pageNo || 1) - 1) * (Results_GetProperties.pageSize || 25) + 1,
+			pageCount: Results_GetProperties.pageSize || 25,
 		});
 	},
 
