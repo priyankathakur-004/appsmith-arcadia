@@ -1,0 +1,49 @@
+{
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 24,
+  "boxShadow": "none",
+  "buttonColor": "#475569",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "btn_clear_GetLses",
+  "leftColumn": 32,
+  "minWidth": 450,
+  "mobileBottomRow": 24,
+  "mobileLeftColumn": 32,
+  "mobileRightColumn": 47,
+  "mobileTopRow": 19,
+  "needsErrorInfo": false,
+  "onClick": "{{ resetWidget('Inp_GetLses_searchOn', false); resetWidget('Inp_GetLses_zipCode', false); resetWidget('Inp_GetLses_country', false); resetWidget('Inp_GetLses_ownerships', false); resetWidget('Inp_GetLses_serviceTypes', false) }}",
+  "originalBottomRow": 24,
+  "originalTopRow": 19,
+  "parentColumnSpace": 15,
+  "parentId": "fcc_GetLses",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 47,
+  "text": "Clear",
+  "tooltip": "",
+  "topRow": 19,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "btn_clear_GetLses",
+  "widgetName": "Btn_Clear_GetLses"
+}

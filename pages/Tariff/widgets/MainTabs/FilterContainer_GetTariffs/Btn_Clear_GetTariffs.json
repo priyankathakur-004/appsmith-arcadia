@@ -1,0 +1,49 @@
+{
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 32,
+  "boxShadow": "none",
+  "buttonColor": "#475569",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "btn_clear_GetTariffs",
+  "leftColumn": 32,
+  "minWidth": 450,
+  "mobileBottomRow": 32,
+  "mobileLeftColumn": 32,
+  "mobileRightColumn": 47,
+  "mobileTopRow": 27,
+  "needsErrorInfo": false,
+  "onClick": "{{ resetWidget('Inp_GetTariffs_lseId', false); resetWidget('Inp_GetTariffs_masterTariffId', false); resetWidget('Inp_GetTariffs_zipCode', false); resetWidget('Inp_GetTariffs_effectiveOn', false); resetWidget('Inp_GetTariffs_customerClasses', false); resetWidget('Inp_GetTariffs_serviceTypes', false); resetWidget('Inp_GetTariffs_populateRates', false); resetWidget('Inp_GetTariffs_populateProperties', false); resetWidget('Inp_GetTariffs_chargeTypes', false); resetWidget('Inp_GetTariffs_tariffTypes', false); resetWidget('Inp_GetTariffs_privacyFlags', false) }}",
+  "originalBottomRow": 32,
+  "originalTopRow": 27,
+  "parentColumnSpace": 15,
+  "parentId": "fcc_GetTariffs",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 47,
+  "text": "Clear",
+  "tooltip": "",
+  "topRow": 27,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "btn_clear_GetTariffs",
+  "widgetName": "Btn_Clear_GetTariffs"
+}

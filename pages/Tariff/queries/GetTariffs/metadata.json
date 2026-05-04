@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69b3a04bd659a362092919a3_c5bfd589-a03e-4bee-a5bc-54de5d1465f2",
-  "id": "Tariff_GetTariff",
+  "gitSyncId": "69b3a04bd659a362092919a3_0afe39ae-e96e-4623-9cbe-b0f537cb15c1",
+  "id": "Tariff_GetTariffs",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -12,11 +12,20 @@
       "formData": {
         "apiContentType": "none"
       },
-      "headers": [],
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Bearer {{appsmith.store.arcadiaAccessToken.accessToken}}"
+        },
+        {
+          "key": "Arcadia-Version",
+          "value": "2022-12-21"
+        }
+      ],
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "rest/public/tariffs",
+      "path": "rest/public/tariffs{{TariffUtils.qsTariffs()}}",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -32,10 +41,17 @@
       "name": "Arcadia-GetTariffs",
       "pluginId": "restapi-plugin"
     },
-    "dynamicBindingPathList": [],
-    "name": "GetTariff",
+    "dynamicBindingPathList": [
+      {
+        "key": "path"
+      },
+      {
+        "key": "headers[0].value"
+      }
+    ],
+    "name": "GetTariffs",
     "pageId": "Tariff",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

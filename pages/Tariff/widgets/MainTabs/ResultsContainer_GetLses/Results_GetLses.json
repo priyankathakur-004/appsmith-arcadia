@@ -1,0 +1,120 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "borderColor": "#334155",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 85,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "canFreezeColumn": true,
+  "columnOrder": [
+    "_action"
+  ],
+  "columnUpdatedAt": 0,
+  "defaultPageSize": 25,
+  "defaultSelectedRowIndex": 0,
+  "defaultSelectedRowIndices": [
+    0
+  ],
+  "delimiter": ",",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "primaryColumns._action.computedValue"
+    },
+    {
+      "key": "totalRecordsCount"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "tableData"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "primaryColumns._action.onClick"
+    },
+    {
+      "key": "onPageChange"
+    },
+    {
+      "key": "onPageSizeChange"
+    }
+  ],
+  "enableClientSideSearch": true,
+  "horizontalAlignment": "LEFT",
+  "isLoading": false,
+  "isSortable": true,
+  "isVisible": true,
+  "isVisibleDownload": true,
+  "isVisibleFilters": true,
+  "isVisiblePagination": true,
+  "isVisibleSearch": true,
+  "key": "res_GetLses",
+  "leftColumn": 0,
+  "minWidth": 450,
+  "mobileBottomRow": 85,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "originalBottomRow": 85,
+  "originalTopRow": 5,
+  "parentColumnSpace": 15,
+  "parentId": "rcc_GetLses",
+  "parentRowSpace": 10,
+  "primaryColumns": {
+    "_action": {
+      "alias": "_action",
+      "allowCellWrapping": false,
+      "buttonColor": "#3b82f6",
+      "buttonLabel": "View Details",
+      "buttonVariant": "PRIMARY",
+      "columnType": "button",
+      "computedValue": "View Details",
+      "horizontalAlignment": "CENTER",
+      "id": "_action",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Action",
+      "labelColor": "#ffffff",
+      "onClick": "{{ GetOneLse.run({lseId: currentRow.lseId}).then(() => showModal('OneLseModal')) }}",
+      "originalId": "_action",
+      "sticky": "right",
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    }
+  },
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "serverSidePaginationEnabled": true,
+  "tableData": "{{TariffUtils.normalizeForTable(GetLses.data)}}",
+  "textColor": "#1e293b",
+  "textSize": "0.875rem",
+  "topRow": 5,
+  "totalRecordsCount": "{{GetLses.data.count || 0}}",
+  "type": "TABLE_WIDGET_V2",
+  "verticalAlignment": "CENTER",
+  "version": 1,
+  "widgetId": "res_GetLses",
+  "widgetName": "Results_GetLses",
+  "onPageChange": "{{GetLses.run()}}",
+  "onPageSizeChange": "{{GetLses.run()}}"
+}

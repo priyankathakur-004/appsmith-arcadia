@@ -1,0 +1,49 @@
+{
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 24,
+  "boxShadow": "none",
+  "buttonColor": "#3b82f6",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "btn_run_GetLses",
+  "leftColumn": 48,
+  "minWidth": 450,
+  "mobileBottomRow": 24,
+  "mobileLeftColumn": 48,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 19,
+  "needsErrorInfo": false,
+  "onClick": "{{GetLses.run()}}",
+  "originalBottomRow": 24,
+  "originalTopRow": 19,
+  "parentColumnSpace": 15,
+  "parentId": "fcc_GetLses",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "text": "Run",
+  "tooltip": "",
+  "topRow": 19,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "btn_run_GetLses",
+  "widgetName": "Btn_Run_GetLses"
+}

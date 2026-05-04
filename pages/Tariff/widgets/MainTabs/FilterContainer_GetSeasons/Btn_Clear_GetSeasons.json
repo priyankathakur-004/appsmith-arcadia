@@ -1,0 +1,49 @@
+{
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 9,
+  "boxShadow": "none",
+  "buttonColor": "#475569",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "btn_clear_GetSeasons",
+  "leftColumn": 32,
+  "minWidth": 450,
+  "mobileBottomRow": 9,
+  "mobileLeftColumn": 32,
+  "mobileRightColumn": 47,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "onClick": "{{ resetWidget('Inp_GetSeasons_lseId', false) }}",
+  "originalBottomRow": 9,
+  "originalTopRow": 4,
+  "parentColumnSpace": 15,
+  "parentId": "fcc_GetSeasons",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 47,
+  "text": "Clear",
+  "tooltip": "",
+  "topRow": 4,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "btn_clear_GetSeasons",
+  "widgetName": "Btn_Clear_GetSeasons"
+}
