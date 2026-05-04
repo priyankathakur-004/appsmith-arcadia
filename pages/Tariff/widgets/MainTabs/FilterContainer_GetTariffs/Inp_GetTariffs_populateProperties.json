@@ -1,47 +1,63 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
-  "alignWidget": "LEFT",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 17,
   "boxShadow": "none",
-  "defaultSwitchState": false,
+  "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
     }
   ],
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    }
+  ],
   "dynamicTriggerPathList": [],
   "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
   "isVisible": true,
   "key": "inp_GetTariffs_populateProperties",
-  "label": "",
-  "labelPosition": "Left",
-  "labelStyle": "",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "",
   "labelTextColor": "#cbd5e1",
   "labelTextSize": "0.875rem",
   "labelWidth": 0,
   "leftColumn": 48,
-  "minWidth": 60,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
   "mobileBottomRow": 17,
   "mobileLeftColumn": 48,
   "mobileRightColumn": 63,
   "mobileTopRow": 12,
   "needsErrorInfo": false,
+  "optionLabel": "label",
+  "optionValue": "value",
   "originalBottomRow": 17,
   "originalTopRow": 12,
   "parentColumnSpace": 15,
   "parentId": "fcc_GetTariffs",
   "parentRowSpace": 10,
+  "placeholderText": "true / false",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 63,
+  "serverSideFiltering": false,
+  "sourceData": "{{[{\"label\": \"true\", \"value\": \"true\"}, {\"label\": \"false\", \"value\": \"false\"}]}}",
   "topRow": 12,
-  "type": "SWITCH_WIDGET",
+  "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "inp_GetTariffs_populateProperties",
   "widgetName": "Inp_GetTariffs_populateProperties"

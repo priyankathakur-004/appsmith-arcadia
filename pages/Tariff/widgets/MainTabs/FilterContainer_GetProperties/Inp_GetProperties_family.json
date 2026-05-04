@@ -45,7 +45,7 @@
   "parentColumnSpace": 15,
   "parentId": "fcc_GetProperties",
   "parentRowSpace": 10,
-  "placeholderText": "billing / metering / connection",
+  "placeholderText": "e.g. billing, metering",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",

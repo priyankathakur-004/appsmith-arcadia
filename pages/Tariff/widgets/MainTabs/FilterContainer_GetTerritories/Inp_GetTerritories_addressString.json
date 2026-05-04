@@ -45,7 +45,7 @@
   "parentColumnSpace": 15,
   "parentId": "fcc_GetTerritories",
   "parentRowSpace": 10,
-  "placeholderText": "full address",
+  "placeholderText": "Full street address",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",

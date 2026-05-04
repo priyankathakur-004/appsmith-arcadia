@@ -48,7 +48,7 @@
   "parentColumnSpace": 15,
   "parentId": "fcc_GetTariffs",
   "parentRowSpace": 10,
-  "placeholderText": "RESIDENTIAL,GENERAL",
+  "placeholderText": "Select customer classes",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 15,

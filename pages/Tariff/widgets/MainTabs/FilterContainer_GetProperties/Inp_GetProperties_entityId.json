@@ -45,7 +45,7 @@
   "parentColumnSpace": 15,
   "parentId": "fcc_GetProperties",
   "parentRowSpace": 10,
-  "placeholderText": "use with Entity Type",
+  "placeholderText": "e.g. 734 (use with Entity Type)",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",

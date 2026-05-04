@@ -45,7 +45,7 @@
   "parentColumnSpace": 15,
   "parentId": "fcc_GetTerritories",
   "parentRowSpace": 10,
-  "placeholderText": "default US",
+  "placeholderText": "ISO code (default US)",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",

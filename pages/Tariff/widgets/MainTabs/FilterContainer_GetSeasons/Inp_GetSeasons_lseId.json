@@ -45,7 +45,7 @@
   "parentColumnSpace": 15,
   "parentId": "fcc_GetSeasons",
   "parentRowSpace": 10,
-  "placeholderText": "required",
+  "placeholderText": "e.g. 734 (required)",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",

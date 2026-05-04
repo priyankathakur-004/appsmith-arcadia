@@ -45,7 +45,7 @@
   "parentColumnSpace": 15,
   "parentId": "fcc_GetLses",
   "parentRowSpace": 10,
-  "placeholderText": "ISO code, e.g. US",
+  "placeholderText": "ISO code (e.g. US)",
   "renderMode": "CANVAS",
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",

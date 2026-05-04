@@ -48,7 +48,7 @@
   "parentColumnSpace": 15,
   "parentId": "fcc_GetLses",
   "parentRowSpace": 10,
-  "placeholderText": "INVESTOR,COOP,MUNI",
+  "placeholderText": "Select ownerships",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 63,
