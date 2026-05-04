@@ -16,6 +16,9 @@ export default {
 			serviceTypes: (Inp_GetTariffs_serviceTypes.selectedOptionValues || []).join(','),
 			populateRates: Inp_GetTariffs_populateRates.isSwitchedOn || undefined,
 			populateProperties: Inp_GetTariffs_populateProperties.isSwitchedOn || undefined,
+			chargeTypes: (Inp_GetTariffs_chargeTypes.selectedOptionValues || []).join(','),
+			tariffTypes: (Inp_GetTariffs_tariffTypes.selectedOptionValues || []).join(','),
+			privacyFlags: (Inp_GetTariffs_privacyFlags.selectedOptionValues || []).join(','),
 			pageStart: ((Results_GetTariffs.pageNo || 1) - 1) * (Results_GetTariffs.pageSize || 25) + 1,
 			pageCount: Results_GetTariffs.pageSize || 25,
 		});
@@ -68,7 +71,7 @@ export default {
 
 	qsProperties() {
 		return this.qs({
-			dataType: Inp_GetProperties_dataType.selectedOptionValue,
+			dataType: Inp_GetProperties_dataType.text,
 			family: Inp_GetProperties_family.text,
 			keySpace: Inp_GetProperties_keySpace.text,
 			entityId: Inp_GetProperties_entityId.text,

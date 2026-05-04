@@ -1,10 +1,9 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
-  "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 17,
+  "bottomRow": 25,
   "boxShadow": "none",
-  "defaultOptionValue": "",
+  "defaultOptionValue": "[]",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -16,6 +15,7 @@
       "key": "sourceData"
     }
   ],
+  "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
       "key": "sourceData"
@@ -27,38 +27,36 @@
   "isLoading": false,
   "isRequired": false,
   "isVisible": true,
-  "key": "inp_GetProperties_entityType",
+  "key": "inp_GetTariffs_tariffTypes",
   "labelAlignment": "left",
   "labelPosition": "Top",
   "labelText": "",
   "labelTextColor": "#cbd5e1",
   "labelTextSize": "0.875rem",
   "labelWidth": 0,
-  "leftColumn": 0,
-  "maxDynamicHeight": 9000,
-  "minDynamicHeight": 4,
+  "leftColumn": 16,
   "minWidth": 450,
-  "mobileBottomRow": 17,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 15,
-  "mobileTopRow": 12,
+  "mobileBottomRow": 25,
+  "mobileLeftColumn": 16,
+  "mobileRightColumn": 31,
+  "mobileTopRow": 20,
   "needsErrorInfo": false,
   "optionLabel": "label",
   "optionValue": "value",
-  "originalBottomRow": 17,
-  "originalTopRow": 12,
+  "originalBottomRow": 25,
+  "originalTopRow": 20,
   "parentColumnSpace": 15,
-  "parentId": "fcc_GetProperties",
+  "parentId": "fcc_GetTariffs",
   "parentRowSpace": 10,
-  "placeholderText": "LSE",
+  "placeholderText": "Select tariff types",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 15,
+  "rightColumn": 31,
   "serverSideFiltering": false,
-  "sourceData": "{{[{\"label\": \"LSE\", \"value\": \"LSE\"}]}}",
-  "topRow": 12,
-  "type": "SELECT_WIDGET",
+  "sourceData": "{{[{\"label\": \"DEFAULT\", \"value\": \"DEFAULT\"}, {\"label\": \"ALTERNATIVE\", \"value\": \"ALTERNATIVE\"}, {\"label\": \"OPTIONAL_EXTRA\", \"value\": \"OPTIONAL_EXTRA\"}, {\"label\": \"RIDER\", \"value\": \"RIDER\"}]}}",
+  "topRow": 20,
+  "type": "MULTI_SELECT_WIDGET_V2",
   "version": 1,
-  "widgetId": "inp_GetProperties_entityType",
-  "widgetName": "Inp_GetProperties_entityType"
+  "widgetId": "inp_GetTariffs_tariffTypes",
+  "widgetName": "Inp_GetTariffs_tariffTypes"
 }
