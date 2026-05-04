@@ -84,7 +84,7 @@
       "isVisible": true,
       "label": "Action",
       "labelColor": "#ffffff",
-      "onClick": "{{ storeValue('selectedLseId', currentRow.lseId).then(() => GetOneLse.run()).then(() => showModal('OneLseModal')) }}",
+      "onClick": "{{ GetOneLse.run({lseId: currentRow.lseId}).then(() => showModal('OneLseModal')) }}",
       "originalId": "_action",
       "sticky": "right",
       "validation": {},

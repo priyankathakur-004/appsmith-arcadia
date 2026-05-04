@@ -84,7 +84,7 @@
       "isVisible": true,
       "label": "Action",
       "labelColor": "#ffffff",
-      "onClick": "{{ storeValue('selectedPropertyKey', currentRow.keyName).then(() => GetOneProperty.run()).then(() => showModal('OnePropertyModal')) }}",
+      "onClick": "{{ GetOneProperty.run({keyName: currentRow.keyName}).then(() => showModal('OnePropertyModal')) }}",
       "originalId": "_action",
       "sticky": "right",
       "validation": {},

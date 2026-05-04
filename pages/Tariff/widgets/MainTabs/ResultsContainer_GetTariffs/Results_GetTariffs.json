@@ -84,7 +84,7 @@
       "isVisible": true,
       "label": "Action",
       "labelColor": "#ffffff",
-      "onClick": "{{ storeValue('selectedMasterTariffId', currentRow.masterTariffId).then(() => GetTariffHistory.run()).then(() => showModal('TariffHistoryModal')) }}",
+      "onClick": "{{ GetTariffHistory.run({masterTariffId: currentRow.masterTariffId}).then(() => showModal('TariffHistoryModal')) }}",
       "originalId": "_action",
       "sticky": "right",
       "validation": {},

@@ -84,7 +84,7 @@
       "isVisible": true,
       "label": "Action",
       "labelColor": "#ffffff",
-      "onClick": "{{ storeValue('selectedTerritoryId', currentRow.territoryId).then(() => GetOneTerritory.run()).then(() => showModal('OneTerritoryModal')) }}",
+      "onClick": "{{ GetOneTerritory.run({territoryId: currentRow.territoryId}).then(() => showModal('OneTerritoryModal')) }}",
       "originalId": "_action",
       "sticky": "right",
       "validation": {},
