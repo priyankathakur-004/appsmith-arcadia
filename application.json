@@ -41,6 +41,10 @@
     {
       "id": "Meter-Intervals",
       "isDefault": false
+    },
+    {
+      "id": "Tariff",
+      "isDefault": false
     }
   ],
   "unpublishedApplicationDetail": {
