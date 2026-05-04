@@ -1,0 +1,44 @@
+{
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 26,
+  "boxShadow": "none",
+  "buttonColor": "#475569",
+  "buttonVariant": "SECONDARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "btn_clear_GetProperties",
+  "leftColumn": 53,
+  "minWidth": 450,
+  "needsErrorInfo": false,
+  "onClick": "{{ resetWidget('Inp_GetProperties_dataType', false); resetWidget('Inp_GetProperties_family', false); resetWidget('Inp_GetProperties_keySpace', false); resetWidget('Inp_GetProperties_entityId', false); resetWidget('Inp_GetProperties_entityType', false); resetWidget('Inp_GetProperties_excludeGlobal', false) }}",
+  "originalBottomRow": 26,
+  "originalTopRow": 22,
+  "parentColumnSpace": 15,
+  "parentId": "fcc_GetProperties",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "text": "Clear",
+  "tooltip": "",
+  "topRow": 22,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "btn_clear_GetProperties",
+  "widgetName": "Btn_Clear_GetProperties"
+}
