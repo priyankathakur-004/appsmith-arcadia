@@ -1,53 +1,74 @@
 {
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "borderColor": "#334155",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
   "bottomRow": 85,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-  "children": [],
+  "canFreezeColumn": true,
+  "columnOrder": [],
+  "columnUpdatedAt": 0,
+  "defaultPageSize": 10,
+  "defaultSelectedRowIndex": 0,
+  "defaultSelectedRowIndices": [
+    0
+  ],
+  "delimiter": ",",
   "dynamicBindingPathList": [
     {
-      "key": "boxShadow"
+      "key": "accentColor"
     },
     {
       "key": "borderRadius"
     },
     {
-      "key": "text"
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
     }
   ],
-  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "tableData"
+    }
+  ],
   "dynamicTriggerPathList": [],
-  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "0.875rem",
+  "enableClientSideSearch": true,
+  "horizontalAlignment": "LEFT",
   "isLoading": false,
+  "isSortable": true,
   "isVisible": true,
+  "isVisibleDownload": true,
+  "isVisibleFilters": true,
+  "isVisiblePagination": true,
+  "isVisibleSearch": true,
   "key": "res_GetOneLse",
   "leftColumn": 0,
   "minWidth": 450,
+  "mobileBottomRow": 85,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 5,
   "needsErrorInfo": false,
   "originalBottomRow": 85,
   "originalTopRow": 5,
-  "overflow": "SCROLL",
   "parentColumnSpace": 15,
   "parentId": "rcc_GetOneLse",
   "parentRowSpace": 10,
+  "primaryColumns": {},
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 64,
-  "shouldTruncate": false,
-  "text": "{{ JSON.stringify(GetOneLse.data, null, 2) }}",
-  "textAlign": "LEFT",
-  "textColor": "#cbd5e1",
+  "serverSidePaginationEnabled": false,
+  "tableData": "{{TariffUtils.normalizeForTable(GetOneLse.data)}}",
+  "textColor": "#1e293b",
+  "textSize": "0.875rem",
   "topRow": 5,
-  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-  "type": "TEXT_WIDGET",
+  "totalRecordsCount": "",
+  "type": "TABLE_WIDGET_V2",
+  "verticalAlignment": "CENTER",
   "version": 1,
   "widgetId": "res_GetOneLse",
-  "widgetName": "Results_GetOneLse",
-  "mobileBottomRow": 85,
-  "mobileTopRow": 5,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 64,
-  "dynamicPropertyPathList": []
+  "widgetName": "Results_GetOneLse"
 }

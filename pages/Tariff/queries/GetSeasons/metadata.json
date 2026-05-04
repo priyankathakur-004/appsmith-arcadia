@@ -25,18 +25,13 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "rest/public/seasons",
+      "path": "rest/public/seasons{{TariffUtils.qsSeasons()}}",
       "pluginSpecifiedTemplates": [
         {
           "value": true
         }
       ],
-      "queryParameters": [
-        {
-          "key": "lseId",
-          "value": "{{Inp_GetSeasons_lseId.text}}"
-        }
-      ],
+      "queryParameters": [],
       "timeoutInMillisecond": 10000
     },
     "confirmBeforeExecute": false,
@@ -48,7 +43,7 @@
     },
     "dynamicBindingPathList": [
       {
-        "key": "queryParameters[0].value"
+        "key": "path"
       },
       {
         "key": "headers[0].value"

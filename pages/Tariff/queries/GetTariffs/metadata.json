@@ -25,46 +25,13 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "rest/public/tariffs",
+      "path": "rest/public/tariffs{{TariffUtils.qsTariffs()}}",
       "pluginSpecifiedTemplates": [
         {
           "value": true
         }
       ],
-      "queryParameters": [
-        {
-          "key": "lseId",
-          "value": "{{Inp_GetTariffs_lseId.text}}"
-        },
-        {
-          "key": "masterTariffId",
-          "value": "{{Inp_GetTariffs_masterTariffId.text}}"
-        },
-        {
-          "key": "zipCode",
-          "value": "{{Inp_GetTariffs_zipCode.text}}"
-        },
-        {
-          "key": "effectiveOn",
-          "value": "{{Inp_GetTariffs_effectiveOn.text}}"
-        },
-        {
-          "key": "customerClasses",
-          "value": "{{Inp_GetTariffs_customerClasses.text}}"
-        },
-        {
-          "key": "serviceTypes",
-          "value": "{{Inp_GetTariffs_serviceTypes.text}}"
-        },
-        {
-          "key": "populateRates",
-          "value": "{{Inp_GetTariffs_populateRates.text}}"
-        },
-        {
-          "key": "populateProperties",
-          "value": "{{Inp_GetTariffs_populateProperties.text}}"
-        }
-      ],
+      "queryParameters": [],
       "timeoutInMillisecond": 10000
     },
     "confirmBeforeExecute": false,
@@ -76,28 +43,7 @@
     },
     "dynamicBindingPathList": [
       {
-        "key": "queryParameters[0].value"
-      },
-      {
-        "key": "queryParameters[1].value"
-      },
-      {
-        "key": "queryParameters[2].value"
-      },
-      {
-        "key": "queryParameters[3].value"
-      },
-      {
-        "key": "queryParameters[4].value"
-      },
-      {
-        "key": "queryParameters[5].value"
-      },
-      {
-        "key": "queryParameters[6].value"
-      },
-      {
-        "key": "queryParameters[7].value"
+        "key": "path"
       },
       {
         "key": "headers[0].value"

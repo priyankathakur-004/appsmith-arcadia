@@ -25,38 +25,13 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "rest/public/properties",
+      "path": "rest/public/properties{{TariffUtils.qsProperties()}}",
       "pluginSpecifiedTemplates": [
         {
           "value": true
         }
       ],
-      "queryParameters": [
-        {
-          "key": "dataType",
-          "value": "{{Inp_GetProperties_dataType.text}}"
-        },
-        {
-          "key": "family",
-          "value": "{{Inp_GetProperties_family.text}}"
-        },
-        {
-          "key": "keySpace",
-          "value": "{{Inp_GetProperties_keySpace.text}}"
-        },
-        {
-          "key": "entityId",
-          "value": "{{Inp_GetProperties_entityId.text}}"
-        },
-        {
-          "key": "entityType",
-          "value": "{{Inp_GetProperties_entityType.text}}"
-        },
-        {
-          "key": "excludeGlobal",
-          "value": "{{Inp_GetProperties_excludeGlobal.text}}"
-        }
-      ],
+      "queryParameters": [],
       "timeoutInMillisecond": 10000
     },
     "confirmBeforeExecute": false,
@@ -68,22 +43,7 @@
     },
     "dynamicBindingPathList": [
       {
-        "key": "queryParameters[0].value"
-      },
-      {
-        "key": "queryParameters[1].value"
-      },
-      {
-        "key": "queryParameters[2].value"
-      },
-      {
-        "key": "queryParameters[3].value"
-      },
-      {
-        "key": "queryParameters[4].value"
-      },
-      {
-        "key": "queryParameters[5].value"
+        "key": "path"
       },
       {
         "key": "headers[0].value"

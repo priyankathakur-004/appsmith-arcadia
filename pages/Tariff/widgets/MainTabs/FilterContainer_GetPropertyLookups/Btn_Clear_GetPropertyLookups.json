@@ -3,7 +3,7 @@
   "bottomRow": 19,
   "boxShadow": "none",
   "buttonColor": "#475569",
-  "buttonVariant": "SECONDARY",
+  "buttonVariant": "PRIMARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
     {

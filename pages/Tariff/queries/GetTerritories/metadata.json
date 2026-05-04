@@ -25,46 +25,13 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "rest/public/territories",
+      "path": "rest/public/territories{{TariffUtils.qsTerritories()}}",
       "pluginSpecifiedTemplates": [
         {
           "value": true
         }
       ],
-      "queryParameters": [
-        {
-          "key": "zipCode",
-          "value": "{{Inp_GetTerritories_zipCode.text}}"
-        },
-        {
-          "key": "country",
-          "value": "{{Inp_GetTerritories_country.text}}"
-        },
-        {
-          "key": "addressString",
-          "value": "{{Inp_GetTerritories_addressString.text}}"
-        },
-        {
-          "key": "lseId",
-          "value": "{{Inp_GetTerritories_lseId.text}}"
-        },
-        {
-          "key": "masterTariffId",
-          "value": "{{Inp_GetTerritories_masterTariffId.text}}"
-        },
-        {
-          "key": "populateLses",
-          "value": "{{Inp_GetTerritories_populateLses.text}}"
-        },
-        {
-          "key": "containsItemType",
-          "value": "{{Inp_GetTerritories_containsItemType.text}}"
-        },
-        {
-          "key": "containsItemValue",
-          "value": "{{Inp_GetTerritories_containsItemValue.text}}"
-        }
-      ],
+      "queryParameters": [],
       "timeoutInMillisecond": 10000
     },
     "confirmBeforeExecute": false,
@@ -76,28 +43,7 @@
     },
     "dynamicBindingPathList": [
       {
-        "key": "queryParameters[0].value"
-      },
-      {
-        "key": "queryParameters[1].value"
-      },
-      {
-        "key": "queryParameters[2].value"
-      },
-      {
-        "key": "queryParameters[3].value"
-      },
-      {
-        "key": "queryParameters[4].value"
-      },
-      {
-        "key": "queryParameters[5].value"
-      },
-      {
-        "key": "queryParameters[6].value"
-      },
-      {
-        "key": "queryParameters[7].value"
+        "key": "path"
       },
       {
         "key": "headers[0].value"

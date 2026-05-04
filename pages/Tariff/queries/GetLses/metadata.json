@@ -25,34 +25,13 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
-      "path": "rest/public/lses",
+      "path": "rest/public/lses{{TariffUtils.qsLses()}}",
       "pluginSpecifiedTemplates": [
         {
           "value": true
         }
       ],
-      "queryParameters": [
-        {
-          "key": "searchOn",
-          "value": "{{Inp_GetLses_searchOn.text}}"
-        },
-        {
-          "key": "zipCode",
-          "value": "{{Inp_GetLses_zipCode.text}}"
-        },
-        {
-          "key": "country",
-          "value": "{{Inp_GetLses_country.text}}"
-        },
-        {
-          "key": "ownerships",
-          "value": "{{Inp_GetLses_ownerships.text}}"
-        },
-        {
-          "key": "serviceTypes",
-          "value": "{{Inp_GetLses_serviceTypes.text}}"
-        }
-      ],
+      "queryParameters": [],
       "timeoutInMillisecond": 10000
     },
     "confirmBeforeExecute": false,
@@ -64,19 +43,7 @@
     },
     "dynamicBindingPathList": [
       {
-        "key": "queryParameters[0].value"
-      },
-      {
-        "key": "queryParameters[1].value"
-      },
-      {
-        "key": "queryParameters[2].value"
-      },
-      {
-        "key": "queryParameters[3].value"
-      },
-      {
-        "key": "queryParameters[4].value"
+        "key": "path"
       },
       {
         "key": "headers[0].value"
