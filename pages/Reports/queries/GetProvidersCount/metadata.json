@@ -29,7 +29,7 @@
     ],
     "name": "GetProvidersCount",
     "pageId": "Reports",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": true
+    "runBehaviour": "AUTOMATIC",
+    "userSetOnLoad": false
   }
 }

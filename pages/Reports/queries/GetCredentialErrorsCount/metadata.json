@@ -30,6 +30,6 @@
     "name": "GetCredentialErrorsCount",
     "pageId": "Reports",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": true
+    "userSetOnLoad": false
   }
 }

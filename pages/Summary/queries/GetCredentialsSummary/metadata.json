@@ -29,7 +29,7 @@
     ],
     "name": "GetCredentialsSummary",
     "pageId": "Summary",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": true
+    "runBehaviour": "AUTOMATIC",
+    "userSetOnLoad": false
   }
 }
