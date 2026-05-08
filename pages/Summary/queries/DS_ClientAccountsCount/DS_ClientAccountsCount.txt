@@ -21,8 +21,8 @@ WITH UniqueAccounts AS (
       AND c.IdProvider = 7
 
       AND (
-        {{ this.params.clientId ? 1 : 0 }} = 0
-        OR c.ProviderClientId = '{{ this.params.clientId }}'
+        {{ (this.params.clientId || appsmith.store.accountsSearch?.clientId) ? 1 : 0 }} = 0
+        OR c.ProviderClientId = '{{ this.params.clientId || appsmith.store.accountsSearch?.clientId }}'
       )
 )
 

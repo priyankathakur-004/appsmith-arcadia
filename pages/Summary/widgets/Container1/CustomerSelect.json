@@ -48,7 +48,7 @@
   "mobileRightColumn": 17,
   "mobileTopRow": 0,
   "needsErrorInfo": false,
-  "onOptionChange": "{{DS_Customers.run().then(() => {\n  CustomerStats.loadCustomerTotals();\n});}}",
+  "onOptionChange": "{{Promise.all([GetAccountsSummary.run(), GetAccountsSummaryCount.run(), GetCredentialsSummary.run()]);}}",
   "optionLabel": "client_name",
   "optionValue": "client_id_DS",
   "originalBottomRow": 22,

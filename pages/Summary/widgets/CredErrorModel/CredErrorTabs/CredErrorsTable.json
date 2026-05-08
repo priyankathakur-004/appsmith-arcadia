@@ -1310,7 +1310,7 @@
   "tableData": "{{ CredentialsUtils.normalizeCredentials() }}",
   "textSize": "0.875rem",
   "topRow": 0,
-  "totalRecordsCount": "{{\n  appsmith.store.credentialSearch.source === \"Arcadia\"\n    ? Api_ListCredentialsArcadiaFix.data?.page?.totalElements\n    : Api_ListCredentialsUSFix.data?.page?.totalElements\n}}",
+  "totalRecordsCount": "{{GetCredentialErrorsByClientCount.data?.[0]?.total || 0}}",
   "type": "TABLE_WIDGET_V2",
   "version": 2,
   "verticalAlignment": "CENTER",

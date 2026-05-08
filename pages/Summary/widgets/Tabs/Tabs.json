@@ -141,7 +141,7 @@
   "mobileRightColumn": 7,
   "mobileTopRow": 61,
   "needsErrorInfo": false,
-  "onTabSelected": "{{ Tabs.selectedTab === \"Credentials\" && CredentialsStats.loadCredentialTotals() }}\n\n",
+  "onTabSelected": "{{ Tabs.selectedTab === \"Credentials\" && GetCredentialsSummary.run() }}\n\n",
   "originalBottomRow": 79,
   "originalTopRow": 17,
   "parentColumnSpace": 16.765625,

@@ -1665,7 +1665,7 @@
   "tableData": "{{ AccountsUtils.normalizeAccounts() }}",
   "textSize": "0.875rem",
   "topRow": 2,
-  "totalRecordsCount": "{{\n  appsmith.store.accountsSearch?.source === \"Arcadia\"\n    ? Api_ListAccountsArcadiaFix.data?.page?.totalElements\n    : Api_ListAccountsUSFix.data?.page?.totalElements\n}}",
+  "totalRecordsCount": "{{GetAccountErrorsByClientCount.data?.[0]?.total || 0}}",
   "type": "TABLE_WIDGET_V2",
   "version": 2,
   "verticalAlignment": "CENTER",

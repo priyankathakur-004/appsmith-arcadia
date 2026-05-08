@@ -1,0 +1,55 @@
+SELECT
+    c.ClientName AS Customers,
+    c.ProviderClientId AS ID,
+    (SELECT COUNT(DISTINCT ca2.AccountNumber_Raw)
+     FROM dbo.ClientAccount ca2
+     INNER JOIN dbo.Vendor v2 ON v2.IdVendor = ca2.IdVendor AND v2.IsInactive = 0
+     INNER JOIN dbo.VendorCredential vc2 ON vc2.IdVendorCredential = ca2.IdVendorCredential
+     WHERE ca2.IdClient = c.IdClient AND ca2.IsInactive = 0) AS Accounts,
+    COUNT(aa.IdArcadiaAccount) AS ArcadiaFeed,
+    CASE
+        WHEN (SELECT COUNT(DISTINCT ca2.AccountNumber_Raw)
+              FROM dbo.ClientAccount ca2
+              INNER JOIN dbo.Vendor v2 ON v2.IdVendor = ca2.IdVendor AND v2.IsInactive = 0
+              INNER JOIN dbo.VendorCredential vc2 ON vc2.IdVendorCredential = ca2.IdVendorCredential
+              WHERE ca2.IdClient = c.IdClient AND ca2.IsInactive = 0) > 0
+        THEN CAST(ROUND(COUNT(aa.IdArcadiaAccount) * 100.0 /
+             (SELECT COUNT(DISTINCT ca2.AccountNumber_Raw)
+              FROM dbo.ClientAccount ca2
+              INNER JOIN dbo.Vendor v2 ON v2.IdVendor = ca2.IdVendor AND v2.IsInactive = 0
+              INNER JOIN dbo.VendorCredential vc2 ON vc2.IdVendorCredential = ca2.IdVendorCredential
+              WHERE ca2.IdClient = c.IdClient AND ca2.IsInactive = 0), 2) AS VARCHAR) + '%'
+        ELSE '0%'
+    END AS Possible,
+    SUM(CASE WHEN aa.Status = 'CONNECTION_SUCCESS' THEN 1 ELSE 0 END) AS Synced,
+    CASE
+        WHEN COUNT(aa.IdArcadiaAccount) > 0
+        THEN CAST(ROUND(SUM(CASE WHEN aa.Status = 'CONNECTION_SUCCESS' THEN 1.0 ELSE 0 END) / COUNT(aa.IdArcadiaAccount) * 100, 2) AS VARCHAR) + '%'
+        ELSE '0%'
+    END AS Percentage,
+    CASE
+        WHEN COUNT(aa.IdArcadiaAccount) > 0
+        THEN CAST(ROUND(100.0 - (SUM(CASE WHEN aa.Status = 'CONNECTION_SUCCESS' THEN 1.0 ELSE 0 END) / COUNT(aa.IdArcadiaAccount) * 100), 2) AS VARCHAR) + '%'
+        ELSE '100%'
+    END AS ToFix,
+    SUM(CASE WHEN aa.Status IN ('DATA_ACCESS_FAILURE', 'CONNECTION_IN_PROGRESS') THEN 1 ELSE 0 END) AS US,
+    SUM(CASE WHEN aa.Status IN ('INACTIVE', 'CONNECTION_DEACTIVATED') THEN 1 ELSE 0 END) AS Arcadia
+FROM dbo.Client c
+LEFT JOIN dbo.ArcadiaAccounts aa ON aa.IdClient = c.IdClient
+WHERE c.IdProvider = 7
+  AND EXISTS (
+    SELECT 1 FROM dbo.ClientAccount ca
+    INNER JOIN dbo.Vendor v ON v.IdVendor = ca.IdVendor AND v.IsInactive = 0
+    INNER JOIN dbo.VendorCredential vc ON vc.IdVendorCredential = ca.IdVendorCredential
+    WHERE ca.IdClient = c.IdClient AND ca.IsInactive = 0
+  )
+  AND (
+    '{{ CustomerSelect.selectedOptionValues?.join(",") || "" }}' = ''
+    OR c.ProviderClientId IN (
+      SELECT value FROM STRING_SPLIT('{{ CustomerSelect.selectedOptionValues?.join(",") || "" }}', ',')
+    )
+  )
+GROUP BY c.ClientName, c.ProviderClientId, c.IdClient
+ORDER BY c.ClientName
+OFFSET {{ 10 * (AccountsTable.pageNo - 1) }} ROWS
+FETCH NEXT 10 ROWS ONLY;

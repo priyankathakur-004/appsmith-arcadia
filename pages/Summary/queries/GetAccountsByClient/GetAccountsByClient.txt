@@ -1,0 +1,32 @@
+SELECT
+    aa.IdClient AS idClient,
+    c.ClientName AS client_name,
+    aa.IdClientAccount AS idClientAccount,
+    aa.AccountNumber AS accountNumber,
+    aa.NormalizedAccountNumber AS normalizedAccountNumber,
+    aa.ArcadiaAccountId AS id,
+    aa.ArcadiaAccountId AS accountId,
+    aa.ProviderId AS providerId,
+    aa.ProviderName AS providerName,
+    aa.LatestStatementDate AS latestStatementDate,
+    aa.NextExpectedPostDate AS nextExpectedPostDate,
+    aa.Status AS status,
+    aa.Status AS accountStatus,
+    aa.StatusDetail AS statusDetail,
+    aa.StatusDetail AS accountStatusDetail,
+    aa.SummaryAccountId AS summaryAccountId,
+    aa.SummaryAccountNumber AS summaryAccountNumber,
+    aa.AccountType AS type,
+    aa.AccountType AS accountType,
+    aa.VoidedAt AS voidedAt,
+    aa.SyncedOn AS syncedOn
+FROM dbo.ArcadiaAccounts aa
+INNER JOIN dbo.Client c ON aa.IdClient = c.IdClient
+WHERE c.ProviderClientId = '{{ appsmith.store.accountsSearch?.clientId || "" }}'
+  AND (
+    '{{ appsmith.store.accountsSearch?.source || "" }}' != 'ArcadiaSuccess'
+    OR aa.Status = 'CONNECTION_SUCCESS'
+  )
+ORDER BY aa.AccountNumber
+OFFSET {{ (ArcadiaAccountsTable.pageNo - 1) * 50 }} ROWS
+FETCH NEXT 50 ROWS ONLY;
