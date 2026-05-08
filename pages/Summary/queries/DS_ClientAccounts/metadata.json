@@ -29,7 +29,7 @@
     ],
     "name": "DS_ClientAccounts",
     "pageId": "Summary",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }
