@@ -39,7 +39,7 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "onTextChanged": "{{APi_ListProviders.run()}}",
+  "onTextChanged": "{{GetProvidersData.run(); GetProvidersCount.run();}}",
   "originalBottomRow": 11,
   "originalTopRow": 4,
   "parentColumnSpace": 15,

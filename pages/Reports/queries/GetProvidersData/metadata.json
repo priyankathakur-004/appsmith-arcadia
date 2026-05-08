@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n    ap.IdVendor AS id_vendor,\n    ap.VendorName AS vendor_name,\n    ap.ArcadiaProviderName AS arcadia_provider_name,\n    ap.Country AS country,\n    ap.Region AS region,\n    ap.Website AS website,\n    ap.ArcadiaProviderId AS arcadia_provider_id,\n    ap.SyncedOn AS synced_on\nFROM dbo.ArcadiaProviders ap\nWHERE 1=1\n  AND (\n    '{{ProvVendorInput.text || \"\"}}' = ''\n    OR LOWER(LTRIM(RTRIM(ISNULL(ap.VendorName, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || \"\"}}') + '%'\n    OR LOWER(LTRIM(RTRIM(ISNULL(ap.ArcadiaProviderName, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || \"\"}}') + '%'\n  )\nORDER BY ap.VendorName\nOFFSET {{(ProvidersTable.pageNo - 1) * 50}} ROWS\nFETCH NEXT 50 ROWS ONLY;",
+      "body": "SELECT\n    ap.IdVendor AS IdVendor,\n    ap.VendorName AS VendorName,\n    ap.ArcadiaProviderName AS ProviderName,\n    ap.Country AS Country,\n    ap.Region AS Region,\n    ap.Website AS Website,\n    ap.ArcadiaProviderId AS ProviderId,\n    ap.SyncedOn AS SyncedOn\nFROM dbo.ArcadiaProviders ap\nWHERE 1=1\n  AND (\n    '{{ProvVendorInput.text || \"\"}}' = ''\n    OR LOWER(LTRIM(RTRIM(ISNULL(ap.VendorName, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || \"\"}}') + '%'\n    OR LOWER(LTRIM(RTRIM(ISNULL(ap.ArcadiaProviderName, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || \"\"}}') + '%'\n  )\nORDER BY ap.VendorName\nOFFSET {{(ProvidersTable.pageNo - 1) * 50}} ROWS\nFETCH NEXT 50 ROWS ONLY;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

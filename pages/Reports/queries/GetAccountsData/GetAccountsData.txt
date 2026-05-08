@@ -1,21 +1,25 @@
 SELECT
-    aa.IdClient AS id_client,
+    aa.IdClient AS idClient,
     c.ClientName AS client_name,
-    aa.IdClientAccount AS id_client_account,
-    aa.AccountNumber AS account_number,
-    aa.ArcadiaAccountId AS arcadia_account_id,
-    aa.ProviderId AS provider_id,
-    aa.ProviderName AS provider_name,
-    aa.LatestStatementDate AS latest_statement_date,
-    aa.NextExpectedPostDate AS next_expected_post_date,
-    aa.NormalizedAccountNumber AS normalized_account_number,
+    aa.IdClientAccount AS idClientAccount,
+    aa.AccountNumber AS accountNumber,
+    aa.NormalizedAccountNumber AS normalizedAccountNumber,
+    aa.ArcadiaAccountId AS id,
+    aa.ArcadiaAccountId AS accountId,
+    aa.ProviderId AS providerId,
+    aa.ProviderName AS providerName,
+    aa.LatestStatementDate AS latestStatementDate,
+    aa.NextExpectedPostDate AS nextExpectedPostDate,
     aa.Status AS status,
-    aa.StatusDetail AS status_detail,
-    aa.SummaryAccountId AS summary_account_id,
-    aa.SummaryAccountNumber AS summary_account_number,
-    aa.AccountType AS account_type,
-    aa.VoidedAt AS voided_at,
-    aa.SyncedOn AS synced_on
+    aa.Status AS accountStatus,
+    aa.StatusDetail AS statusDetail,
+    aa.StatusDetail AS accountStatusDetail,
+    aa.SummaryAccountId AS summaryAccountId,
+    aa.SummaryAccountNumber AS summaryAccountNumber,
+    aa.AccountType AS type,
+    aa.AccountType AS accountType,
+    aa.VoidedAt AS voidedAt,
+    aa.SyncedOn AS syncedOn
 FROM dbo.ArcadiaAccounts aa
 INNER JOIN dbo.Client c ON aa.IdClient = c.IdClient
 WHERE 1=1
@@ -32,5 +36,5 @@ WHERE 1=1
     )
   )
 ORDER BY c.ClientName, aa.AccountNumber
-OFFSET {{(AccountsTable.pageNo - 1) *  50}} ROWS
+OFFSET {{(AccountsTable.pageNo - 1) * 50}} ROWS
 FETCH NEXT 50 ROWS ONLY;
