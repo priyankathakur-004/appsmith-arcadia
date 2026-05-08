@@ -29,7 +29,7 @@
     ],
     "name": "GetAccountsData",
     "pageId": "Reports",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": true
+    "runBehaviour": "AUTOMATIC",
+    "userSetOnLoad": false
   }
 }

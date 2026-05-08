@@ -30,6 +30,6 @@
     "name": "GetAccountErrorsByClient",
     "pageId": "Summary",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": true
+    "userSetOnLoad": false
   }
 }

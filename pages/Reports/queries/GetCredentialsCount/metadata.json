@@ -29,7 +29,7 @@
     ],
     "name": "GetCredentialsCount",
     "pageId": "Reports",
-    "runBehaviour": "MANUAL",
-    "userSetOnLoad": true
+    "runBehaviour": "AUTOMATIC",
+    "userSetOnLoad": false
   }
 }

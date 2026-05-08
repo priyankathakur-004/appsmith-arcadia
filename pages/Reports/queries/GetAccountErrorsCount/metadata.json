@@ -30,6 +30,6 @@
     "name": "GetAccountErrorsCount",
     "pageId": "Reports",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": true
+    "userSetOnLoad": false
   }
 }

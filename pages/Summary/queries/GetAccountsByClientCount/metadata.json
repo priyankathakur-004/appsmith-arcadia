@@ -30,6 +30,6 @@
     "name": "GetAccountsByClientCount",
     "pageId": "Summary",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": true
+    "userSetOnLoad": false
   }
 }

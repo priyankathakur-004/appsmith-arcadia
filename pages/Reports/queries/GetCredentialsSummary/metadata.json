@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "GetCredentialsSummary",
     "pageId": "Reports",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

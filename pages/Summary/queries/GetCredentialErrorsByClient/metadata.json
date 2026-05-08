@@ -30,6 +30,6 @@
     "name": "GetCredentialErrorsByClient",
     "pageId": "Summary",
     "runBehaviour": "MANUAL",
-    "userSetOnLoad": true
+    "userSetOnLoad": false
   }
 }
