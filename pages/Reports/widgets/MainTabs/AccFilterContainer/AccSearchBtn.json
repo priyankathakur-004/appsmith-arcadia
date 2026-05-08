@@ -28,7 +28,7 @@
   "mobileRightColumn": 8,
   "mobileTopRow": 12,
   "needsErrorInfo": false,
-  "onClick": "{{Api_ListAccounts.run()}}",
+  "onClick": "{{AccountsUtils.fetchAccountStats()}}",
   "originalBottomRow": 17,
   "originalTopRow": 13,
   "parentColumnSpace": 15,

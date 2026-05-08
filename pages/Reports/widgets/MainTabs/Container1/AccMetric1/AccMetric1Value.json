@@ -44,7 +44,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 57,
   "shouldTruncate": false,
-  "text": "{{AccountsUtils.totalAccounts(\"DS_ClientAccounts\") || 0}}",
+  "text": "{{AccountsUtils.totalAccounts(\"ArcadiaFeed\") || 0}}",
   "textAlign": "LEFT",
   "textColor": "#f4f4f5",
   "topRow": 4,

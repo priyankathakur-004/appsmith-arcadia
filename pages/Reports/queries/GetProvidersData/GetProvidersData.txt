@@ -1,12 +1,12 @@
 SELECT
-    ap.IdVendor AS id_vendor,
-    ap.VendorName AS vendor_name,
-    ap.ArcadiaProviderName AS arcadia_provider_name,
-    ap.Country AS country,
-    ap.Region AS region,
-    ap.Website AS website,
-    ap.ArcadiaProviderId AS arcadia_provider_id,
-    ap.SyncedOn AS synced_on
+    ap.IdVendor AS IdVendor,
+    ap.VendorName AS VendorName,
+    ap.ArcadiaProviderName AS ProviderName,
+    ap.Country AS Country,
+    ap.Region AS Region,
+    ap.Website AS Website,
+    ap.ArcadiaProviderId AS ProviderId,
+    ap.SyncedOn AS SyncedOn
 FROM dbo.ArcadiaProviders ap
 WHERE 1=1
   AND (
