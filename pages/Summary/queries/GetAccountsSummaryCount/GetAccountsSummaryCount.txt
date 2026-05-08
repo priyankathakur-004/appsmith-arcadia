@@ -1,0 +1,15 @@
+SELECT COUNT(*) AS total
+FROM dbo.Client c
+WHERE c.IdProvider = 7
+  AND EXISTS (
+    SELECT 1 FROM dbo.ClientAccount ca
+    INNER JOIN dbo.Vendor v ON v.IdVendor = ca.IdVendor AND v.IsInactive = 0
+    INNER JOIN dbo.VendorCredential vc ON vc.IdVendorCredential = ca.IdVendorCredential
+    WHERE ca.IdClient = c.IdClient AND ca.IsInactive = 0
+  )
+  AND (
+    '{{ CustomerSelect.selectedOptionValues?.join(",") || "" }}' = ''
+    OR c.ProviderClientId IN (
+      SELECT value FROM STRING_SPLIT('{{ CustomerSelect.selectedOptionValues?.join(",") || "" }}', ',')
+    )
+  );

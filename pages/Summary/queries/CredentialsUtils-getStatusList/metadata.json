@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69b3a04bd659a362092919a3_bc46c625-eb43-4234-842d-753ba3eda89f",
-  "id": "Summary_CredentialsUtils.fetchCredentials",
+  "gitSyncId": "69b3a04bd659a362092919a3_ab30ea1e-8c48-49e7-84fb-0ce3a796e3d4",
+  "id": "Summary_CredentialsUtils.getStatusList",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -22,8 +22,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "CredentialsUtils.fetchCredentials",
-    "name": "fetchCredentials",
+    "fullyQualifiedName": "CredentialsUtils.getStatusList",
+    "name": "getStatusList",
     "pageId": "Summary",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

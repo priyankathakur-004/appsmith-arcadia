@@ -1,0 +1,7 @@
+SELECT COUNT(*) AS total
+FROM dbo.ArcadiaAccounts aa
+INNER JOIN dbo.Client c ON aa.IdClient = c.IdClient
+WHERE c.ProviderClientId = '{{ appsmith.store.accountsSearch?.clientId || "" }}'
+  AND aa.Status IN (
+    SELECT value FROM STRING_SPLIT('{{ AccountsUtils.getStatusList() }}', ',')
+  );
