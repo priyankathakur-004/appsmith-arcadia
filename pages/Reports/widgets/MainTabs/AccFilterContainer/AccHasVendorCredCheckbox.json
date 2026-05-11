@@ -1,0 +1,43 @@
+{
+  "accentColor": "#86efac",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 19,
+  "defaultCheckedState": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "zmw9uc4rad",
+  "label": "Client account has vendor credential",
+  "labelPosition": "Left",
+  "labelTextColor": "#f4f4f5",
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 19,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 35,
+  "mobileTopRow": 16,
+  "needsErrorInfo": false,
+  "parentColumnSpace": 19.40625,
+  "parentId": "o19crntpr9",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 35,
+  "topRow": 16,
+  "type": "CHECKBOX_WIDGET",
+  "version": 1,
+  "widgetId": "cwtosvhdeh",
+  "widgetName": "AccHasVendorCredCheckbox"
+}
