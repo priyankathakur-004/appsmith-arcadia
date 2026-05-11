@@ -143,6 +143,96 @@
       "version": 1,
       "widgetId": "yuqv1evc5y",
       "widgetName": "Canvas5"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 1260,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "pfw0zw1tvg",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 1000,
+      "minWidth": 450,
+      "mobileBottomRow": 1001,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1073,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "elazkpef8e",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 1073,
+      "tabId": "tabsaxqx6o0lz",
+      "tabName": "Client Coverage",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "fjrwaxszcq",
+      "widgetName": "Canvas_ClientCoverage"
+    },
+    {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "bottomRow": 1260,
+      "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+      "canExtend": false,
+      "containerStyle": "none",
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [
+        {
+          "key": "borderRadius"
+        },
+        {
+          "key": "boxShadow"
+        }
+      ],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "f7f2flrdpy",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 1000,
+      "minWidth": 450,
+      "mobileBottomRow": 1001,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 1073,
+      "mobileTopRow": 1,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "elazkpef8e",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 1073,
+      "tabId": "tabeoqg07169o",
+      "tabName": "Webhook Logs",
+      "topRow": 1,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "9ijama4urh",
+      "widgetName": "Canvas_WebhookLogs"
     }
   ],
   "defaultTab": "Accounts",
@@ -208,6 +298,20 @@
       "isVisible": true,
       "label": "Providers",
       "widgetId": "yuqv1evc5y"
+    },
+    "tabsaxqx6o0lz": {
+      "id": "tabsaxqx6o0lz",
+      "index": 3,
+      "isVisible": true,
+      "label": "Client Coverage",
+      "widgetId": "fjrwaxszcq"
+    },
+    "tabeoqg07169o": {
+      "id": "tabeoqg07169o",
+      "index": 4,
+      "isVisible": true,
+      "label": "Webhook Logs",
+      "widgetId": "9ijama4urh"
     }
   },
   "topRow": 13,
