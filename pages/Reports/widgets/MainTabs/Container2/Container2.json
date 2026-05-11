@@ -75,7 +75,7 @@
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,
   "isLoading": false,
-  "isVisible": "{{CredClientSelect.selectedOptionValue ? true : false}}",
+  "isVisible": "{{CredClientSelect.selectedOptionValues?.length > 0}}",
   "key": "dpzu0rnpy9",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
