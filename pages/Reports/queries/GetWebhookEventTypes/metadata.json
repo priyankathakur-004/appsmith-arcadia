@@ -29,7 +29,7 @@
     ],
     "name": "GetWebhookEventTypes",
     "pageId": "Reports",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

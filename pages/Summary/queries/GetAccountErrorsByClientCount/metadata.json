@@ -29,7 +29,7 @@
     ],
     "name": "GetAccountErrorsByClientCount",
     "pageId": "Summary",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

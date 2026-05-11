@@ -6,11 +6,6 @@
     "pageId": "Summary",
     "pluginId": "js-plugin",
     "pluginType": "JS",
-    "variables": [
-      {
-        "name": "statusFilterMap",
-        "value": "{\n  Arcadia: {\n    All: [\"INACTIVE\", \"CONNECTION_DEACTIVATED\", \"CONNECTION_IN_PROGRESS\"],\n    \"Connection In progress\": [\"CONNECTION_IN_PROGRESS\"],\n    \"Inactive\": [\"INACTIVE\"],\n    \"Connection Deactivated\": [\"CONNECTION_DEACTIVATED\"],\n    \"Data Access Failure\": [\"DATA_ACCESS_FAILURE\"]\n  },\n  US: {\n    All: [\"DATA_ACCESS_FAILURE\", \"CONNECTION_IN_PROGRESS\"],\n    \"Connection In progress\": [\"CONNECTION_IN_PROGRESS\"],\n    \"Data Access Failure\": [\"DATA_ACCESS_FAILURE\"]\n  }\n}"
-      }
-    ]
+    "variables": []
   }
 }
