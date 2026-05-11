@@ -1,14 +1,58 @@
+WITH client_filter AS (
+    SELECT
+        c.IdClient
+    FROM dbo.Client c
+    WHERE c.IdProvider = 7
+      AND (
+        '{{CoverageClientSelect.selectedOptionValues?.join(",") || ""}}' = ''
+        OR c.IdClient IN (
+          SELECT CAST(value AS INT) FROM STRING_SPLIT('{{CoverageClientSelect.selectedOptionValues?.join(",") || ""}}', ',')
+        )
+      )
+),
+client_accounts AS (
+    SELECT
+        ca.IdClient,
+        ca.IdClientAccount,
+        ca.AccountNumber_Raw,
+        ca.IdVendor,
+        ca.IdVendorCredential,
+        ap.ArcadiaProviderId,
+        active_aca.ArcadiaCredentialId AS LinkedCredentialId,
+        active_aca.Status AS LinkedAccountStatus,
+        cs.Status AS CredentialStatus,
+        cs.StatusDetail AS CredentialStatusDetail
+    FROM dbo.ClientAccount ca
+    INNER JOIN client_filter cf ON cf.IdClient = ca.IdClient
+    INNER JOIN dbo.Vendor v ON v.IdVendor = ca.IdVendor AND v.IsInactive = 0
+    LEFT JOIN dbo.VendorCredential vc ON vc.IdVendorCredential = ca.IdVendorCredential
+    LEFT JOIN arcadia.ArcadiaProviders ap ON ap.IdVendor = ca.IdVendor
+    OUTER APPLY (
+        SELECT TOP 1 aca.ArcadiaCredentialId, aca.Status
+        FROM arcadia.ArcadiaCredentialAccount aca
+        WHERE aca.IdClientAccount = ca.IdClientAccount
+          AND ISNULL(aca.IsActive, 0) = 1
+        ORDER BY aca.LastSyncedOn DESC, aca.LastSeenOn DESC
+    ) active_aca
+    LEFT JOIN arcadia.ArcadiaCredentialState cs
+        ON cs.IdClient = ca.IdClient
+        AND cs.ArcadiaCredentialId = active_aca.ArcadiaCredentialId
+    WHERE ca.IsInactive = 0
+)
 SELECT
-    COUNT(1) AS total,
-    SUM(CASE WHEN aca.IsActive = 1 AND aca.IdClientAccount IS NOT NULL THEN 1 ELSE 0 END) AS found,
-    SUM(CASE WHEN aca.Status = 'CONNECTION_IN_PROGRESS' THEN 1 ELSE 0 END) AS in_progress,
-    SUM(CASE WHEN aca.IsActive = 1 AND aca.IdClientAccount IS NULL THEN 1 ELSE 0 END) AS pending,
-    SUM(CASE WHEN aca.IsActive = 0 OR aca.Status IN ('DATA_ACCESS_FAILURE', 'CONNECTION_FAILURE', 'INACTIVE') THEN 1 ELSE 0 END) AS failed,
-    SUM(CASE WHEN aca.MissingSince IS NOT NULL THEN 1 ELSE 0 END) AS missing
-FROM arcadia.ArcadiaCredentialAccount aca
-WHERE (
-    '{{CoverageClientSelect.selectedOptionValues?.join(",") || ""}}' = ''
-    OR aca.IdClient IN (
-      SELECT CAST(value AS INT) FROM STRING_SPLIT('{{CoverageClientSelect.selectedOptionValues?.join(",") || ""}}', ',')
-    )
-);
+    COUNT(1) AS total_accounts,
+    COUNT(DISTINCT ca.AccountNumber_Raw) AS grouped_accounts,
+    SUM(CASE WHEN ca.IdVendorCredential IS NOT NULL THEN 1 ELSE 0 END) AS eligible_accounts,
+    SUM(CASE WHEN ca.LinkedCredentialId IS NOT NULL THEN 1 ELSE 0 END) AS linked_in_arcadia,
+    SUM(CASE WHEN ca.CredentialStatus = 'CONNECTION_IN_PROGRESS' AND ca.LinkedCredentialId IS NULL THEN 1 ELSE 0 END) AS in_progress,
+    SUM(CASE WHEN ca.LinkedCredentialId IS NULL
+                  AND ca.ArcadiaProviderId IS NOT NULL
+                  AND (ca.CredentialStatus IS NULL OR ca.CredentialStatus NOT IN ('CONNECTION_IN_PROGRESS', 'CONNECTION_FAILURE', 'CONNECTION_DEACTIVATED'))
+             THEN 1 ELSE 0 END) AS pending,
+    SUM(CASE WHEN ca.LinkedCredentialId IS NULL
+                  AND ca.ArcadiaProviderId IS NOT NULL
+                  AND (ca.IdVendorCredential IS NULL
+                       OR ca.CredentialStatus IN ('CONNECTION_FAILURE', 'CONNECTION_DEACTIVATED'))
+             THEN 1 ELSE 0 END) AS failed,
+    SUM(CASE WHEN ca.ArcadiaProviderId IS NULL OR LTRIM(RTRIM(ca.ArcadiaProviderId)) = '' THEN 1 ELSE 0 END) AS provider_not_mapped
+FROM client_accounts ca;
