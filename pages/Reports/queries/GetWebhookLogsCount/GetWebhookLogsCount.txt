@@ -1,0 +1,70 @@
+WITH ranked_accounts AS (
+    SELECT
+        aca.IdClient,
+        aca.IdClientAccount,
+        aca.ArcadiaAccountId,
+        aca.IsActive,
+        aca.LastSeenOn,
+        aca.LastSyncedOn,
+        ROW_NUMBER() OVER (
+            PARTITION BY aca.ArcadiaAccountId
+            ORDER BY
+                CASE WHEN ISNULL(aca.IsActive, 0) = 1 THEN 0 ELSE 1 END,
+                ISNULL(aca.LastSyncedOn, aca.LastSeenOn) DESC,
+                aca.LastSeenOn DESC,
+                aca.ArcadiaCredentialId DESC
+        ) AS RowNum
+    FROM arcadia.ArcadiaCredentialAccount aca
+    WHERE aca.ArcadiaAccountId IS NOT NULL
+        AND aca.IdClientAccount IS NOT NULL
+)
+SELECT COUNT(1) AS total
+FROM arcadia.ArcadiaWebhookLogs AS logs
+OUTER APPLY (
+    SELECT TOP 1
+        ca.AccountNumber,
+        c.ClientName
+    FROM STRING_SPLIT(ISNULL(logs.AccountIds, ''), ',') AS ids
+    INNER JOIN ranked_accounts AS ra
+        ON ra.ArcadiaAccountId = LTRIM(RTRIM(ids.value))
+        AND ra.RowNum = 1
+    INNER JOIN dbo.ClientAccount AS ca ON ca.IdClientAccount = ra.IdClientAccount
+    INNER JOIN dbo.Client AS c ON c.IdClient = ra.IdClient
+    ORDER BY
+        CASE WHEN ISNULL(ra.IsActive, 0) = 1 THEN 0 ELSE 1 END,
+        ISNULL(ra.LastSyncedOn, ra.LastSeenOn) DESC,
+        ra.LastSeenOn DESC
+) AS mapped
+WHERE 1=1
+  AND (
+    '{{WebhookEventTypeSelect.selectedOptionValues?.join(",") || ""}}' = ''
+    OR logs.EventType IN (
+      SELECT value FROM STRING_SPLIT('{{WebhookEventTypeSelect.selectedOptionValues?.join(",") || ""}}', ',')
+    )
+  )
+  AND (
+    '{{WebhookResourceSelect.selectedOptionValues?.join(",") || ""}}' = ''
+    OR logs.Resource IN (
+      SELECT value FROM STRING_SPLIT('{{WebhookResourceSelect.selectedOptionValues?.join(",") || ""}}', ',')
+    )
+  )
+  AND (
+    '{{WebhookStatusSelect.selectedOptionValue || ""}}' = ''
+    OR logs.Status = '{{WebhookStatusSelect.selectedOptionValue || ""}}'
+  )
+  AND (
+    '{{WebhookClientNameInput.text || ""}}' = ''
+    OR mapped.ClientName = '{{WebhookClientNameInput.text || ""}}'
+  )
+  AND (
+    '{{WebhookAccountNumberInput.text || ""}}' = ''
+    OR mapped.AccountNumber = '{{WebhookAccountNumberInput.text || ""}}'
+  )
+  AND (
+    '{{WebhookFromDate.formattedDate || ""}}' = ''
+    OR logs.ReceivedAtEt >= '{{WebhookFromDate.formattedDate || ""}}'
+  )
+  AND (
+    '{{WebhookToDate.formattedDate || ""}}' = ''
+    OR logs.ReceivedAtEt <= '{{WebhookToDate.formattedDate || ""}}'
+  );

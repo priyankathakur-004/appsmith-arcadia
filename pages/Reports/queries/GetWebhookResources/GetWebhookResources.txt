@@ -1,0 +1,4 @@
+SELECT DISTINCT Resource AS resource
+FROM arcadia.ArcadiaWebhookLogs
+WHERE Resource IS NOT NULL
+ORDER BY Resource;

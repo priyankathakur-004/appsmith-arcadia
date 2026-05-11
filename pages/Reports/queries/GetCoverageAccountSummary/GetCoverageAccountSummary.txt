@@ -1,0 +1,14 @@
+SELECT
+    COUNT(1) AS total,
+    SUM(CASE WHEN aca.IsActive = 1 AND aca.IdClientAccount IS NOT NULL THEN 1 ELSE 0 END) AS found,
+    SUM(CASE WHEN aca.Status = 'CONNECTION_IN_PROGRESS' THEN 1 ELSE 0 END) AS in_progress,
+    SUM(CASE WHEN aca.IsActive = 1 AND aca.IdClientAccount IS NULL THEN 1 ELSE 0 END) AS pending,
+    SUM(CASE WHEN aca.IsActive = 0 OR aca.Status IN ('DATA_ACCESS_FAILURE', 'CONNECTION_FAILURE', 'INACTIVE') THEN 1 ELSE 0 END) AS failed,
+    SUM(CASE WHEN aca.MissingSince IS NOT NULL THEN 1 ELSE 0 END) AS missing
+FROM arcadia.ArcadiaCredentialAccount aca
+WHERE (
+    '{{CoverageClientSelect.selectedOptionValues?.join(",") || ""}}' = ''
+    OR aca.IdClient IN (
+      SELECT CAST(value AS INT) FROM STRING_SPLIT('{{CoverageClientSelect.selectedOptionValues?.join(",") || ""}}', ',')
+    )
+);

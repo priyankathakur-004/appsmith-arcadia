@@ -1,19 +1,25 @@
 SELECT
-    ap.IdVendor AS IdVendor,
-    ap.VendorName AS VendorName,
+    v.IdVendor AS IdVendor,
+    COALESCE(ap.VendorName, v.VendorName) AS VendorName,
     ap.ArcadiaProviderName AS ProviderName,
     ap.Country AS Country,
     ap.Region AS Region,
     ap.Website AS Website,
     ap.ArcadiaProviderId AS ProviderId,
-    ap.SyncedOn AS SyncedOn
-FROM dbo.ArcadiaProviders ap
-WHERE 1=1
-  AND (
-    '{{ProvVendorInput.text || ""}}' = ''
-    OR LOWER(LTRIM(RTRIM(ISNULL(ap.VendorName, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || ""}}') + '%'
-    OR LOWER(LTRIM(RTRIM(ISNULL(ap.ArcadiaProviderName, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || ""}}') + '%'
-  )
-ORDER BY ap.VendorName
+    ap.SyncedOn AS SyncedOn,
+    ap.UpdatedOn AS UpdatedOn,
+    ap.UpdatedBy AS UpdatedBy,
+    ap.CurrentVersionNumber AS CurrentVersionNumber
+FROM dbo.Vendor v
+LEFT JOIN arcadia.ArcadiaProviders ap ON ap.IdVendor = v.IdVendor
+WHERE 1 = 1
+    AND v.IsInactive = 0
+    AND (
+        '{{ProvVendorInput.text || ""}}' = ''
+        OR LOWER(LTRIM(RTRIM(ISNULL(v.VendorName, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || ""}}') + '%'
+        OR LOWER(LTRIM(RTRIM(ISNULL(ap.ArcadiaProviderName, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || ""}}') + '%'
+        OR LOWER(LTRIM(RTRIM(ISNULL(ap.ArcadiaProviderId, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || ""}}') + '%'
+    )
+ORDER BY VendorName
 OFFSET {{(ProvidersTable.pageNo - 1) * 50}} ROWS
 FETCH NEXT 50 ROWS ONLY;

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT COUNT(*) AS total\nFROM dbo.ArcadiaCredential ac\nINNER JOIN dbo.Client c ON ac.IdClient = c.IdClient\nWHERE c.ProviderClientId = '{{ appsmith.store.credentialSearch?.clientId || \"\" }}'\n  AND ac.IsCustomerActionRequired = (\n    CASE WHEN '{{ appsmith.store.credentialSearch?.source || \"\" }}' = 'Arcadia' THEN 0 ELSE 1 END\n  )\n  AND ac.Status IN (\n    SELECT value FROM STRING_SPLIT('{{ CredentialsUtils.getStatusList() }}', ',')\n  );\n",
+      "body": "SELECT COUNT(*) AS total\nFROM arcadia.ArcadiaCredentialState cs\nINNER JOIN dbo.Client c ON cs.IdClient = c.IdClient\nWHERE c.ProviderClientId = '{{ appsmith.store.credentialSearch?.clientId || \"\" }}'\n  AND cs.IsCustomerActionRequired = (\n    CASE WHEN '{{ appsmith.store.credentialSearch?.source || \"\" }}' = 'Arcadia' THEN 0 ELSE 1 END\n  )\n  AND cs.Status IN (\n    SELECT value FROM STRING_SPLIT('{{ CredentialsUtils.getStatusList() }}', ',')\n  );",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

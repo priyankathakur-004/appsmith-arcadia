@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT DISTINCT\n    aa.Status AS status\nFROM dbo.ArcadiaAccounts aa\nWHERE aa.Status IS NOT NULL\nORDER BY aa.Status;",
+      "body": "SELECT DISTINCT\n    aca.Status AS status\nFROM arcadia.ArcadiaCredentialAccount aca\nWHERE aca.Status IS NOT NULL\nORDER BY aca.Status;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

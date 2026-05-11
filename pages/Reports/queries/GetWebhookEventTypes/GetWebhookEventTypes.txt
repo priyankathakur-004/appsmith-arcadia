@@ -1,0 +1,4 @@
+SELECT DISTINCT EventType AS event_type
+FROM arcadia.ArcadiaWebhookLogs
+WHERE EventType IS NOT NULL
+ORDER BY EventType;

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT COUNT(1) AS total\nFROM dbo.ArcadiaCredential ac\nWHERE 1=1\n  AND (\n    '{{CredClientSelect.selectedOptionValues?.join(\",\") || \"\"}}' = ''\n    OR ac.IdClient IN (\n      SELECT CAST(value AS INT) FROM STRING_SPLIT('{{CredClientSelect.selectedOptionValues?.join(\",\") || \"\"}}', ',')\n    )\n  )\n  AND (\n    '{{CredStatusSelect.selectedOptionValues?.join(\",\") || \"\"}}' = ''\n    OR ac.Status IN (\n      SELECT value FROM STRING_SPLIT('{{CredStatusSelect.selectedOptionValues?.join(\",\") || \"\"}}', ',')\n    )\n  )",
+      "body": "SELECT COUNT(1) AS total\nFROM arcadia.ArcadiaCredentialState cs\nWHERE 1=1\n  AND (\n    '{{CredClientSelect.selectedOptionValues?.join(\",\") || \"\"}}' = ''\n    OR cs.IdClient IN (\n      SELECT CAST(value AS INT) FROM STRING_SPLIT('{{CredClientSelect.selectedOptionValues?.join(\",\") || \"\"}}', ',')\n    )\n  )\n  AND (\n    '{{CredStatusSelect.selectedOptionValues?.join(\",\") || \"\"}}' = ''\n    OR cs.Status IN (\n      SELECT value FROM STRING_SPLIT('{{CredStatusSelect.selectedOptionValues?.join(\",\") || \"\"}}', ',')\n    )\n  );",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
