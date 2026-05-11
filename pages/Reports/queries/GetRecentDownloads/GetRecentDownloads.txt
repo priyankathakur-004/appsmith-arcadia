@@ -1,0 +1,13 @@
+SELECT TOP 6
+    FORMAT(v.MonthStart, 'MMM yyyy') AS month_label,
+    v.MonthStart AS month_start,
+    SUM(v.DownloadedAccountCount) AS downloaded_account_count
+FROM arcadia.vw_MonthlyDownloadedAccounts v
+WHERE (
+    '{{CoverageClientSelect.selectedOptionValues?.join(",") || ""}}' = ''
+    OR v.IdClient IN (
+      SELECT CAST(value AS INT) FROM STRING_SPLIT('{{CoverageClientSelect.selectedOptionValues?.join(",") || ""}}', ',')
+    )
+)
+GROUP BY v.MonthStart
+ORDER BY v.MonthStart DESC;

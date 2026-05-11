@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT COUNT(1) AS total\nFROM dbo.ArcadiaProviders ap\nWHERE 1=1\n  AND (\n    '{{ProvVendorInput.text || \"\"}}' = ''\n    OR LOWER(LTRIM(RTRIM(ISNULL(ap.VendorName, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || \"\"}}') + '%'\n    OR LOWER(LTRIM(RTRIM(ISNULL(ap.ArcadiaProviderName, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || \"\"}}') + '%'\n  );",
+      "body": "SELECT COUNT(1) AS total\nFROM dbo.Vendor v\nLEFT JOIN arcadia.ArcadiaProviders ap ON ap.IdVendor = v.IdVendor\nWHERE 1 = 1\n    AND v.IsInactive = 0\n    AND (\n        '{{ProvVendorInput.text || \"\"}}' = ''\n        OR LOWER(LTRIM(RTRIM(ISNULL(v.VendorName, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || \"\"}}') + '%'\n        OR LOWER(LTRIM(RTRIM(ISNULL(ap.ArcadiaProviderName, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || \"\"}}') + '%'\n        OR LOWER(LTRIM(RTRIM(ISNULL(ap.ArcadiaProviderId, '')))) LIKE '%' + LOWER('{{ProvVendorInput.text || \"\"}}') + '%'\n    );",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

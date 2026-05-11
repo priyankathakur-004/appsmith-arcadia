@@ -1,0 +1,4 @@
+SELECT DISTINCT Status AS status
+FROM arcadia.ArcadiaWebhookLogs
+WHERE Status IS NOT NULL
+ORDER BY Status;

@@ -1,0 +1,43 @@
+SELECT
+    aca.IdClient AS idClient,
+    c.ClientName AS clientName,
+    aca.IdClientAccount AS idClientAccount,
+    aca.ArcadiaAccountId AS arcadiaAccountId,
+    aca.ArcadiaCredentialId AS credentialId,
+    aca.AccountNumber AS accountNumber,
+    aca.NormalizedAccountNumber AS normalizedAccountNumber,
+    aca.ProviderId AS providerId,
+    aca.ProviderName AS providerName,
+    aca.Status AS status,
+    aca.StatusDetail AS statusDetail,
+    aca.IsActive AS isActive,
+    aca.MissingSince AS missingSince,
+    aca.LastSeenOn AS lastSeenOn,
+    aca.LastSyncedOn AS lastSyncedOn,
+    aca.LatestStatementDate AS latestStatementDate,
+    cs.Status AS credentialStatus,
+    cs.StatusDetail AS credentialStatusDetail,
+    CASE
+        WHEN aca.IsActive = 1 AND aca.IdClientAccount IS NOT NULL THEN 'Linked'
+        WHEN aca.Status = 'CONNECTION_IN_PROGRESS' OR cs.Status = 'CONNECTION_IN_PROGRESS' THEN 'In Progress'
+        WHEN aca.IsActive = 1 AND aca.IdClientAccount IS NULL THEN 'Pending'
+        WHEN aca.IsActive = 0 THEN 'Failed'
+        WHEN aca.Status IN ('DATA_ACCESS_FAILURE', 'CONNECTION_FAILURE', 'INACTIVE') THEN 'Failed'
+        WHEN cs.Status IN ('CONNECTION_FAILURE', 'CONNECTION_DEACTIVATED') THEN 'Failed'
+        WHEN aca.ProviderId IS NULL THEN 'Provider Not Mapped'
+        ELSE 'Pending'
+    END AS bucket
+FROM arcadia.ArcadiaCredentialAccount aca
+INNER JOIN dbo.Client c ON c.IdClient = aca.IdClient
+LEFT JOIN arcadia.ArcadiaCredentialState cs
+    ON cs.IdClient = aca.IdClient
+    AND cs.ArcadiaCredentialId = aca.ArcadiaCredentialId
+WHERE (
+    '{{CoverageClientSelect.selectedOptionValues?.join(",") || ""}}' = ''
+    OR aca.IdClient IN (
+      SELECT CAST(value AS INT) FROM STRING_SPLIT('{{CoverageClientSelect.selectedOptionValues?.join(",") || ""}}', ',')
+    )
+)
+ORDER BY c.ClientName, aca.AccountNumber, aca.ArcadiaAccountId
+OFFSET {{(CoverageAccountsTable.pageNo - 1) * 50}} ROWS
+FETCH NEXT 50 ROWS ONLY;

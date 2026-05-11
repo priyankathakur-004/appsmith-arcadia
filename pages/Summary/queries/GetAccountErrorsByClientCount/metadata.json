@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT COUNT(*) AS total\nFROM dbo.ArcadiaAccounts aa\nINNER JOIN dbo.Client c ON aa.IdClient = c.IdClient\nWHERE c.ProviderClientId = '{{ appsmith.store.accountsSearch?.clientId || \"\" }}'\n  AND aa.Status IN (\n    SELECT value FROM STRING_SPLIT('{{ AccountsUtils.getStatusList() }}', ',')\n  );\n",
+      "body": "SELECT COUNT(*) AS total\nFROM arcadia.ArcadiaCredentialAccount aca\nINNER JOIN dbo.Client c ON aca.IdClient = c.IdClient\nWHERE c.ProviderClientId = '{{ appsmith.store.accountsSearch?.clientId || \"\" }}'\n  AND aca.Status IN (\n    SELECT value FROM STRING_SPLIT('{{ AccountsUtils.getStatusList() }}', ',')\n  );",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

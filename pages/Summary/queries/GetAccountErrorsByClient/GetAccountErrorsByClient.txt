@@ -1,29 +1,30 @@
 SELECT
-    aa.IdClient AS idClient,
+    aca.IdClient AS idClient,
     c.ClientName AS client_name,
-    aa.IdClientAccount AS idClientAccount,
-    aa.AccountNumber AS accountNumber,
-    aa.NormalizedAccountNumber AS normalizedAccountNumber,
-    aa.ArcadiaAccountId AS id,
-    aa.ArcadiaAccountId AS accountId,
-    aa.ProviderId AS providerId,
-    aa.ProviderName AS providerName,
-    aa.LatestStatementDate AS latestStatementDate,
-    aa.NextExpectedPostDate AS nextExpectedPostDate,
-    aa.Status AS status,
-    aa.Status AS accountStatus,
-    aa.StatusDetail AS statusDetail,
-    aa.StatusDetail AS accountStatusDetail,
-    aa.SummaryAccountId AS summaryAccountId,
-    aa.SummaryAccountNumber AS summaryAccountNumber,
-    aa.AccountType AS type,
-    aa.AccountType AS accountType,
-    aa.VoidedAt AS voidedAt,
-    aa.SyncedOn AS syncedOn
-FROM dbo.ArcadiaAccounts aa
-INNER JOIN dbo.Client c ON aa.IdClient = c.IdClient
+    aca.IdClientAccount AS idClientAccount,
+    aca.AccountNumber AS accountNumber,
+    aca.NormalizedAccountNumber AS normalizedAccountNumber,
+    aca.ArcadiaAccountId AS id,
+    aca.ArcadiaAccountId AS accountId,
+    aca.ArcadiaCredentialId AS credentialId,
+    aca.ProviderId AS providerId,
+    aca.ProviderName AS providerName,
+    aca.LatestStatementDate AS latestStatementDate,
+    aca.NextExpectedPostDate AS nextExpectedPostDate,
+    aca.Status AS status,
+    aca.Status AS accountStatus,
+    aca.StatusDetail AS statusDetail,
+    aca.StatusDetail AS accountStatusDetail,
+    aca.AccountType AS type,
+    aca.AccountType AS accountType,
+    aca.IsActive AS isActive,
+    aca.MissingSince AS missingSince,
+    aca.LastSeenOn AS lastSeenOn,
+    aca.LastSyncedOn AS syncedOn
+FROM arcadia.ArcadiaCredentialAccount aca
+INNER JOIN dbo.Client c ON aca.IdClient = c.IdClient
 WHERE c.ProviderClientId = '{{ appsmith.store.accountsSearch?.clientId || "" }}'
-  AND aa.Status IN (
+  AND aca.Status IN (
     SELECT value FROM STRING_SPLIT('{{ AccountsUtils.getStatusList() }}', ',')
   )
-ORDER BY aa.Status, aa.AccountNumber;
+ORDER BY aca.Status, aca.AccountNumber;

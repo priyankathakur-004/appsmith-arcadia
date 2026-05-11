@@ -1,15 +1,49 @@
+WITH ranked_accounts AS (
+    SELECT
+        aca.IdClientAccount,
+        aca.ArcadiaAccountId,
+        aca.ArcadiaCredentialId,
+        aca.AccountNumber,
+        aca.ProviderId,
+        ROW_NUMBER() OVER (
+            PARTITION BY
+                CASE
+                    WHEN aca.IdClientAccount IS NOT NULL THEN CONCAT('client:', CONVERT(NVARCHAR(50), aca.IdClientAccount))
+                    WHEN aca.ArcadiaAccountId IS NOT NULL THEN CONCAT('arcadia:', aca.ArcadiaAccountId)
+                    ELSE CONCAT(
+                        'fallback:',
+                        ISNULL(CONVERT(NVARCHAR(50), aca.IdClient), ''),
+                        ':',
+                        ISNULL(aca.ArcadiaCredentialId, ''),
+                        ':',
+                        ISNULL(aca.AccountNumber, ''),
+                        ':',
+                        ISNULL(aca.ProviderId, '')
+                    )
+                END
+            ORDER BY
+                CASE WHEN ISNULL(aca.IsActive, 0) = 1 THEN 0 ELSE 1 END,
+                ISNULL(aca.LastSyncedOn, aca.LastSeenOn) DESC,
+                aca.LastSeenOn DESC,
+                aca.LatestStatementDate DESC,
+                aca.ArcadiaCredentialId DESC,
+                aca.ArcadiaAccountId DESC
+        ) AS RowNum
+    FROM arcadia.ArcadiaCredentialAccount aca
+    WHERE 1=1
+      AND (
+        '{{AccClientSelect.selectedOptionValues?.join(",") || ""}}' = ''
+        OR aca.IdClient IN (
+          SELECT CAST(value AS INT) FROM STRING_SPLIT('{{AccClientSelect.selectedOptionValues?.join(",") || ""}}', ',')
+        )
+      )
+      AND (
+        '{{AccStatusSelect.selectedOptionValues?.join(",") || ""}}' = ''
+        OR aca.Status IN (
+          SELECT value FROM STRING_SPLIT('{{AccStatusSelect.selectedOptionValues?.join(",") || ""}}', ',')
+        )
+      )
+)
 SELECT COUNT(1) AS total
-FROM dbo.ArcadiaAccounts aa
-WHERE 1=1
-  AND (
-    '{{AccClientSelect.selectedOptionValues?.join(",") || ""}}' = ''
-    OR aa.IdClient IN (
-      SELECT CAST(value AS INT) FROM STRING_SPLIT('{{AccClientSelect.selectedOptionValues?.join(",") || ""}}', ',')
-    )
-  )
-  AND (
-    '{{AccStatusSelect.selectedOptionValues?.join(",") || ""}}' = ''
-    OR aa.Status IN (
-      SELECT value FROM STRING_SPLIT('{{AccStatusSelect.selectedOptionValues?.join(",") || ""}}', ',')
-    )
-  );
+FROM ranked_accounts ra
+WHERE ra.RowNum = 1;

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT DISTINCT\n    aa.IdClient AS id_client,\n    c.ClientName AS client_name\nFROM dbo.ArcadiaAccounts aa\nINNER JOIN dbo.Client c ON aa.IdClient = c.IdClient\nORDER BY c.ClientName;",
+      "body": "SELECT DISTINCT\n    aca.IdClient AS id_client,\n    c.ClientName AS client_name\nFROM arcadia.ArcadiaCredentialAccount aca\nINNER JOIN dbo.Client c ON c.IdClient = aca.IdClient\nORDER BY c.ClientName, aca.IdClient;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
