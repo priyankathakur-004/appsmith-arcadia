@@ -38,6 +38,18 @@ WITH ranked_accounts AS (
           SELECT CAST(value AS INT) FROM STRING_SPLIT('{{AccClientSelect.selectedOptionValues?.join(",") || ""}}', ',')
         )
       )
+      AND (
+        '{{AccOnlyMatchedCheckbox?.isChecked ? "1" : "0"}}' = '0'
+        OR aca.IdClientAccount IS NOT NULL
+      )
+      AND (
+        '{{AccHasVendorCredCheckbox?.isChecked ? "1" : "0"}}' = '0'
+        OR EXISTS (
+          SELECT 1 FROM dbo.ClientAccount ca
+          WHERE ca.IdClientAccount = aca.IdClientAccount
+            AND ca.IdVendorCredential IS NOT NULL
+        )
+      )
 )
 SELECT
     ra.Status AS status,

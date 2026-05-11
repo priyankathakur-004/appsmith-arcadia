@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT COUNT(1) AS total\nFROM arcadia.ArcadiaCredentialState cs\nWHERE 1=1\n  AND (\n    '{{CredClientSelect.selectedOptionValues?.join(\",\") || \"\"}}' = ''\n    OR cs.IdClient IN (\n      SELECT CAST(value AS INT) FROM STRING_SPLIT('{{CredClientSelect.selectedOptionValues?.join(\",\") || \"\"}}', ',')\n    )\n  )\n  AND (\n    '{{CredStatusSelect.selectedOptionValues?.join(\",\") || \"\"}}' = ''\n    OR cs.Status IN (\n      SELECT value FROM STRING_SPLIT('{{CredStatusSelect.selectedOptionValues?.join(\",\") || \"\"}}', ',')\n    )\n  );",
+      "body": "SELECT COUNT(1) AS total\nFROM arcadia.ArcadiaCredentialState cs\nWHERE 1=1\n  AND (\n    '{{CredClientSelect.selectedOptionValues?.join(\",\") || \"\"}}' = ''\n    OR cs.IdClient IN (\n      SELECT CAST(value AS INT) FROM STRING_SPLIT('{{CredClientSelect.selectedOptionValues?.join(\",\") || \"\"}}', ',')\n    )\n  )\n  AND (\n    '{{CredStatusSelect.selectedOptionValues?.join(\",\") || \"\"}}' = ''\n    OR cs.Status IN (\n      SELECT value FROM STRING_SPLIT('{{CredStatusSelect.selectedOptionValues?.join(\",\") || \"\"}}', ',')\n    )\n  )\n  AND (\n    '{{CredOnlyWithCorrelationCheckbox?.isChecked ? \"1\" : \"0\"}}' = '0'\n    OR cs.CorrelationId IS NOT NULL\n  )\n  AND (\n    '{{CredHideAlreadyExistingCheckbox?.isChecked ? \"1\" : \"0\"}}' = '0'\n    OR NOT EXISTS (\n      SELECT 1 FROM arcadia.ArcadiaCredentialCreateLog cl\n      WHERE cl.IdClient = cs.IdClient\n        AND cl.ArcadiaCredentialId = cs.ArcadiaCredentialId\n        AND cl.Status = 'ALREADY_EXISTS'\n    )\n  );",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

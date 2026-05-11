@@ -1,11 +1,42 @@
+WITH ranked_accounts AS (
+    SELECT
+        aca.IdClient,
+        aca.IdClientAccount,
+        aca.AccountNumber,
+        aca.ArcadiaAccountId,
+        aca.ArcadiaCredentialId,
+        aca.Status,
+        aca.ProviderId,
+        aca.IsActive,
+        aca.LastSyncedOn,
+        aca.LastSeenOn,
+        aca.LatestStatementDate,
+        ROW_NUMBER() OVER (
+            PARTITION BY
+                CASE
+                    WHEN aca.IdClientAccount IS NOT NULL THEN CONCAT('client:', CONVERT(NVARCHAR(50), aca.IdClientAccount))
+                    WHEN aca.ArcadiaAccountId IS NOT NULL THEN CONCAT('arcadia:', aca.ArcadiaAccountId)
+                    ELSE CONCAT('fallback:', ISNULL(CONVERT(NVARCHAR(50), aca.IdClient), ''), ':', ISNULL(aca.ArcadiaCredentialId, ''), ':', ISNULL(aca.AccountNumber, ''), ':', ISNULL(aca.ProviderId, ''))
+                END
+            ORDER BY
+                CASE WHEN ISNULL(aca.IsActive, 0) = 1 THEN 0 ELSE 1 END,
+                ISNULL(aca.LastSyncedOn, aca.LastSeenOn) DESC,
+                aca.LastSeenOn DESC,
+                aca.LatestStatementDate DESC,
+                aca.ArcadiaCredentialId DESC,
+                aca.ArcadiaAccountId DESC
+        ) AS RowNum
+    FROM arcadia.ArcadiaCredentialAccount aca
+    INNER JOIN dbo.Client c ON aca.IdClient = c.IdClient
+    WHERE c.ProviderClientId = '{{appsmith.store.accountsSearch?.clientId || ""}}'
+      AND (
+        ('{{appsmith.store.accountsSearch?.source || ""}}' = 'US'
+          AND aca.Status IN ('DATA_ACCESS_FAILURE', 'CONNECTION_IN_PROGRESS'))
+        OR
+        ('{{appsmith.store.accountsSearch?.source || ""}}' = 'Arcadia'
+          AND aca.Status IN ('INACTIVE', 'CONNECTION_DEACTIVATED', 'CONNECTION_IN_PROGRESS'))
+      )
+)
 SELECT COUNT(*) AS total
-FROM dbo.ArcadiaAccounts aa
-INNER JOIN dbo.Client c ON aa.IdClient = c.IdClient
-WHERE c.ProviderClientId = '{{appsmith.store.accountsSearch?.clientId || ""}}'
-  AND (
-    ('{{appsmith.store.accountsSearch?.source || ""}}' = 'US'
-      AND aa.Status IN ('DATA_ACCESS_FAILURE', 'CONNECTION_IN_PROGRESS'))
-    OR
-    ('{{appsmith.store.accountsSearch?.source || ""}}' = 'Arcadia'
-      AND aa.Status IN ('INACTIVE', 'CONNECTION_DEACTIVATED', 'CONNECTION_IN_PROGRESS'))
-  );
+FROM ranked_accounts ra
+WHERE ra.RowNum = 1;
