@@ -50,7 +50,7 @@
   "rightColumn": 51,
   "shouldScrollContents": true,
   "shouldTruncate": false,
-  "text": "Account Coverage  {{ (GetCoverageAccountSummary.data?.[0]?.total_accounts) ? (((GetCoverageAccountSummary.data[0].linked_in_arcadia || 0) / GetCoverageAccountSummary.data[0].total_accounts) * 100).toFixed(0) + '%' : '0%' }}",
+  "text": "Account Coverage  {{ (GetCoverageAccountSummary.data?.[0]?.eligible_accounts) ? (((GetCoverageAccountSummary.data[0].linked_in_arcadia || 0) / GetCoverageAccountSummary.data[0].eligible_accounts) * 100).toFixed(1) + '%' : '0%' }}",
   "textAlign": "CENTER",
   "textColor": "#3b82f6",
   "topRow": 0,

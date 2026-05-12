@@ -139,6 +139,19 @@ historical_credential_state AS (
         AND cs.ArcadiaCredentialId = aca.ArcadiaCredentialId
     GROUP BY a.IdClient, a.IdClientAccount
 ),
+known_credential_ids AS (
+    -- DSS_API local_credentials_by_account: arcadia.ArcadiaCredential rows tied directly to
+    -- this specific IdClientAccount with a populated ArcadiaCredentialId.
+    SELECT DISTINCT
+        a.IdClient,
+        a.IdClientAccount
+    FROM accounts a
+    INNER JOIN arcadia.ArcadiaCredential ac
+        ON ac.IdClient = a.IdClient
+        AND ac.IdClientAccount = a.IdClientAccount
+    WHERE ac.ArcadiaCredentialId IS NOT NULL
+      AND LTRIM(RTRIM(ac.ArcadiaCredentialId)) <> ''
+),
 has_create_log AS (
     -- DSS_API: latest_create_log + (success OR has credential_id) → in_progress
     --         latest_create_log without success → failed (fallback)
@@ -181,10 +194,8 @@ classified AS (
             WHEN ISNULL(hcs.HasCustomerActionRequired, 0) = 1 THEN 'failed'
             WHEN ISNULL(hcs.HasConnectionInProgress, 0) = 1 THEN 'in_progress'
             -- 5. waiting_on_account_sync (DSS_API "known_credential_ids" branch):
-            --    vendor credential set + provider mapped, nothing failing → in_progress
-            WHEN a.IdVendorCredential IS NOT NULL
-              AND COALESCE(pl.PlanArcadiaProviderId, pv.ArcadiaProviderId) IS NOT NULL
-              THEN 'in_progress'
+            --    account has an ArcadiaCredential row linked to it → in_progress
+            WHEN kci.IdClientAccount IS NOT NULL THEN 'in_progress'
             -- 6. Successful create log → in_progress (waiting_on_account_sync)
             WHEN ISNULL(hcl.HasSuccess, 0) = 1 OR ISNULL(hcl.HasCredentialId, 0) = 1 THEN 'in_progress'
             -- 7. Plan-level reasons (in DSS_API order)
@@ -214,6 +225,7 @@ classified AS (
     LEFT JOIN same_number_unmatched snu ON snu.IdClient = a.IdClient AND snu.IdClientAccount = a.IdClientAccount
     LEFT JOIN matched_credential_state mcs ON mcs.IdClient = a.IdClient AND mcs.IdClientAccount = a.IdClientAccount
     LEFT JOIN historical_credential_state hcs ON hcs.IdClient = a.IdClient AND hcs.IdClientAccount = a.IdClientAccount
+    LEFT JOIN known_credential_ids kci ON kci.IdClient = a.IdClient AND kci.IdClientAccount = a.IdClientAccount
     LEFT JOIN has_create_log hcl ON hcl.IdClient = a.IdClient AND hcl.IdClientAccount = a.IdClientAccount
 ),
 duplicate_groups AS (
