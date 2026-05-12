@@ -194,10 +194,7 @@
   "defaultTab": "All",
   "dynamicBindingPathList": [
     {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
+      "key": "tabsObj.tabn68demhsnl.isVisible"
     },
     {
       "key": "backgroundColor"
@@ -206,7 +203,10 @@
       "key": "borderColor"
     },
     {
-      "key": "tabsObj.tabn68demhsnl.isVisible"
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",

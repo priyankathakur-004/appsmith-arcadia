@@ -8,16 +8,10 @@
   "boxShadow": "none",
   "dynamicBindingPathList": [
     {
-      "key": "fontFamily"
-    },
-    {
-      "key": "truncateButtonColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
       "key": "text"
+    },
+    {
+      "key": "fontFamily"
     }
   ],
   "dynamicHeight": "FIXED",

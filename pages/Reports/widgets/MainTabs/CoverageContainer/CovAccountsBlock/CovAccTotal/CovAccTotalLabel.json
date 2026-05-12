@@ -5,12 +5,6 @@
   "dynamicBindingPathList": [
     {
       "key": "fontFamily"
-    },
-    {
-      "key": "truncateButtonColor"
-    },
-    {
-      "key": "borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -39,7 +33,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 58,
+  "rightColumn": 63,
   "shouldTruncate": false,
   "text": "Total Accounts",
   "textAlign": "LEFT",

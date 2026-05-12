@@ -2,10 +2,11 @@
   "accentColor": "#3b82f6",
   "allowScroll": false,
   "animateLoading": true,
+  "backgroundColor": "#1e293b",
   "borderColor": "#334155",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 34,
+  "bottomRow": 40,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "chartName": "Recent Downloads",
   "chartType": "CUSTOM_ECHART",
@@ -13,19 +14,16 @@
   "customFusionChartConfig": {},
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
+      "key": "customEChartConfig"
+    },
+    {
+      "key": "isVisible"
     },
     {
       "key": "borderRadius"
     },
     {
       "key": "boxShadow"
-    },
-    {
-      "key": "isVisible"
-    },
-    {
-      "key": "customEChartConfig"
     }
   ],
   "dynamicPropertyPathList": [
@@ -40,15 +38,15 @@
   "isVisible": "{{CoverageClientSelect.selectedOptionValues?.length > 0}}",
   "key": "k",
   "labelOrientation": "auto",
-  "leftColumn": 47,
+  "leftColumn": 44,
   "minWidth": 450,
   "mobileBottomRow": 33,
   "mobileLeftColumn": 44,
   "mobileRightColumn": 64,
   "mobileTopRow": 9,
   "needsErrorInfo": true,
-  "originalBottomRow": 76,
-  "originalTopRow": 52,
+  "originalBottomRow": 34,
+  "originalTopRow": 8,
   "parentColumnSpace": 15,
   "parentId": "t0adezkakm",
   "parentRowSpace": 10,
@@ -57,12 +55,11 @@
   "rightColumn": 64,
   "setAdaptiveYMin": false,
   "showDataPointLabel": false,
-  "topRow": 8,
+  "topRow": 9,
   "type": "CHART_WIDGET",
   "version": 1,
   "widgetId": "8hvkarz52h",
   "widgetName": "CovRecentDownloadsChart",
   "xAxisName": "",
-  "yAxisName": "Accounts",
-  "backgroundColor": "#1e293b"
+  "yAxisName": "Accounts"
 }

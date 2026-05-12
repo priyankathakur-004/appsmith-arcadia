@@ -3,13 +3,14 @@
   "borderColor": "#334155",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "0",
-  "bottomRow": 23,
+  "bottomRow": 30,
   "boxShadow": "none",
   "children": [
     {
-      "bottomRow": 100,
+      "bottomRow": 110,
       "canExtend": true,
       "dynamicBindingPathList": [],
+      "dynamicHeight": "AUTO_HEIGHT",
       "dynamicPropertyPathList": [],
       "dynamicTriggerPathList": [],
       "flexLayers": [],
@@ -18,6 +19,8 @@
       "isVisible": true,
       "key": "k",
       "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
       "minHeight": 100,
       "minWidth": 450,
       "mobileBottomRow": 100,
@@ -37,23 +40,15 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "04n20yqqlh",
-      "widgetName": "CovAccInProgressCanvas",
-      "dynamicHeight": "AUTO_HEIGHT",
-      "maxDynamicHeight": 9000,
-      "minDynamicHeight": 4
+      "widgetName": "CovAccInProgressCanvas"
     }
   ],
   "dynamicBindingPathList": [
     {
-      "key": "boxShadow"
-    },
-    {
       "key": "borderRadius"
-    },
-    {
-      "key": "isVisible"
     }
   ],
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "isVisible"
@@ -74,8 +69,8 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 15,
   "needsErrorInfo": false,
-  "originalBottomRow": 23,
-  "originalTopRow": 15,
+  "originalBottomRow": 30,
+  "originalTopRow": 19,
   "parentColumnSpace": 15,
   "parentId": "77sk442lzo",
   "parentRowSpace": 10,
@@ -83,10 +78,9 @@
   "responsiveBehavior": "fill",
   "rightColumn": 16,
   "shouldScrollContents": false,
-  "topRow": 15,
+  "topRow": 19,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "keb3mnbr39",
-  "widgetName": "CovAccInProgress",
-  "dynamicHeight": "AUTO_HEIGHT"
+  "widgetName": "CovAccInProgress"
 }

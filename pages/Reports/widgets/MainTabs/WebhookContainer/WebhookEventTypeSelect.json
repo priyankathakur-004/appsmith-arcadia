@@ -6,13 +6,13 @@
   "defaultOptionValue": "[\"EXISTING_DATA_UPDATED\",\"NEW_DATA_AVAILABLE\"]",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
+      "key": "sourceData"
     },
     {
       "key": "borderRadius"
     },
     {
-      "key": "sourceData"
+      "key": "accentColor"
     }
   ],
   "dynamicHeight": "FIXED",

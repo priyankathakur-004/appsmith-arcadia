@@ -36,22 +36,7 @@
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
-    },
-    {
       "key": "tableData"
-    },
-    {
-      "key": "totalRecordsCount"
-    },
-    {
-      "key": "isVisible"
     },
     {
       "key": "primaryColumns.idClient.computedValue"
@@ -60,22 +45,49 @@
       "key": "primaryColumns.clientName.computedValue"
     },
     {
+      "key": "primaryColumns.latestStatementDate.computedValue"
+    },
+    {
       "key": "primaryColumns.idClientAccount.computedValue"
     },
     {
-      "key": "primaryColumns.arcadiaAccountId.computedValue"
+      "key": "primaryColumns.statusDetail.computedValue"
     },
     {
-      "key": "primaryColumns.credentialId.computedValue"
+      "key": "primaryColumns.lastSyncedOn.computedValue"
     },
     {
       "key": "primaryColumns.accountNumber.computedValue"
     },
     {
-      "key": "primaryColumns.normalizedAccountNumber.computedValue"
+      "key": "primaryColumns.isActive.computedValue"
+    },
+    {
+      "key": "primaryColumns.arcadiaAccountId.computedValue"
+    },
+    {
+      "key": "primaryColumns.credentialStatus.computedValue"
+    },
+    {
+      "key": "primaryColumns.missingSince.computedValue"
+    },
+    {
+      "key": "primaryColumns.bucket.computedValue"
+    },
+    {
+      "key": "primaryColumns.lastSeenOn.computedValue"
     },
     {
       "key": "primaryColumns.providerId.computedValue"
+    },
+    {
+      "key": "primaryColumns.normalizedAccountNumber.computedValue"
+    },
+    {
+      "key": "primaryColumns.credentialId.computedValue"
+    },
+    {
+      "key": "primaryColumns.credentialStatusDetail.computedValue"
     },
     {
       "key": "primaryColumns.providerName.computedValue"
@@ -84,31 +96,19 @@
       "key": "primaryColumns.status.computedValue"
     },
     {
-      "key": "primaryColumns.statusDetail.computedValue"
+      "key": "totalRecordsCount"
     },
     {
-      "key": "primaryColumns.isActive.computedValue"
+      "key": "isVisible"
     },
     {
-      "key": "primaryColumns.missingSince.computedValue"
+      "key": "accentColor"
     },
     {
-      "key": "primaryColumns.lastSeenOn.computedValue"
+      "key": "borderRadius"
     },
     {
-      "key": "primaryColumns.lastSyncedOn.computedValue"
-    },
-    {
-      "key": "primaryColumns.latestStatementDate.computedValue"
-    },
-    {
-      "key": "primaryColumns.credentialStatus.computedValue"
-    },
-    {
-      "key": "primaryColumns.credentialStatusDetail.computedValue"
-    },
-    {
-      "key": "primaryColumns.bucket.computedValue"
+      "key": "boxShadow"
     }
   ],
   "dynamicPropertyPathList": [

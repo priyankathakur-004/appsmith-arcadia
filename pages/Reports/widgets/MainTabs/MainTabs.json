@@ -5,7 +5,7 @@
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": 1,
-  "bottomRow": 133,
+  "bottomRow": 145,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
@@ -56,7 +56,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1270,
+      "bottomRow": 1280,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -101,7 +101,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1160,
+      "bottomRow": 1280,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -146,7 +146,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1160,
+      "bottomRow": 1280,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -191,7 +191,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1160,
+      "bottomRow": 1280,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -238,16 +238,16 @@
   "defaultTab": "Client Coverage",
   "dynamicBindingPathList": [
     {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
-    },
-    {
       "key": "backgroundColor"
     },
     {
       "key": "borderColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -266,7 +266,7 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 15,
   "needsErrorInfo": false,
-  "originalBottomRow": 159,
+  "originalBottomRow": 145,
   "originalTopRow": 13,
   "parentColumnSpace": 16.765625,
   "parentId": "0",

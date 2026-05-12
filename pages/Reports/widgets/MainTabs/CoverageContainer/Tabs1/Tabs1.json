@@ -5,12 +5,12 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": 1,
-  "bottomRow": 112,
+  "bottomRow": 124,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 740,
+      "bottomRow": 770,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -56,7 +56,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 740,
+      "bottomRow": 770,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -101,16 +101,16 @@
       "widgetName": "Canvas13"
     }
   ],
-  "defaultTab": "Tab 1",
+  "defaultTab": "Credential Coverage Details",
   "dynamicBindingPathList": [
+    {
+      "key": "backgroundColor"
+    },
     {
       "key": "borderRadius"
     },
     {
       "key": "boxShadow"
-    },
-    {
-      "key": "backgroundColor"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -129,8 +129,8 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 38,
   "needsErrorInfo": false,
-  "originalBottomRow": 112,
-  "originalTopRow": 34,
+  "originalBottomRow": 124,
+  "originalTopRow": 43,
   "parentColumnSpace": 19.40625,
   "parentId": "t0adezkakm",
   "parentRowSpace": 10,
@@ -157,7 +157,7 @@
       "widgetId": "oxt7jsht2g"
     }
   },
-  "topRow": 34,
+  "topRow": 43,
   "type": "TABS_WIDGET",
   "version": 3,
   "widgetId": "d75o7s174c",

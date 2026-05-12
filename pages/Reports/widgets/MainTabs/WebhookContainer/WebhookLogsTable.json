@@ -28,22 +28,19 @@
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
-    },
-    {
       "key": "tableData"
     },
     {
-      "key": "totalRecordsCount"
+      "key": "primaryColumns.error_message.computedValue"
     },
     {
-      "key": "primaryColumns.id.computedValue"
+      "key": "primaryColumns.account_number.computedValue"
+    },
+    {
+      "key": "primaryColumns.received_at_et.computedValue"
+    },
+    {
+      "key": "primaryColumns.account_ids.computedValue"
     },
     {
       "key": "primaryColumns.event_type.computedValue"
@@ -55,13 +52,10 @@
       "key": "primaryColumns.webhook_id.computedValue"
     },
     {
+      "key": "primaryColumns.id.computedValue"
+    },
+    {
       "key": "primaryColumns.statement_id.computedValue"
-    },
-    {
-      "key": "primaryColumns.account_ids.computedValue"
-    },
-    {
-      "key": "primaryColumns.account_number.computedValue"
     },
     {
       "key": "primaryColumns.client_name.computedValue"
@@ -70,10 +64,16 @@
       "key": "primaryColumns.status.computedValue"
     },
     {
-      "key": "primaryColumns.error_message.computedValue"
+      "key": "totalRecordsCount"
     },
     {
-      "key": "primaryColumns.received_at_et.computedValue"
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
     }
   ],
   "dynamicPropertyPathList": [

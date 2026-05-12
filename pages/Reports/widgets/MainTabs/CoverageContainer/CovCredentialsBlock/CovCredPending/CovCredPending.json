@@ -3,13 +3,14 @@
   "borderColor": "#334155",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "0",
-  "bottomRow": 14,
+  "bottomRow": 18,
   "boxShadow": "none",
   "children": [
     {
-      "bottomRow": 100,
+      "bottomRow": 120,
       "canExtend": true,
       "dynamicBindingPathList": [],
+      "dynamicHeight": "AUTO_HEIGHT",
       "dynamicPropertyPathList": [],
       "dynamicTriggerPathList": [],
       "flexLayers": [],
@@ -18,6 +19,8 @@
       "isVisible": true,
       "key": "k",
       "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
       "minHeight": 100,
       "minWidth": 450,
       "mobileBottomRow": 100,
@@ -37,23 +40,15 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "ganbi71fkp",
-      "widgetName": "CovCredPendingCanvas",
-      "dynamicHeight": "AUTO_HEIGHT",
-      "maxDynamicHeight": 9000,
-      "minDynamicHeight": 4
+      "widgetName": "CovCredPendingCanvas"
     }
   ],
   "dynamicBindingPathList": [
     {
-      "key": "boxShadow"
-    },
-    {
       "key": "borderRadius"
-    },
-    {
-      "key": "isVisible"
     }
   ],
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "isVisible"
@@ -74,7 +69,7 @@
   "mobileRightColumn": 62,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "originalBottomRow": 14,
+  "originalBottomRow": 18,
   "originalTopRow": 6,
   "parentColumnSpace": 15,
   "parentId": "pudcy8ou6k",
@@ -87,6 +82,5 @@
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "ml5mdqrz88",
-  "widgetName": "CovCredPending",
-  "dynamicHeight": "AUTO_HEIGHT"
+  "widgetName": "CovCredPending"
 }

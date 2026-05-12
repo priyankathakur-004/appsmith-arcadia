@@ -60,16 +60,49 @@
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
-    },
-    {
       "key": "tableData"
+    },
+    {
+      "key": "primaryColumns.account_number.computedValue"
+    },
+    {
+      "key": "primaryColumns.voided_at.computedValue"
+    },
+    {
+      "key": "primaryColumns.account_type.computedValue"
+    },
+    {
+      "key": "primaryColumns.next_expected_post_date.computedValue"
+    },
+    {
+      "key": "primaryColumns.synced_on.computedValue"
+    },
+    {
+      "key": "primaryColumns.summary_account_number.computedValue"
+    },
+    {
+      "key": "primaryColumns.latest_statement_date.computedValue"
+    },
+    {
+      "key": "primaryColumns.summary_account_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.status_detail.computedValue"
+    },
+    {
+      "key": "primaryColumns.provider_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.arcadia_account_id.computedValue"
+    },
+    {
+      "key": "primaryColumns.provider_name.computedValue"
+    },
+    {
+      "key": "primaryColumns.client_name.computedValue"
+    },
+    {
+      "key": "primaryColumns.normalized_account_number.computedValue"
     },
     {
       "key": "primaryColumns.status.computedValue"
@@ -78,46 +111,13 @@
       "key": "totalRecordsCount"
     },
     {
-      "key": "primaryColumns.account_number.computedValue"
+      "key": "accentColor"
     },
     {
-      "key": "primaryColumns.normalized_account_number.computedValue"
+      "key": "borderRadius"
     },
     {
-      "key": "primaryColumns.arcadia_account_id.computedValue"
-    },
-    {
-      "key": "primaryColumns.status_detail.computedValue"
-    },
-    {
-      "key": "primaryColumns.provider_name.computedValue"
-    },
-    {
-      "key": "primaryColumns.provider_id.computedValue"
-    },
-    {
-      "key": "primaryColumns.account_type.computedValue"
-    },
-    {
-      "key": "primaryColumns.latest_statement_date.computedValue"
-    },
-    {
-      "key": "primaryColumns.next_expected_post_date.computedValue"
-    },
-    {
-      "key": "primaryColumns.summary_account_id.computedValue"
-    },
-    {
-      "key": "primaryColumns.summary_account_number.computedValue"
-    },
-    {
-      "key": "primaryColumns.synced_on.computedValue"
-    },
-    {
-      "key": "primaryColumns.voided_at.computedValue"
-    },
-    {
-      "key": "primaryColumns.client_name.computedValue"
+      "key": "boxShadow"
     }
   ],
   "dynamicPropertyPathList": [

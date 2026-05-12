@@ -3,13 +3,14 @@
   "borderColor": "#334155",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "0",
-  "bottomRow": 23,
+  "bottomRow": 29,
   "boxShadow": "none",
   "children": [
     {
-      "bottomRow": 100,
+      "bottomRow": 110,
       "canExtend": true,
       "dynamicBindingPathList": [],
+      "dynamicHeight": "AUTO_HEIGHT",
       "dynamicPropertyPathList": [],
       "dynamicTriggerPathList": [],
       "flexLayers": [],
@@ -18,6 +19,8 @@
       "isVisible": true,
       "key": "k",
       "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
       "minHeight": 100,
       "minWidth": 450,
       "mobileBottomRow": 100,
@@ -37,23 +40,15 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "dvq3b2gjqu",
-      "widgetName": "CovAccFailedCanvas",
-      "dynamicHeight": "AUTO_HEIGHT",
-      "maxDynamicHeight": 9000,
-      "minDynamicHeight": 4
+      "widgetName": "CovAccFailedCanvas"
     }
   ],
   "dynamicBindingPathList": [
     {
-      "key": "boxShadow"
-    },
-    {
       "key": "borderRadius"
-    },
-    {
-      "key": "isVisible"
     }
   ],
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "isVisible"
@@ -74,8 +69,8 @@
   "mobileRightColumn": 46,
   "mobileTopRow": 15,
   "needsErrorInfo": false,
-  "originalBottomRow": 23,
-  "originalTopRow": 15,
+  "originalBottomRow": 29,
+  "originalTopRow": 18,
   "parentColumnSpace": 15,
   "parentId": "77sk442lzo",
   "parentRowSpace": 10,
@@ -83,10 +78,9 @@
   "responsiveBehavior": "fill",
   "rightColumn": 46,
   "shouldScrollContents": false,
-  "topRow": 15,
+  "topRow": 18,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "3pwaiz2gpw",
-  "widgetName": "CovAccFailed",
-  "dynamicHeight": "AUTO_HEIGHT"
+  "widgetName": "CovAccFailed"
 }

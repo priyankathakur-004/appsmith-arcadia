@@ -3,13 +3,14 @@
   "borderColor": "#334155",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "0",
-  "bottomRow": 14,
+  "bottomRow": 19,
   "boxShadow": "none",
   "children": [
     {
-      "bottomRow": 100,
+      "bottomRow": 120,
       "canExtend": true,
       "dynamicBindingPathList": [],
+      "dynamicHeight": "AUTO_HEIGHT",
       "dynamicPropertyPathList": [],
       "dynamicTriggerPathList": [],
       "flexLayers": [],
@@ -18,6 +19,8 @@
       "isVisible": true,
       "key": "k",
       "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
       "minHeight": 100,
       "minWidth": 450,
       "mobileBottomRow": 100,
@@ -37,23 +40,15 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "1pp4ulnf2k",
-      "widgetName": "CovCredConnectedCanvas",
-      "dynamicHeight": "AUTO_HEIGHT",
-      "maxDynamicHeight": 9000,
-      "minDynamicHeight": 4
+      "widgetName": "CovCredConnectedCanvas"
     }
   ],
   "dynamicBindingPathList": [
     {
-      "key": "boxShadow"
-    },
-    {
       "key": "borderRadius"
-    },
-    {
-      "key": "isVisible"
     }
   ],
+  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {
       "key": "isVisible"
@@ -74,8 +69,8 @@
   "mobileRightColumn": 31,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "originalBottomRow": 14,
-  "originalTopRow": 6,
+  "originalBottomRow": 19,
+  "originalTopRow": 7,
   "parentColumnSpace": 15,
   "parentId": "pudcy8ou6k",
   "parentRowSpace": 10,
@@ -83,10 +78,9 @@
   "responsiveBehavior": "fill",
   "rightColumn": 31,
   "shouldScrollContents": false,
-  "topRow": 6,
+  "topRow": 7,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "520dogi6o8",
-  "widgetName": "CovCredConnected",
-  "dynamicHeight": "AUTO_HEIGHT"
+  "widgetName": "CovCredConnected"
 }

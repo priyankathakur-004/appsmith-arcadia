@@ -56,18 +56,6 @@
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
-    },
-    {
-      "key": "totalRecordsCount"
-    },
-    {
       "key": "tableData"
     },
     {
@@ -77,31 +65,43 @@
       "key": "primaryColumns.ProviderName.computedValue"
     },
     {
+      "key": "primaryColumns.UpdatedBy.computedValue"
+    },
+    {
+      "key": "primaryColumns.SyncedOn.computedValue"
+    },
+    {
+      "key": "primaryColumns.VendorName.computedValue"
+    },
+    {
       "key": "primaryColumns.Country.computedValue"
     },
     {
       "key": "primaryColumns.Region.computedValue"
     },
     {
-      "key": "primaryColumns.IdVendor.computedValue"
-    },
-    {
-      "key": "primaryColumns.VendorName.computedValue"
+      "key": "primaryColumns.UpdatedOn.computedValue"
     },
     {
       "key": "primaryColumns.Website.computedValue"
     },
     {
-      "key": "primaryColumns.SyncedOn.computedValue"
-    },
-    {
-      "key": "primaryColumns.UpdatedOn.computedValue"
-    },
-    {
-      "key": "primaryColumns.UpdatedBy.computedValue"
+      "key": "primaryColumns.IdVendor.computedValue"
     },
     {
       "key": "primaryColumns.CurrentVersionNumber.computedValue"
+    },
+    {
+      "key": "totalRecordsCount"
+    },
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
     }
   ],
   "dynamicPropertyPathList": [

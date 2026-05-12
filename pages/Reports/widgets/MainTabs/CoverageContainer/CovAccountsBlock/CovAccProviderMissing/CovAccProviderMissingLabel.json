@@ -1,16 +1,10 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 5,
+  "bottomRow": 6,
   "dynamicBindingPathList": [
     {
       "key": "fontFamily"
-    },
-    {
-      "key": "truncateButtonColor"
-    },
-    {
-      "key": "borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -31,7 +25,7 @@
   "mobileRightColumn": 58,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 4,
+  "originalBottomRow": 6,
   "originalTopRow": 1,
   "overflow": "NONE",
   "parentColumnSpace": 15,

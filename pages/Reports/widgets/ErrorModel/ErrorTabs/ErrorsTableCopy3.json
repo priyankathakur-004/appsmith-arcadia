@@ -86,124 +86,7 @@
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
-    },
-    {
       "key": "tableData"
-    },
-    {
-      "key": "primaryColumns.accountNumber.computedValue"
-    },
-    {
-      "key": "primaryColumns.billingCycle.computedValue"
-    },
-    {
-      "key": "primaryColumns.correlationIds.computedValue"
-    },
-    {
-      "key": "primaryColumns.createdAt.computedValue"
-    },
-    {
-      "key": "primaryColumns.createdBy.computedValue"
-    },
-    {
-      "key": "primaryColumns.customData.computedValue"
-    },
-    {
-      "key": "primaryColumns.firstExtractedAt.computedValue"
-    },
-    {
-      "key": "primaryColumns.id.computedValue"
-    },
-    {
-      "key": "primaryColumns.isAccessible.computedValue"
-    },
-    {
-      "key": "primaryColumns.isCustomerActionRequired.computedValue"
-    },
-    {
-      "key": "primaryColumns.isHistoryFulfilled.computedValue"
-    },
-    {
-      "key": "primaryColumns.isIntervalsThirdPartyPortalAccount.computedValue"
-    },
-    {
-      "key": "primaryColumns.isStatementsProductActive.computedValue"
-    },
-    {
-      "key": "primaryColumns.lastModifiedAt.computedValue"
-    },
-    {
-      "key": "primaryColumns.lastModifiedBy.computedValue"
-    },
-    {
-      "key": "primaryColumns.lastSuccessfulStatementExtractionAt.computedValue"
-    },
-    {
-      "key": "primaryColumns.latestNewStatementAt.computedValue"
-    },
-    {
-      "key": "primaryColumns.latestStatementDate.computedValue"
-    },
-    {
-      "key": "primaryColumns.nextExpectedPostDate.computedValue"
-    },
-    {
-      "key": "primaryColumns.normalizedAccountNumber.computedValue"
-    },
-    {
-      "key": "primaryColumns.prepaid.computedValue"
-    },
-    {
-      "key": "primaryColumns.providerClassification.computedValue"
-    },
-    {
-      "key": "primaryColumns.siteNames.computedValue"
-    },
-    {
-      "key": "primaryColumns.status.computedValue"
-    },
-    {
-      "key": "primaryColumns.statusDetail.computedValue"
-    },
-    {
-      "key": "primaryColumns.summaryAccountId.computedValue"
-    },
-    {
-      "key": "primaryColumns.summaryAccountNumber.computedValue"
-    },
-    {
-      "key": "primaryColumns.type.computedValue"
-    },
-    {
-      "key": "primaryColumns.voidedAt.computedValue"
-    },
-    {
-      "key": "totalRecordsCount"
-    },
-    {
-      "key": "primaryColumns.providerId.computedValue"
-    },
-    {
-      "key": "primaryColumns.providerName.computedValue"
-    },
-    {
-      "key": "primaryColumns.providerCountry.computedValue"
-    },
-    {
-      "key": "primaryColumns.providerIsIntervalDataSupported.computedValue"
-    },
-    {
-      "key": "primaryColumns.providerIsIntervalFileUploadSupported.computedValue"
-    },
-    {
-      "key": "primaryColumns.providerIsRealTimeCredentialValidationSupported.computedValue"
     },
     {
       "key": "primaryColumns.providerIntervalServiceTypes.computedValue"
@@ -212,16 +95,133 @@
       "key": "primaryColumns.serviceType.computedValue"
     },
     {
-      "key": "primaryColumns.serviceTypeClassification.computedValue"
+      "key": "primaryColumns.lastModifiedAt.computedValue"
     },
     {
-      "key": "primaryColumns.accountId.computedValue"
+      "key": "primaryColumns.providerIsIntervalFileUploadSupported.computedValue"
+    },
+    {
+      "key": "primaryColumns.customData.computedValue"
+    },
+    {
+      "key": "primaryColumns.statusDetail.computedValue"
+    },
+    {
+      "key": "primaryColumns.type.computedValue"
+    },
+    {
+      "key": "primaryColumns.providerIsIntervalDataSupported.computedValue"
     },
     {
       "key": "primaryColumns.accountStatus.computedValue"
     },
     {
+      "key": "primaryColumns.createdAt.computedValue"
+    },
+    {
+      "key": "primaryColumns.summaryAccountId.computedValue"
+    },
+    {
+      "key": "primaryColumns.providerIsRealTimeCredentialValidationSupported.computedValue"
+    },
+    {
+      "key": "primaryColumns.latestNewStatementAt.computedValue"
+    },
+    {
+      "key": "primaryColumns.providerId.computedValue"
+    },
+    {
+      "key": "primaryColumns.correlationIds.computedValue"
+    },
+    {
+      "key": "primaryColumns.id.computedValue"
+    },
+    {
+      "key": "primaryColumns.providerName.computedValue"
+    },
+    {
+      "key": "primaryColumns.providerClassification.computedValue"
+    },
+    {
       "key": "primaryColumns.accountStatusDetail.computedValue"
+    },
+    {
+      "key": "primaryColumns.isAccessible.computedValue"
+    },
+    {
+      "key": "primaryColumns.providerCountry.computedValue"
+    },
+    {
+      "key": "primaryColumns.latestStatementDate.computedValue"
+    },
+    {
+      "key": "primaryColumns.nextExpectedPostDate.computedValue"
+    },
+    {
+      "key": "primaryColumns.serviceTypeClassification.computedValue"
+    },
+    {
+      "key": "primaryColumns.lastModifiedBy.computedValue"
+    },
+    {
+      "key": "primaryColumns.prepaid.computedValue"
+    },
+    {
+      "key": "primaryColumns.accountNumber.computedValue"
+    },
+    {
+      "key": "primaryColumns.lastSuccessfulStatementExtractionAt.computedValue"
+    },
+    {
+      "key": "primaryColumns.firstExtractedAt.computedValue"
+    },
+    {
+      "key": "primaryColumns.accountId.computedValue"
+    },
+    {
+      "key": "primaryColumns.createdBy.computedValue"
+    },
+    {
+      "key": "primaryColumns.isIntervalsThirdPartyPortalAccount.computedValue"
+    },
+    {
+      "key": "primaryColumns.billingCycle.computedValue"
+    },
+    {
+      "key": "primaryColumns.normalizedAccountNumber.computedValue"
+    },
+    {
+      "key": "primaryColumns.isCustomerActionRequired.computedValue"
+    },
+    {
+      "key": "primaryColumns.summaryAccountNumber.computedValue"
+    },
+    {
+      "key": "primaryColumns.isHistoryFulfilled.computedValue"
+    },
+    {
+      "key": "primaryColumns.voidedAt.computedValue"
+    },
+    {
+      "key": "primaryColumns.isStatementsProductActive.computedValue"
+    },
+    {
+      "key": "primaryColumns.siteNames.computedValue"
+    },
+    {
+      "key": "primaryColumns.status.computedValue"
+    },
+    {
+      "key": "totalRecordsCount"
+    },
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
     }
   ],
   "dynamicPropertyPathList": [

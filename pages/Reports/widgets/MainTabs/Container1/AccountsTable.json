@@ -41,52 +41,7 @@
   "delimiter": ",",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
-    },
-    {
       "key": "tableData"
-    },
-    {
-      "key": "totalRecordsCount"
-    },
-    {
-      "key": "primaryColumns.accountNumber.computedValue"
-    },
-    {
-      "key": "primaryColumns.id.computedValue"
-    },
-    {
-      "key": "primaryColumns.latestStatementDate.computedValue"
-    },
-    {
-      "key": "primaryColumns.nextExpectedPostDate.computedValue"
-    },
-    {
-      "key": "primaryColumns.normalizedAccountNumber.computedValue"
-    },
-    {
-      "key": "primaryColumns.statusDetail.computedValue"
-    },
-    {
-      "key": "primaryColumns.type.computedValue"
-    },
-    {
-      "key": "primaryColumns.providerId.computedValue"
-    },
-    {
-      "key": "primaryColumns.providerName.computedValue"
-    },
-    {
-      "key": "primaryColumns.accountId.computedValue"
-    },
-    {
-      "key": "primaryColumns.accountStatus.computedValue"
     },
     {
       "key": "primaryColumns.accountStatusDetail.computedValue"
@@ -95,34 +50,82 @@
       "key": "primaryColumns.idClient.computedValue"
     },
     {
-      "key": "primaryColumns.client_name.computedValue"
+      "key": "primaryColumns.latestStatementDate.computedValue"
     },
     {
-      "key": "primaryColumns.idClientAccount.computedValue"
-    },
-    {
-      "key": "primaryColumns.credentialId.computedValue"
-    },
-    {
-      "key": "primaryColumns.accountType.computedValue"
+      "key": "primaryColumns.nextExpectedPostDate.computedValue"
     },
     {
       "key": "primaryColumns.isExcluded.computedValue"
     },
     {
-      "key": "primaryColumns.isActive.computedValue"
+      "key": "primaryColumns.accountType.computedValue"
     },
     {
-      "key": "primaryColumns.missingSince.computedValue"
+      "key": "primaryColumns.idClientAccount.computedValue"
     },
     {
-      "key": "primaryColumns.lastSeenOn.computedValue"
+      "key": "primaryColumns.syncedOn.computedValue"
+    },
+    {
+      "key": "primaryColumns.statusDetail.computedValue"
     },
     {
       "key": "primaryColumns.lastSyncedOn.computedValue"
     },
     {
-      "key": "primaryColumns.syncedOn.computedValue"
+      "key": "primaryColumns.accountNumber.computedValue"
+    },
+    {
+      "key": "primaryColumns.isActive.computedValue"
+    },
+    {
+      "key": "primaryColumns.type.computedValue"
+    },
+    {
+      "key": "primaryColumns.missingSince.computedValue"
+    },
+    {
+      "key": "primaryColumns.accountStatus.computedValue"
+    },
+    {
+      "key": "primaryColumns.accountId.computedValue"
+    },
+    {
+      "key": "primaryColumns.lastSeenOn.computedValue"
+    },
+    {
+      "key": "primaryColumns.providerId.computedValue"
+    },
+    {
+      "key": "primaryColumns.normalizedAccountNumber.computedValue"
+    },
+    {
+      "key": "primaryColumns.credentialId.computedValue"
+    },
+    {
+      "key": "primaryColumns.id.computedValue"
+    },
+    {
+      "key": "primaryColumns.client_name.computedValue"
+    },
+    {
+      "key": "primaryColumns.providerName.computedValue"
+    },
+    {
+      "key": "primaryColumns.status.computedValue"
+    },
+    {
+      "key": "totalRecordsCount"
+    },
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
     }
   ],
   "dynamicPropertyPathList": [

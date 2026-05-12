@@ -4,16 +4,10 @@
   "bottomRow": 10,
   "dynamicBindingPathList": [
     {
-      "key": "fontFamily"
-    },
-    {
-      "key": "truncateButtonColor"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
       "key": "text"
+    },
+    {
+      "key": "fontFamily"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -25,7 +19,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "k",
-  "leftColumn": 2,
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -34,15 +28,15 @@
   "mobileRightColumn": 58,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "originalBottomRow": 33,
-  "originalTopRow": 28,
+  "originalBottomRow": 10,
+  "originalTopRow": 5,
   "overflow": "NONE",
   "parentColumnSpace": 15,
   "parentId": "1pp4ulnf2k",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 58,
+  "rightColumn": 54,
   "shouldTruncate": false,
   "text": "{{GetCoverageCredentialSummary.data?.[0]?.connected_in_arcadia ?? 0}}",
   "textAlign": "LEFT",
