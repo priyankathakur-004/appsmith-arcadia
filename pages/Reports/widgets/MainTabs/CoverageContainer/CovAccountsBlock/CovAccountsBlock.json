@@ -37,7 +37,10 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "77sk442lzo",
-      "widgetName": "CovAccountsBlockCanvas"
+      "widgetName": "CovAccountsBlockCanvas",
+      "dynamicHeight": "AUTO_HEIGHT",
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4
     }
   ],
   "dynamicBindingPathList": [
@@ -73,10 +76,11 @@
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
   "rightColumn": 44,
-  "shouldScrollContents": false,
+  "shouldScrollContents": true,
   "topRow": 9,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "f3h1806mgy",
-  "widgetName": "CovAccountsBlock"
+  "widgetName": "CovAccountsBlock",
+  "dynamicHeight": "AUTO_HEIGHT"
 }

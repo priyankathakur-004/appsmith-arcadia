@@ -37,7 +37,10 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "v5apldeer7",
-      "widgetName": "CovAccProviderMissingCanvas"
+      "widgetName": "CovAccProviderMissingCanvas",
+      "dynamicHeight": "AUTO_HEIGHT",
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4
     }
   ],
   "dynamicBindingPathList": [
@@ -84,5 +87,6 @@
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "35g1vv1r3f",
-  "widgetName": "CovAccProviderMissing"
+  "widgetName": "CovAccProviderMissing",
+  "dynamicHeight": "AUTO_HEIGHT"
 }

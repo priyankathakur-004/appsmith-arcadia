@@ -28,7 +28,7 @@
       "originalBottomRow": 100,
       "originalTopRow": 0,
       "parentColumnSpace": 1,
-      "parentId": "wgqoz98ktj",
+      "parentId": "520dogi6o8",
       "parentRowSpace": 10,
       "renderMode": "CANVAS",
       "responsiveBehavior": "fill",
@@ -36,8 +36,11 @@
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
-      "widgetId": "akwff40kqs",
-      "widgetName": "CovAccTotalCanvas"
+      "widgetId": "1pp4ulnf2k",
+      "widgetName": "CovCredConnectedCanvas",
+      "dynamicHeight": "AUTO_HEIGHT",
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4
     }
   ],
   "dynamicBindingPathList": [
@@ -68,21 +71,22 @@
   "minWidth": 450,
   "mobileBottomRow": 14,
   "mobileLeftColumn": 1,
-  "mobileRightColumn": 16,
+  "mobileRightColumn": 31,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
   "originalBottomRow": 14,
   "originalTopRow": 6,
   "parentColumnSpace": 15,
-  "parentId": "77sk442lzo",
+  "parentId": "pudcy8ou6k",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 16,
+  "rightColumn": 31,
   "shouldScrollContents": false,
   "topRow": 6,
   "type": "CONTAINER_WIDGET",
   "version": 1,
-  "widgetId": "wgqoz98ktj",
-  "widgetName": "CovAccTotal"
+  "widgetId": "520dogi6o8",
+  "widgetName": "CovCredConnected",
+  "dynamicHeight": "AUTO_HEIGHT"
 }

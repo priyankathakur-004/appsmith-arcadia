@@ -37,7 +37,10 @@
       "type": "CANVAS_WIDGET",
       "version": 1,
       "widgetId": "04n20yqqlh",
-      "widgetName": "CovAccInProgressCanvas"
+      "widgetName": "CovAccInProgressCanvas",
+      "dynamicHeight": "AUTO_HEIGHT",
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4
     }
   ],
   "dynamicBindingPathList": [
@@ -84,5 +87,6 @@
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "keb3mnbr39",
-  "widgetName": "CovAccInProgress"
+  "widgetName": "CovAccInProgress",
+  "dynamicHeight": "AUTO_HEIGHT"
 }
