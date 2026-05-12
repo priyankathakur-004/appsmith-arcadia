@@ -47,7 +47,7 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 5,
   "needsErrorInfo": false,
-  "onOptionChange": "",
+  "onOptionChange": "{{GetCoverageAccountSummary.run(); GetCoverageCredentialSummary.run(); GetRecentDownloads.run(); GetCoverageCredentialList.run(); GetCoverageAccountList.run();}}",
   "optionLabel": "client_name",
   "optionValue": "id_client",
   "originalBottomRow": 12,

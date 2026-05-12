@@ -1,0 +1,88 @@
+{
+  "backgroundColor": "#1e293b",
+  "borderColor": "#334155",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 33,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "children": [
+    {
+      "bottomRow": 100,
+      "canExtend": true,
+      "dynamicBindingPathList": [],
+      "dynamicPropertyPathList": [],
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isCanvas": true,
+      "isLoading": false,
+      "isVisible": true,
+      "key": "k",
+      "leftColumn": 0,
+      "minHeight": 100,
+      "minWidth": 450,
+      "mobileBottomRow": 100,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 960,
+      "mobileTopRow": 0,
+      "needsErrorInfo": false,
+      "originalBottomRow": 100,
+      "originalTopRow": 0,
+      "parentColumnSpace": 1,
+      "parentId": "35g1vv1r3f",
+      "parentRowSpace": 10,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 960,
+      "topRow": 0,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "v5apldeer7",
+      "widgetName": "CovAccProviderMissingCanvas"
+    }
+  ],
+  "dynamicBindingPathList": [
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isCanvas": true,
+  "isLoading": false,
+  "isVisible": "{{CoverageClientSelect.selectedOptionValues?.length > 0}}",
+  "key": "k",
+  "leftColumn": 38,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 33,
+  "mobileLeftColumn": 38,
+  "mobileRightColumn": 44,
+  "mobileTopRow": 23,
+  "needsErrorInfo": false,
+  "originalBottomRow": 33,
+  "originalTopRow": 23,
+  "parentColumnSpace": 15,
+  "parentId": "t0adezkakm",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 44,
+  "shouldScrollContents": false,
+  "topRow": 23,
+  "type": "CONTAINER_WIDGET",
+  "version": 1,
+  "widgetId": "35g1vv1r3f",
+  "widgetName": "CovAccProviderMissing"
+}

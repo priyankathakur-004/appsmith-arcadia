@@ -1,0 +1,56 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 6,
+  "dynamicBindingPathList": [
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "2.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "k",
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 6,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 58,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "originalBottomRow": 6,
+  "originalTopRow": 4,
+  "overflow": "NONE",
+  "parentColumnSpace": 15,
+  "parentId": "ebr2ifa2ee",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 58,
+  "shouldTruncate": false,
+  "text": "{{ (GetCoverageAccountSummary.data?.[0]?.total_accounts) ? (((GetCoverageAccountSummary.data[0].linked_in_arcadia || 0) / GetCoverageAccountSummary.data[0].total_accounts) * 100).toFixed(0) + '%' : '0%' }}",
+  "textAlign": "LEFT",
+  "textColor": "#f4f4f5",
+  "topRow": 4,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "iugrb2lbb8",
+  "widgetName": "CovAccountCoveragePctValue"
+}

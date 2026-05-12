@@ -3,7 +3,7 @@
   "borderColor": "#334155",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 95,
+  "bottomRow": 123,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "canFreezeColumn": true,
   "columnOrder": [
@@ -49,6 +49,9 @@
     },
     {
       "key": "totalRecordsCount"
+    },
+    {
+      "key": "isVisible"
     },
     {
       "key": "primaryColumns.idClient.computedValue"
@@ -111,6 +114,9 @@
   "dynamicPropertyPathList": [
     {
       "key": "tableData"
+    },
+    {
+      "key": "isVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -125,7 +131,7 @@
   "horizontalAlignment": "LEFT",
   "isLoading": false,
   "isSortable": true,
-  "isVisible": true,
+  "isVisible": "{{CoverageClientSelect.selectedOptionValues?.length > 0}}",
   "isVisibleDownload": true,
   "isVisibleFilters": true,
   "isVisiblePagination": true,
@@ -133,15 +139,15 @@
   "key": "za96uk5u8t",
   "leftColumn": 0,
   "minWidth": 450,
-  "mobileBottomRow": 95,
+  "mobileBottomRow": 123,
   "mobileLeftColumn": 0,
   "mobileRightColumn": 64,
-  "mobileTopRow": 52,
+  "mobileTopRow": 80,
   "needsErrorInfo": false,
   "onPageChange": "{{GetCoverageAccountList.run()}}",
   "onPageSizeChange": "",
-  "originalBottomRow": 97,
-  "originalTopRow": 17,
+  "originalBottomRow": 123,
+  "originalTopRow": 80,
   "parentColumnSpace": 15,
   "parentId": "t0adezkakm",
   "parentRowSpace": 10,
@@ -801,7 +807,7 @@
   "tableData": "{{GetCoverageAccountList.data || []}}",
   "textColor": "#1e293b",
   "textSize": "0.875rem",
-  "topRow": 52,
+  "topRow": 80,
   "totalRecordsCount": "{{(GetCoverageAccountList.data || []).length}}",
   "type": "TABLE_WIDGET_V2",
   "version": 1,
