@@ -32,7 +32,7 @@ accounts AS (
         ))) AS NormalizedAccountNumber
     FROM dbo.ClientAccount ca
     INNER JOIN client_filter cf ON cf.IdClient = ca.IdClient
-    INNER JOIN dbo.Vendor v ON v.IdVendor = ca.IdVendor AND v.IsInactive = 0
+    LEFT JOIN dbo.Vendor v ON v.IdVendor = ca.IdVendor
     WHERE ca.IsInactive = 0
 ),
 plans AS (
@@ -122,23 +122,6 @@ matched_credential_state AS (
     ) t
     WHERE rn = 1
 ),
-historical_credential_state AS (
-    -- Same but including historical (non-active) matches — used when direct_active is empty
-    SELECT
-        a.IdClient,
-        a.IdClientAccount,
-        MAX(CASE WHEN cs.Status = 'CONNECTION_FAILURE' THEN 1 ELSE 0 END) AS HasConnectionFailure,
-        MAX(CASE WHEN cs.Status = 'CONNECTION_IN_PROGRESS' THEN 1 ELSE 0 END) AS HasConnectionInProgress,
-        MAX(CASE WHEN ISNULL(cs.IsCustomerActionRequired, 0) = 1 THEN 1 ELSE 0 END) AS HasCustomerActionRequired
-    FROM accounts a
-    INNER JOIN arcadia.ArcadiaCredentialAccount aca
-        ON aca.IdClient = a.IdClient
-        AND aca.IdClientAccount = a.IdClientAccount
-    INNER JOIN arcadia.ArcadiaCredentialState cs
-        ON cs.IdClient = aca.IdClient
-        AND cs.ArcadiaCredentialId = aca.ArcadiaCredentialId
-    GROUP BY a.IdClient, a.IdClientAccount
-),
 known_credential_ids AS (
     -- DSS_API local_credentials_by_account: arcadia.ArcadiaCredential rows tied directly to
     -- this specific IdClientAccount with a populated ArcadiaCredentialId.
@@ -151,6 +134,38 @@ known_credential_ids AS (
         AND ac.IdClientAccount = a.IdClientAccount
     WHERE ac.ArcadiaCredentialId IS NOT NULL
       AND LTRIM(RTRIM(ac.ArcadiaCredentialId)) <> ''
+),
+known_credential_state AS (
+    -- DSS_API has_related_* checks: aggregate the STATE of credentials in known_credential_ids.
+    -- - HasActiveElsewhere: any known credential has an ACTIVE arcadia account for a DIFFERENT
+    --   IdClientAccount (the "never_seen" branch in DSS_API).
+    -- - HasConnectionFailure / HasConnectionInProgress / HasCustomerActionRequired: state of
+    --   each known credential.
+    SELECT
+        a.IdClient,
+        a.IdClientAccount,
+        MAX(CASE WHEN cs.Status = 'CONNECTION_FAILURE' THEN 1 ELSE 0 END) AS HasConnectionFailure,
+        MAX(CASE WHEN cs.Status = 'CONNECTION_IN_PROGRESS' THEN 1 ELSE 0 END) AS HasConnectionInProgress,
+        MAX(CASE WHEN ISNULL(cs.IsCustomerActionRequired, 0) = 1 THEN 1 ELSE 0 END) AS HasCustomerActionRequired,
+        MAX(CASE WHEN ao.HasActive = 1 THEN 1 ELSE 0 END) AS HasActiveElsewhere
+    FROM accounts a
+    INNER JOIN arcadia.ArcadiaCredential ac
+        ON ac.IdClient = a.IdClient
+        AND ac.IdClientAccount = a.IdClientAccount
+    LEFT JOIN arcadia.ArcadiaCredentialState cs
+        ON cs.IdClient = ac.IdClient
+        AND cs.ArcadiaCredentialId = ac.ArcadiaCredentialId
+    OUTER APPLY (
+        SELECT MAX(1) AS HasActive
+        FROM arcadia.ArcadiaCredentialAccount aca
+        WHERE aca.IdClient = ac.IdClient
+          AND aca.ArcadiaCredentialId = ac.ArcadiaCredentialId
+          AND ISNULL(aca.IsActive, 0) = 1
+          AND (aca.IdClientAccount IS NULL OR aca.IdClientAccount <> a.IdClientAccount)
+    ) ao
+    WHERE ac.ArcadiaCredentialId IS NOT NULL
+      AND LTRIM(RTRIM(ac.ArcadiaCredentialId)) <> ''
+    GROUP BY a.IdClient, a.IdClientAccount
 ),
 has_create_log AS (
     -- DSS_API: latest_create_log + (success OR has credential_id) → in_progress
@@ -189,12 +204,18 @@ classified AS (
             WHEN snu.IdClientAccount IS NOT NULL THEN 'pending'
             -- 3. Direct historical match but no active → failed (previously_seen_now_missing)
             WHEN ISNULL(dany.Cnt, 0) > 0 THEN 'failed'
-            -- 4. No direct match — related credential signals
-            WHEN ISNULL(hcs.HasConnectionFailure, 0) = 1 THEN 'failed'
-            WHEN ISNULL(hcs.HasCustomerActionRequired, 0) = 1 THEN 'failed'
-            WHEN ISNULL(hcs.HasConnectionInProgress, 0) = 1 THEN 'in_progress'
+            -- 4. No direct match — DSS_API has_related_* checks (in exact DSS_API order):
+            -- 4a. has_related_active_arcadia_accounts (a known credential has active matches
+            --     elsewhere, but not us) → 'failed' (never_seen)
+            WHEN ISNULL(kcs.HasActiveElsewhere, 0) = 1 THEN 'failed'
+            -- 4b. has_related_connection_failure → 'failed'
+            WHEN ISNULL(kcs.HasConnectionFailure, 0) = 1 THEN 'failed'
+            -- 4c. has_related_customer_action_required → 'failed' (covers mfa_failure too)
+            WHEN ISNULL(kcs.HasCustomerActionRequired, 0) = 1 THEN 'failed'
+            -- 4d. has_related_connection_in_progress → 'in_progress'
+            WHEN ISNULL(kcs.HasConnectionInProgress, 0) = 1 THEN 'in_progress'
             -- 5. waiting_on_account_sync (DSS_API "known_credential_ids" branch):
-            --    account has an ArcadiaCredential row linked to it → in_progress
+            --    account has an ArcadiaCredential row but no state issues → in_progress
             WHEN kci.IdClientAccount IS NOT NULL THEN 'in_progress'
             -- 6. Successful create log → in_progress (waiting_on_account_sync)
             WHEN ISNULL(hcl.HasSuccess, 0) = 1 OR ISNULL(hcl.HasCredentialId, 0) = 1 THEN 'in_progress'
@@ -224,8 +245,8 @@ classified AS (
     LEFT JOIN direct_any dany ON dany.IdClient = a.IdClient AND dany.IdClientAccount = a.IdClientAccount
     LEFT JOIN same_number_unmatched snu ON snu.IdClient = a.IdClient AND snu.IdClientAccount = a.IdClientAccount
     LEFT JOIN matched_credential_state mcs ON mcs.IdClient = a.IdClient AND mcs.IdClientAccount = a.IdClientAccount
-    LEFT JOIN historical_credential_state hcs ON hcs.IdClient = a.IdClient AND hcs.IdClientAccount = a.IdClientAccount
     LEFT JOIN known_credential_ids kci ON kci.IdClient = a.IdClient AND kci.IdClientAccount = a.IdClientAccount
+    LEFT JOIN known_credential_state kcs ON kcs.IdClient = a.IdClient AND kcs.IdClientAccount = a.IdClientAccount
     LEFT JOIN has_create_log hcl ON hcl.IdClient = a.IdClient AND hcl.IdClientAccount = a.IdClientAccount
 ),
 duplicate_groups AS (
