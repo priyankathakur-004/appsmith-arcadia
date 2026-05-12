@@ -1,6 +1,8 @@
 {
   "animateLoading": true,
+  "borderColor": "#94a3b8",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "2",
   "bottomRow": 4,
   "dynamicBindingPathList": [
     {
@@ -11,18 +13,21 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "0.875rem",
-  "fontStyle": "",
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
   "key": "k",
-  "leftColumn": 2,
+  "leftColumn": 27,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -31,23 +36,22 @@
   "mobileRightColumn": 58,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 4,
-  "originalTopRow": 1,
   "overflow": "NONE",
   "parentColumnSpace": 15,
-  "parentId": "ebr2ifa2ee",
+  "parentId": "t0adezkakm",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 58,
+  "rightColumn": 51,
+  "shouldScrollContents": true,
   "shouldTruncate": false,
-  "text": "Account Coverage",
-  "textAlign": "LEFT",
+  "text": "Account Coverage: {{ (GetCoverageAccountSummary.data?.[0]?.total_accounts) ? (((GetCoverageAccountSummary.data[0].linked_in_arcadia || 0) / GetCoverageAccountSummary.data[0].total_accounts) * 100).toFixed(0) + '%' : '0%' }}",
+  "textAlign": "CENTER",
   "textColor": "#94a3b8",
-  "topRow": 1,
+  "topRow": 0,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "ti7weqjv7o",
+  "widgetId": "aopf2spior",
   "widgetName": "CovAccountCoveragePctLabel"
 }
