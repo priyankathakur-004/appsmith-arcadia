@@ -29,7 +29,7 @@
     ],
     "name": "GetAccountsByClient",
     "pageId": "Summary",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

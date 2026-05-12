@@ -43,11 +43,7 @@
       "widgetName": "CovAccProviderMissingCanvas"
     }
   ],
-  "dynamicBindingPathList": [
-    {
-      "key": "borderRadius"
-    }
-  ],
+  "dynamicBindingPathList": [],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {

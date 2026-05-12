@@ -43,11 +43,7 @@
       "widgetName": "CovCredConnectedCanvas"
     }
   ],
-  "dynamicBindingPathList": [
-    {
-      "key": "borderRadius"
-    }
-  ],
+  "dynamicBindingPathList": [],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
     {

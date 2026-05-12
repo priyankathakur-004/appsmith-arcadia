@@ -104,6 +104,9 @@
   "defaultTab": "Credential Coverage Details",
   "dynamicBindingPathList": [
     {
+      "key": "isVisible"
+    },
+    {
       "key": "backgroundColor"
     },
     {
@@ -111,12 +114,14 @@
     },
     {
       "key": "boxShadow"
-    },
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
     {
       "key": "isVisible"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,
@@ -164,10 +169,5 @@
   "type": "TABS_WIDGET",
   "version": 3,
   "widgetId": "d75o7s174c",
-  "widgetName": "Tabs1",
-  "dynamicPropertyPathList": [
-    {
-      "key": "isVisible"
-    }
-  ]
+  "widgetName": "Tabs1"
 }
