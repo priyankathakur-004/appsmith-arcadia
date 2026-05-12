@@ -46,7 +46,7 @@
   "shouldTruncate": false,
   "text": "{{GetCoverageCredentialSummary.data?.[0]?.connected_in_arcadia ?? 0}}",
   "textAlign": "LEFT",
-  "textColor": "#f4f4f5",
+  "textColor": "#22c55e",
   "topRow": 5,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",

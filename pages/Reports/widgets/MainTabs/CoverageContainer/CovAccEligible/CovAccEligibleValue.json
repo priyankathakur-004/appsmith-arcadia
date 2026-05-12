@@ -46,7 +46,7 @@
   "shouldTruncate": false,
   "text": "{{GetCoverageAccountSummary.data?.[0]?.eligible_accounts ?? 0}}",
   "textAlign": "LEFT",
-  "textColor": "#f4f4f5",
+  "textColor": "#60a5fa",
   "topRow": 5,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",

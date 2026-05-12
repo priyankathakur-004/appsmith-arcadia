@@ -1,5 +1,5 @@
 {
-  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "accentColor": "#3b82f6",
   "allowScroll": false,
   "animateLoading": true,
   "borderColor": "#334155",
@@ -7,15 +7,9 @@
   "borderWidth": "1",
   "bottomRow": 34,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-  "chartData": {
-    "downloads_series": {
-      "data": "{{ (GetRecentDownloads.data || []).slice().reverse().map(r => ({ x: r.month_label, y: r.downloaded_account_count })) }}",
-      "seriesName": "Downloaded Accounts"
-    }
-  },
   "chartName": "Recent Downloads",
-  "chartType": "LINE_CHART",
-  "customEChartConfig": {},
+  "chartType": "CUSTOM_ECHART",
+  "customEChartConfig": "{{ ({ backgroundColor: 'transparent', grid: { left: '8%', right: '5%', top: '12%', bottom: '12%', containLabel: true }, tooltip: { trigger: 'axis', backgroundColor: '#0f172a', borderColor: '#334155', textStyle: { color: '#e2e8f0' } }, xAxis: { type: 'category', data: (GetRecentDownloads.data || []).slice().reverse().map(r => r.month_label), axisLine: { lineStyle: { color: '#475569' } }, axisLabel: { color: '#94a3b8' } }, yAxis: { type: 'value', axisLine: { lineStyle: { color: '#475569' } }, axisLabel: { color: '#94a3b8' }, splitLine: { lineStyle: { color: '#334155' } } }, series: [{ name: 'Downloaded Accounts', type: 'line', smooth: true, data: (GetRecentDownloads.data || []).slice().reverse().map(r => r.downloaded_account_count), lineStyle: { color: '#3b82f6', width: 3 }, itemStyle: { color: '#3b82f6' }, areaStyle: { color: { type: 'linear', x: 0, y: 0, x2: 0, y2: 1, colorStops: [{ offset: 0, color: 'rgba(59, 130, 246, 0.4)' }, { offset: 1, color: 'rgba(59, 130, 246, 0.02)' }] } } }] }) }}",
   "customFusionChartConfig": {},
   "dynamicBindingPathList": [
     {
@@ -31,7 +25,7 @@
       "key": "isVisible"
     },
     {
-      "key": "chartData.downloads_series.data"
+      "key": "customEChartConfig"
     }
   ],
   "dynamicPropertyPathList": [
@@ -69,5 +63,6 @@
   "widgetId": "8hvkarz52h",
   "widgetName": "CovRecentDownloadsChart",
   "xAxisName": "",
-  "yAxisName": "Accounts"
+  "yAxisName": "Accounts",
+  "backgroundColor": "#1e293b"
 }

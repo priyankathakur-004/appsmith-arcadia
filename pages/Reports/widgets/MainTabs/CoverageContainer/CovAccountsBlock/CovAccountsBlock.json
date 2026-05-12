@@ -1,13 +1,13 @@
 {
-  "backgroundColor": "transparent",
+  "backgroundColor": "#0f172a",
   "borderColor": "#334155",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "borderWidth": "0",
-  "bottomRow": 240,
-  "boxShadow": "none",
+  "borderRadius": "0.5rem",
+  "borderWidth": "1",
+  "bottomRow": 33,
+  "boxShadow": "0px 4px 12px 0px rgba(0, 0, 0, 0.4)",
   "children": [
     {
-      "bottomRow": 100,
+      "bottomRow": 240,
       "canExtend": true,
       "dynamicBindingPathList": [],
       "dynamicPropertyPathList": [],
@@ -18,17 +18,17 @@
       "isVisible": true,
       "key": "k",
       "leftColumn": 0,
-      "minHeight": 100,
+      "minHeight": 240,
       "minWidth": 450,
-      "mobileBottomRow": 100,
+      "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
       "mobileRightColumn": 960,
       "mobileTopRow": 0,
       "needsErrorInfo": false,
-      "originalBottomRow": 100,
+      "originalBottomRow": 240,
       "originalTopRow": 0,
       "parentColumnSpace": 1,
-      "parentId": "keb3mnbr39",
+      "parentId": "f3h1806mgy",
       "parentRowSpace": 10,
       "renderMode": "CANVAS",
       "responsiveBehavior": "fill",
@@ -36,17 +36,11 @@
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
-      "widgetId": "04n20yqqlh",
-      "widgetName": "CovAccInProgressCanvas"
+      "widgetId": "77sk442lzo",
+      "widgetName": "CovAccountsBlockCanvas"
     }
   ],
   "dynamicBindingPathList": [
-    {
-      "key": "boxShadow"
-    },
-    {
-      "key": "borderRadius"
-    },
     {
       "key": "isVisible"
     }
@@ -60,29 +54,29 @@
   "flexVerticalAlignment": "start",
   "isCanvas": true,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{CoverageClientSelect.selectedOptionValues?.length > 0}}",
   "key": "k",
-  "leftColumn": 2,
+  "leftColumn": 22,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 240,
-  "mobileLeftColumn": 2,
-  "mobileRightColumn": 17,
-  "mobileTopRow": 140,
+  "mobileBottomRow": 33,
+  "mobileLeftColumn": 22,
+  "mobileRightColumn": 44,
+  "mobileTopRow": 9,
   "needsErrorInfo": false,
-  "originalBottomRow": 240,
-  "originalTopRow": 140,
+  "originalBottomRow": 33,
+  "originalTopRow": 9,
   "parentColumnSpace": 15,
-  "parentId": "77sk442lzo",
+  "parentId": "t0adezkakm",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 17,
+  "rightColumn": 44,
   "shouldScrollContents": false,
-  "topRow": 140,
+  "topRow": 9,
   "type": "CONTAINER_WIDGET",
   "version": 1,
-  "widgetId": "keb3mnbr39",
-  "widgetName": "CovAccInProgress"
+  "widgetId": "f3h1806mgy",
+  "widgetName": "CovAccountsBlock"
 }

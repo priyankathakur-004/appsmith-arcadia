@@ -46,7 +46,7 @@
   "shouldTruncate": false,
   "text": "{{GetCoverageCredentialSummary.data?.[0]?.connection_failures ?? 0}}",
   "textAlign": "LEFT",
-  "textColor": "#f4f4f5",
+  "textColor": "#ef4444",
   "topRow": 5,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
