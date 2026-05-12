@@ -6,7 +6,7 @@
   "borderColor": "#334155",
   "borderRadius": "0.5rem",
   "borderWidth": "1",
-  "bottomRow": 40,
+  "bottomRow": 47,
   "boxShadow": "0px 4px 12px 0px rgba(0, 0, 0, 0.4)",
   "chartName": "Recent Downloads",
   "chartType": "CUSTOM_ECHART",
@@ -18,12 +18,6 @@
     },
     {
       "key": "isVisible"
-    },
-    {
-      "key": "borderRadius"
-    },
-    {
-      "key": "boxShadow"
     }
   ],
   "dynamicPropertyPathList": [
