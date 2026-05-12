@@ -1,7 +1,7 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 13,
+  "bottomRow": 17,
   "boxShadow": "none",
   "defaultOptionValue": "[]",
   "dynamicBindingPathList": [
@@ -43,8 +43,8 @@
   "needsErrorInfo": false,
   "optionLabel": "client_name",
   "optionValue": "client_name",
-  "originalBottomRow": 12,
-  "originalTopRow": 5,
+  "originalBottomRow": 13,
+  "originalTopRow": 9,
   "parentColumnSpace": 15,
   "parentId": "57lhvp0b70",
   "parentRowSpace": 10,

@@ -5,12 +5,12 @@
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": 1,
-  "bottomRow": 143,
+  "bottomRow": 117,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1260,
+      "bottomRow": 1300,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -56,7 +56,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1260,
+      "bottomRow": 1270,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -101,7 +101,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1260,
+      "bottomRow": 1070,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -146,7 +146,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1260,
+      "bottomRow": 1000,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -191,7 +191,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1260,
+      "bottomRow": 1000,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -235,7 +235,7 @@
       "widgetName": "Canvas_WebhookLogs"
     }
   ],
-  "defaultTab": "Accounts",
+  "defaultTab": "Client Coverage",
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
@@ -266,7 +266,7 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 15,
   "needsErrorInfo": false,
-  "originalBottomRow": 140,
+  "originalBottomRow": 116,
   "originalTopRow": 13,
   "parentColumnSpace": 16.765625,
   "parentId": "0",
@@ -279,7 +279,8 @@
   "tabsObj": {
     "tab1": {
       "id": "tab1",
-      "index": 0,
+      "index": 1,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Accounts",
       "positioning": "vertical",
@@ -287,31 +288,35 @@
     },
     "tabe74qvb0a8f": {
       "id": "tabe74qvb0a8f",
-      "index": 1,
+      "index": 2,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Credentials",
       "widgetId": "d1ela4hvfs"
     },
+    "tabeoqg07169o": {
+      "id": "tabeoqg07169o",
+      "index": 4,
+      "isDuplicateLabel": false,
+      "isVisible": true,
+      "label": "Webhook Logs",
+      "widgetId": "9ijama4urh"
+    },
     "tabjil2ujfw5p": {
       "id": "tabjil2ujfw5p",
-      "index": 2,
+      "index": 3,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Providers",
       "widgetId": "yuqv1evc5y"
     },
     "tabsaxqx6o0lz": {
       "id": "tabsaxqx6o0lz",
-      "index": 3,
+      "index": 0,
+      "isDuplicateLabel": false,
       "isVisible": true,
       "label": "Client Coverage",
       "widgetId": "fjrwaxszcq"
-    },
-    "tabeoqg07169o": {
-      "id": "tabeoqg07169o",
-      "index": 4,
-      "isVisible": true,
-      "label": "Webhook Logs",
-      "widgetId": "9ijama4urh"
     }
   },
   "topRow": 13,
