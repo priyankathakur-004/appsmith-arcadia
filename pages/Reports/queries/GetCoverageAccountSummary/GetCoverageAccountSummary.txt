@@ -21,7 +21,15 @@ accounts AS (
         ca.IdVendor,
         ca.IdVendorCredential,
         ca.AccountNumber_Raw,
-        ca.AccountNumber AS NormalizedAccountNumber
+        -- Normalize: prefer DS-side AccountNumber, fall back to raw; strip spaces/dashes/punct, upper-case.
+        UPPER(LTRIM(RTRIM(
+            REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(
+                REPLACE(REPLACE(REPLACE(REPLACE(
+                    COALESCE(NULLIF(LTRIM(RTRIM(ca.AccountNumber)), ''), ca.AccountNumber_Raw, '')
+                , ' ', ''), '-', ''), '_', ''), '.', '')
+            , '/', ''), '\', ''), ':', ''), ','  , '')
+            , '(', ''), ')', ''), '+', ''), '#', '')
+        ))) AS NormalizedAccountNumber
     FROM dbo.ClientAccount ca
     INNER JOIN client_filter cf ON cf.IdClient = ca.IdClient
     INNER JOIN dbo.Vendor v ON v.IdVendor = ca.IdVendor AND v.IsInactive = 0
@@ -170,7 +178,7 @@ duplicate_groups AS (
         SELECT IdClient, IdVendor, NormalizedAccountNumber
         FROM classified
         WHERE NormalizedAccountNumber IS NOT NULL
-          AND IdVendor IS NOT NULL
+          AND LTRIM(RTRIM(NormalizedAccountNumber)) <> ''
         GROUP BY IdClient, IdVendor, NormalizedAccountNumber
         HAVING COUNT(1) > 1
     ) g
