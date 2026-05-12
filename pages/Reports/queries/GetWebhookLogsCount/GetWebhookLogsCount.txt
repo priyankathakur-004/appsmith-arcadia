@@ -49,12 +49,10 @@ WHERE 1=1
     )
   )
   AND (
-    '{{WebhookStatusSelect.selectedOptionValue || ""}}' = ''
-    OR logs.Status = '{{WebhookStatusSelect.selectedOptionValue || ""}}'
-  )
-  AND (
-    '{{WebhookClientNameInput.text || ""}}' = ''
-    OR mapped.ClientName = '{{WebhookClientNameInput.text || ""}}'
+    '{{WebhookClientSelect.selectedOptionValues?.join(",") || ""}}' = ''
+    OR mapped.ClientName IN (
+      SELECT value FROM STRING_SPLIT('{{WebhookClientSelect.selectedOptionValues?.join(",") || ""}}', ',')
+    )
   )
   AND (
     '{{WebhookAccountNumberInput.text || ""}}' = ''

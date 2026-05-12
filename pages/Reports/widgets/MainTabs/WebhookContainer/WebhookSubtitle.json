@@ -43,7 +43,7 @@
   "shouldTruncate": false,
   "text": "Filter by event type and date range to view Arcadia webhook activity.",
   "textAlign": "LEFT",
-  "textColor": "#64748b",
+  "textColor": "#cbd5e1",
   "topRow": 4,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",

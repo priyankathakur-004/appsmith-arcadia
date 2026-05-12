@@ -43,7 +43,7 @@
   "shouldTruncate": false,
   "text": "Arcadia Webhook Logs",
   "textAlign": "LEFT",
-  "textColor": "#1e293b",
+  "textColor": "#f4f4f5",
   "topRow": 0,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",

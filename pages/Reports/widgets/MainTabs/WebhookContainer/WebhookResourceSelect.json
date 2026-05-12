@@ -3,7 +3,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 13,
   "boxShadow": "none",
-  "defaultOptionValue": "[]",
+  "defaultOptionValue": "[\"DISCOVERED_STATEMENT\",\"STATEMENT\"]",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -30,7 +30,7 @@
   "key": "ztkw6hbslg",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelText": "",
+  "labelText": "Resource",
   "labelTextColor": "#f4f4f5",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,

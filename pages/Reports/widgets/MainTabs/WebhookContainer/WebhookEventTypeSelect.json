@@ -3,7 +3,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 13,
   "boxShadow": "none",
-  "defaultOptionValue": "[]",
+  "defaultOptionValue": "[\"EXISTING_DATA_UPDATED\",\"NEW_DATA_AVAILABLE\"]",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -30,7 +30,7 @@
   "key": "0ps0g5c7c3",
   "labelAlignment": "left",
   "labelPosition": "Top",
-  "labelText": "",
+  "labelText": "Event Type",
   "labelTextColor": "#f4f4f5",
   "labelTextSize": "0.875rem",
   "labelWidth": 5,
