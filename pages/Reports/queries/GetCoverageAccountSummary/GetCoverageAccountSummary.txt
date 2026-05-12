@@ -92,23 +92,35 @@ same_number_unmatched AS (
       )
 ),
 matched_credential_state AS (
-    -- DSS_API: when an account has an active direct match, check the MATCHED credential's
-    -- state (not other unrelated credentials). Prefer active matches; fall back to historical.
+    -- DSS_API _select_best_direct_match picks the most-recently-synced active match,
+    -- then credential_issue_for_arcadia_row checks ONLY that one credential's state.
+    -- Mirror that with ROW_NUMBER() over LastSyncedOn / LastSeenOn.
     SELECT
-        a.IdClient,
-        a.IdClientAccount,
-        MAX(CASE WHEN cs.Status = 'CONNECTION_FAILURE' THEN 1 ELSE 0 END) AS HasConnectionFailure,
-        MAX(CASE WHEN cs.Status = 'CONNECTION_IN_PROGRESS' THEN 1 ELSE 0 END) AS HasConnectionInProgress,
-        MAX(CASE WHEN ISNULL(cs.IsCustomerActionRequired, 0) = 1 THEN 1 ELSE 0 END) AS HasCustomerActionRequired
-    FROM accounts a
-    INNER JOIN arcadia.ArcadiaCredentialAccount aca
-        ON aca.IdClient = a.IdClient
-        AND aca.IdClientAccount = a.IdClientAccount
-        AND ISNULL(aca.IsActive, 0) = 1
-    INNER JOIN arcadia.ArcadiaCredentialState cs
-        ON cs.IdClient = aca.IdClient
-        AND cs.ArcadiaCredentialId = aca.ArcadiaCredentialId
-    GROUP BY a.IdClient, a.IdClientAccount
+        IdClient, IdClientAccount, Status, StatusDetail, IsCustomerActionRequired
+    FROM (
+        SELECT
+            a.IdClient,
+            a.IdClientAccount,
+            cs.Status,
+            cs.StatusDetail,
+            cs.IsCustomerActionRequired,
+            ROW_NUMBER() OVER (
+                PARTITION BY a.IdClient, a.IdClientAccount
+                ORDER BY
+                    ISNULL(aca.LastSyncedOn, '1900-01-01') DESC,
+                    ISNULL(aca.LastSeenOn, '1900-01-01') DESC,
+                    aca.ArcadiaCredentialId DESC
+            ) AS rn
+        FROM accounts a
+        INNER JOIN arcadia.ArcadiaCredentialAccount aca
+            ON aca.IdClient = a.IdClient
+            AND aca.IdClientAccount = a.IdClientAccount
+            AND ISNULL(aca.IsActive, 0) = 1
+        INNER JOIN arcadia.ArcadiaCredentialState cs
+            ON cs.IdClient = aca.IdClient
+            AND cs.ArcadiaCredentialId = aca.ArcadiaCredentialId
+    ) t
+    WHERE rn = 1
 ),
 historical_credential_state AS (
     -- Same but including historical (non-active) matches — used when direct_active is empty
@@ -128,14 +140,24 @@ historical_credential_state AS (
     GROUP BY a.IdClient, a.IdClientAccount
 ),
 has_create_log AS (
-    SELECT DISTINCT
+    -- DSS_API: latest_create_log + (success OR has credential_id) → in_progress
+    --         latest_create_log without success → failed (fallback)
+    SELECT
         a.IdClient,
-        a.IdClientAccount
+        a.IdClientAccount,
+        MAX(CAST(ISNULL(l.IsSuccess, 0) AS INT)) AS HasSuccess,
+        MAX(CASE
+            WHEN l.ArcadiaCredentialId IS NOT NULL
+              AND LTRIM(RTRIM(l.ArcadiaCredentialId)) <> ''
+            THEN 1 ELSE 0
+        END) AS HasCredentialId,
+        MAX(1) AS HasAny
     FROM arcadia.ArcadiaCredentialCreateLog l
     INNER JOIN accounts a
         ON a.IdClient = l.IdClientDS
         AND a.IdVendor = l.IdVendorDS
         AND a.NormalizedAccountNumber = l.AccountNumber
+    GROUP BY a.IdClient, a.IdClientAccount
 ),
 classified AS (
     SELECT
@@ -145,20 +167,27 @@ classified AS (
         a.IdVendor,
         COALESCE(pl.PlanArcadiaProviderId, pv.ArcadiaProviderId) AS ProviderId,
         CASE
-            -- 1. Direct active arcadia match → check MATCHED credential's state
-            WHEN ISNULL(da.Cnt, 0) > 0 AND ISNULL(mcs.HasConnectionFailure, 0) = 1 THEN 'failed'
-            WHEN ISNULL(da.Cnt, 0) > 0 AND ISNULL(mcs.HasCustomerActionRequired, 0) = 1 THEN 'failed'
-            WHEN ISNULL(da.Cnt, 0) > 0 AND ISNULL(mcs.HasConnectionInProgress, 0) = 1 THEN 'in_progress'
+            -- 1. Direct active match → check the SINGLE most-recent matched credential's state
+            WHEN ISNULL(da.Cnt, 0) > 0 AND mcs.Status = 'CONNECTION_FAILURE' THEN 'failed'
+            WHEN ISNULL(da.Cnt, 0) > 0 AND ISNULL(mcs.IsCustomerActionRequired, 0) = 1 THEN 'failed'
+            WHEN ISNULL(da.Cnt, 0) > 0 AND mcs.Status = 'CONNECTION_IN_PROGRESS' THEN 'in_progress'
             WHEN ISNULL(da.Cnt, 0) > 0 THEN 'found'
-            -- 2. Same-number-elsewhere (unmatched) → PENDING (found_not_matched)
+            -- 2. Same-number-elsewhere (unmatched) → pending (found_not_matched)
             WHEN snu.IdClientAccount IS NOT NULL THEN 'pending'
-            -- 3. Has direct historical match but no active → FAILED (previously seen now missing)
+            -- 3. Direct historical match but no active → failed (previously_seen_now_missing)
             WHEN ISNULL(dany.Cnt, 0) > 0 THEN 'failed'
-            -- 4. No direct match, but related-credential signals
+            -- 4. No direct match — related credential signals
             WHEN ISNULL(hcs.HasConnectionFailure, 0) = 1 THEN 'failed'
             WHEN ISNULL(hcs.HasCustomerActionRequired, 0) = 1 THEN 'failed'
             WHEN ISNULL(hcs.HasConnectionInProgress, 0) = 1 THEN 'in_progress'
-            -- 5. Plan-level reasons
+            -- 5. waiting_on_account_sync (DSS_API "known_credential_ids" branch):
+            --    vendor credential set + provider mapped, nothing failing → in_progress
+            WHEN a.IdVendorCredential IS NOT NULL
+              AND COALESCE(pl.PlanArcadiaProviderId, pv.ArcadiaProviderId) IS NOT NULL
+              THEN 'in_progress'
+            -- 6. Successful create log → in_progress (waiting_on_account_sync)
+            WHEN ISNULL(hcl.HasSuccess, 0) = 1 OR ISNULL(hcl.HasCredentialId, 0) = 1 THEN 'in_progress'
+            -- 7. Plan-level reasons (in DSS_API order)
             WHEN pl.ReasonCode = 'provider_not_mapped' THEN 'provider_not_mapped'
             WHEN pl.ReasonCode = 'vendor_credential_missing' THEN 'failed'
             WHEN pl.ReasonCode IN (
@@ -168,18 +197,13 @@ classified AS (
                 'resolved_credentials_missing'
             ) THEN 'failed'
             WHEN pl.AccessPathType IN ('provider_specific','manual','unsupported') THEN 'failed'
-            -- 6. No provider mapping at all
+            -- 8. No provider mapping at all
             WHEN COALESCE(pl.PlanArcadiaProviderId, pv.ArcadiaProviderId) IS NULL
               OR LTRIM(RTRIM(COALESCE(pl.PlanArcadiaProviderId, pv.ArcadiaProviderId))) = ''
               THEN 'provider_not_mapped'
-            -- 7. Has create log but never linked → FAILED (credential_create_failed)
-            WHEN hcl.IdClientAccount IS NOT NULL THEN 'failed'
-            -- 8. waiting_on_account_sync: vendor credential set + provider mapped + no failures
-            --    above → in_progress (account is awaiting Arcadia sync)
-            WHEN a.IdVendorCredential IS NOT NULL
-              AND COALESCE(pl.PlanArcadiaProviderId, pv.ArcadiaProviderId) IS NOT NULL
-              THEN 'in_progress'
-            -- 9. Default → FAILED (credential_not_created)
+            -- 9. Failed create log fallback → failed
+            WHEN ISNULL(hcl.HasAny, 0) = 1 THEN 'failed'
+            -- 10. Default → failed (credential_not_created)
             ELSE 'failed'
         END AS Bucket
     FROM accounts a
