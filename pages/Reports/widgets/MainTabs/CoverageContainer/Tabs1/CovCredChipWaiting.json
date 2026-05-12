@@ -42,7 +42,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 50,
   "shouldTruncate": false,
-  "text": "{{ 'Waiting ' + ((GetCoverageCredentialList.data || []).filter(r => r.bucket === 'waiting').length) }}",
+  "text": "{{ 'Waiting ' + (GetCoverageCredentialSummary.data?.[0]?.pending || 0) }}",
   "textAlign": "CENTER",
   "textColor": "#92400e",
   "topRow": 1,

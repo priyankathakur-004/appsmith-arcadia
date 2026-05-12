@@ -63,13 +63,20 @@ direct_any AS (
     GROUP BY aca.IdClient, aca.IdClientAccount
 ),
 same_number_unmatched AS (
+    -- DSS_API only triggers this if the unmatched row belongs to a credential the account
+    -- already knows about. Approximated here: there must be a credential linking us AND
+    -- the unmatched account number row must also belong to that same credential.
     SELECT DISTINCT a.IdClient, a.IdClientAccount
     FROM accounts a
-    INNER JOIN arcadia.ArcadiaCredentialAccount aca
-        ON aca.IdClient = a.IdClient
-        AND ISNULL(aca.IsActive, 0) = 1
-        AND aca.NormalizedAccountNumber = a.NormalizedAccountNumber
-        AND (aca.IdClientAccount IS NULL OR aca.IdClientAccount <> a.IdClientAccount)
+    INNER JOIN arcadia.ArcadiaCredentialAccount mine
+        ON mine.IdClient = a.IdClient
+        AND mine.IdClientAccount = a.IdClientAccount
+    INNER JOIN arcadia.ArcadiaCredentialAccount sibling
+        ON sibling.IdClient = mine.IdClient
+        AND sibling.ArcadiaCredentialId = mine.ArcadiaCredentialId
+        AND ISNULL(sibling.IsActive, 0) = 1
+        AND sibling.NormalizedAccountNumber = a.NormalizedAccountNumber
+        AND (sibling.IdClientAccount IS NULL OR sibling.IdClientAccount <> a.IdClientAccount)
     WHERE a.NormalizedAccountNumber IS NOT NULL
       AND NOT EXISTS (
           SELECT 1 FROM direct_active da
@@ -157,13 +164,14 @@ classified AS (
     LEFT JOIN has_create_log hcl ON hcl.IdClient = a.IdClient AND hcl.IdClientAccount = a.IdClientAccount
 ),
 duplicate_groups AS (
-    -- Groups with >1 account sharing (provider, normalized number)
+    -- DSS_UI groups by (IdClient, IdVendor, NormalizedAccountNumber). Count of GROUPS with >1 member.
     SELECT COUNT(1) AS GroupCount
     FROM (
-        SELECT ProviderId, NormalizedAccountNumber
+        SELECT IdClient, IdVendor, NormalizedAccountNumber
         FROM classified
         WHERE NormalizedAccountNumber IS NOT NULL
-        GROUP BY ProviderId, NormalizedAccountNumber
+          AND IdVendor IS NOT NULL
+        GROUP BY IdClient, IdVendor, NormalizedAccountNumber
         HAVING COUNT(1) > 1
     ) g
 )

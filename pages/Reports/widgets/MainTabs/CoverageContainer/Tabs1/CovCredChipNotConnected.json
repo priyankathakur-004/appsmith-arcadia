@@ -42,7 +42,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 57,
   "shouldTruncate": false,
-  "text": "{{ 'Not Connected ' + ((GetCoverageCredentialList.data || []).filter(r => r.bucket === 'not_connected').length) }}",
+  "text": "{{ 'Not Connected ' + ((GetCoverageCredentialList.data || []).filter(r => (r.bucket === 'Failed' && (r.arcadiaAccountCount || 0) === 0) || r.status === 'CONNECTION_DEACTIVATED').length) }}",
   "textAlign": "CENTER",
   "textColor": "#475569",
   "topRow": 1,

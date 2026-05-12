@@ -42,7 +42,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 43,
   "shouldTruncate": false,
-  "text": "{{ 'Needs Review ' + ((GetCoverageCredentialList.data || []).filter(r => r.bucket === 'needs_review').length) }}",
+  "text": "{{ 'Needs Review ' + ((GetCoverageCredentialList.data || []).filter(r => (r.activeArcadiaAccountCount || 0) === 0 && (r.status === 'SUCCESS' || r.status === 'CONNECTION_SUCCESS')).length) }}",
   "textAlign": "CENTER",
   "textColor": "#1e40af",
   "topRow": 1,

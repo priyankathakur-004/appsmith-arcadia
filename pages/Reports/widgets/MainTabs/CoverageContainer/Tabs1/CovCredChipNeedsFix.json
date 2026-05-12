@@ -42,7 +42,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 36,
   "shouldTruncate": false,
-  "text": "{{ 'Needs Fix ' + ((GetCoverageCredentialList.data || []).filter(r => r.bucket === 'needs_fix').length) }}",
+  "text": "{{ 'Needs Fix ' + ((GetCoverageCredentialSummary.data?.[0]?.connection_failures || 0) + (GetCoverageCredentialSummary.data?.[0]?.mfa_failures || 0)) }}",
   "textAlign": "CENTER",
   "textColor": "#991b1b",
   "topRow": 1,

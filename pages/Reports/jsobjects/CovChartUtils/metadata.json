@@ -1,0 +1,10 @@
+{
+  "id": "Reports_CovChartUtils",
+  "unpublishedCollection": {
+    "name": "CovChartUtils",
+    "pageId": "Reports",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
