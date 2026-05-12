@@ -43,6 +43,18 @@ WITH ranked_accounts AS (
           SELECT value FROM STRING_SPLIT('{{AccStatusSelect.selectedOptionValues?.join(",") || ""}}', ',')
         )
       )
+      AND (
+        '{{AccOnlyMatchedCheckbox?.isChecked ? "1" : "0"}}' = '0'
+        OR aca.IdClientAccount IS NOT NULL
+      )
+      AND (
+        '{{AccHasVendorCredCheckbox?.isChecked ? "1" : "0"}}' = '0'
+        OR EXISTS (
+          SELECT 1 FROM dbo.ClientAccount ca
+          WHERE ca.IdClientAccount = aca.IdClientAccount
+            AND ca.IdVendorCredential IS NOT NULL
+        )
+      )
 )
 SELECT COUNT(1) AS total
 FROM ranked_accounts ra

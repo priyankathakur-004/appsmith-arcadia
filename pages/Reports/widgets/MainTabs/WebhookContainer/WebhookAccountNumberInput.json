@@ -1,0 +1,58 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 16,
+  "boxShadow": "none",
+  "defaultText": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "inputType": "TEXT",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isSpellCheck": false,
+  "isVisible": true,
+  "key": "j6skglrebt",
+  "label": "Account Number",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Account Number",
+  "labelTextColor": "#f4f4f5",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 33,
+  "minWidth": 450,
+  "mobileBottomRow": 13,
+  "mobileLeftColumn": 33,
+  "mobileRightColumn": 43,
+  "mobileTopRow": 7,
+  "needsErrorInfo": false,
+  "onTextChanged": "",
+  "originalBottomRow": 17,
+  "originalTopRow": 11,
+  "parentColumnSpace": 15,
+  "parentId": "57lhvp0b70",
+  "parentRowSpace": 10,
+  "placeholderText": "Search account number",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 43,
+  "topRow": 9,
+  "type": "INPUT_WIDGET_V2",
+  "version": 1,
+  "widgetId": "348vwoh3sy",
+  "widgetName": "WebhookAccountNumberInput"
+}

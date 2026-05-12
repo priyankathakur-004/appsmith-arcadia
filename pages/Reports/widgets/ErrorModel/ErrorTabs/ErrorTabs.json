@@ -239,10 +239,13 @@
   "defaultTab": "All",
   "dynamicBindingPathList": [
     {
-      "key": "borderRadius"
+      "key": "tabsObj.tabfbhx1x5o8a.isVisible"
     },
     {
-      "key": "boxShadow"
+      "key": "tabsObj.tabbewzlewe11.isVisible"
+    },
+    {
+      "key": "tabsObj.tabn68demhsnl.isVisible"
     },
     {
       "key": "backgroundColor"
@@ -251,13 +254,10 @@
       "key": "borderColor"
     },
     {
-      "key": "tabsObj.tabfbhx1x5o8a.isVisible"
+      "key": "borderRadius"
     },
     {
-      "key": "tabsObj.tabn68demhsnl.isVisible"
-    },
-    {
-      "key": "tabsObj.tabbewzlewe11.isVisible"
+      "key": "boxShadow"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",

@@ -42,10 +42,10 @@
   ],
   "dynamicBindingPathList": [
     {
-      "key": "boxShadow"
+      "key": "borderRadius"
     },
     {
-      "key": "borderRadius"
+      "key": "boxShadow"
     }
   ],
   "dynamicPropertyPathList": [],

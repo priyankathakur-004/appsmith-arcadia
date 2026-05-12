@@ -53,7 +53,7 @@
     "dynamicBindingPathList": [],
     "name": "Api_CreateAccessToken",
     "pageId": "Meter-Intervals",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

@@ -1,43 +1,78 @@
+WITH ranked_accounts AS (
+    SELECT
+        aca.IdClient,
+        aca.IdClientAccount,
+        aca.ArcadiaAccountId,
+        aca.ArcadiaCredentialId,
+        aca.AccountNumber,
+        aca.NormalizedAccountNumber,
+        aca.ProviderId,
+        aca.ProviderName,
+        aca.Status,
+        aca.StatusDetail,
+        aca.IsActive,
+        aca.MissingSince,
+        aca.LastSeenOn,
+        aca.LastSyncedOn,
+        aca.LatestStatementDate,
+        ROW_NUMBER() OVER (
+            PARTITION BY
+                CASE
+                    WHEN aca.IdClientAccount IS NOT NULL THEN CONCAT('client:', CONVERT(NVARCHAR(50), aca.IdClientAccount))
+                    WHEN aca.ArcadiaAccountId IS NOT NULL THEN CONCAT('arcadia:', aca.ArcadiaAccountId)
+                    ELSE CONCAT('fallback:', ISNULL(CONVERT(NVARCHAR(50), aca.IdClient), ''), ':', ISNULL(aca.ArcadiaCredentialId, ''), ':', ISNULL(aca.AccountNumber, ''), ':', ISNULL(aca.ProviderId, ''))
+                END
+            ORDER BY
+                CASE WHEN ISNULL(aca.IsActive, 0) = 1 THEN 0 ELSE 1 END,
+                ISNULL(aca.LastSyncedOn, aca.LastSeenOn) DESC,
+                aca.LastSeenOn DESC,
+                aca.LatestStatementDate DESC,
+                aca.ArcadiaCredentialId DESC,
+                aca.ArcadiaAccountId DESC
+        ) AS RowNum
+    FROM arcadia.ArcadiaCredentialAccount aca
+    WHERE (
+        '{{CoverageClientSelect.selectedOptionValues?.join(",") || ""}}' = ''
+        OR aca.IdClient IN (
+          SELECT CAST(value AS INT) FROM STRING_SPLIT('{{CoverageClientSelect.selectedOptionValues?.join(",") || ""}}', ',')
+        )
+    )
+)
 SELECT
-    aca.IdClient AS idClient,
+    ra.IdClient AS idClient,
     c.ClientName AS clientName,
-    aca.IdClientAccount AS idClientAccount,
-    aca.ArcadiaAccountId AS arcadiaAccountId,
-    aca.ArcadiaCredentialId AS credentialId,
-    aca.AccountNumber AS accountNumber,
-    aca.NormalizedAccountNumber AS normalizedAccountNumber,
-    aca.ProviderId AS providerId,
-    aca.ProviderName AS providerName,
-    aca.Status AS status,
-    aca.StatusDetail AS statusDetail,
-    aca.IsActive AS isActive,
-    aca.MissingSince AS missingSince,
-    aca.LastSeenOn AS lastSeenOn,
-    aca.LastSyncedOn AS lastSyncedOn,
-    aca.LatestStatementDate AS latestStatementDate,
+    ra.IdClientAccount AS idClientAccount,
+    ra.ArcadiaAccountId AS arcadiaAccountId,
+    ra.ArcadiaCredentialId AS credentialId,
+    ra.AccountNumber AS accountNumber,
+    ra.NormalizedAccountNumber AS normalizedAccountNumber,
+    ra.ProviderId AS providerId,
+    ra.ProviderName AS providerName,
+    ra.Status AS status,
+    ra.StatusDetail AS statusDetail,
+    ra.IsActive AS isActive,
+    ra.MissingSince AS missingSince,
+    ra.LastSeenOn AS lastSeenOn,
+    ra.LastSyncedOn AS lastSyncedOn,
+    ra.LatestStatementDate AS latestStatementDate,
     cs.Status AS credentialStatus,
     cs.StatusDetail AS credentialStatusDetail,
     CASE
-        WHEN aca.IsActive = 1 AND aca.IdClientAccount IS NOT NULL THEN 'Linked'
-        WHEN aca.Status = 'CONNECTION_IN_PROGRESS' OR cs.Status = 'CONNECTION_IN_PROGRESS' THEN 'In Progress'
-        WHEN aca.IsActive = 1 AND aca.IdClientAccount IS NULL THEN 'Pending'
-        WHEN aca.IsActive = 0 THEN 'Failed'
-        WHEN aca.Status IN ('DATA_ACCESS_FAILURE', 'CONNECTION_FAILURE', 'INACTIVE') THEN 'Failed'
+        WHEN ra.IsActive = 1 AND ra.IdClientAccount IS NOT NULL THEN 'Linked'
+        WHEN ra.Status = 'CONNECTION_IN_PROGRESS' OR cs.Status = 'CONNECTION_IN_PROGRESS' THEN 'In Progress'
+        WHEN ra.IsActive = 1 AND ra.IdClientAccount IS NULL THEN 'Pending'
+        WHEN ra.IsActive = 0 THEN 'Failed'
+        WHEN ra.Status IN ('DATA_ACCESS_FAILURE', 'CONNECTION_FAILURE', 'INACTIVE') THEN 'Failed'
         WHEN cs.Status IN ('CONNECTION_FAILURE', 'CONNECTION_DEACTIVATED') THEN 'Failed'
-        WHEN aca.ProviderId IS NULL THEN 'Provider Not Mapped'
+        WHEN ra.ProviderId IS NULL THEN 'Provider Not Mapped'
         ELSE 'Pending'
     END AS bucket
-FROM arcadia.ArcadiaCredentialAccount aca
-INNER JOIN dbo.Client c ON c.IdClient = aca.IdClient
+FROM ranked_accounts ra
+INNER JOIN dbo.Client c ON c.IdClient = ra.IdClient
 LEFT JOIN arcadia.ArcadiaCredentialState cs
-    ON cs.IdClient = aca.IdClient
-    AND cs.ArcadiaCredentialId = aca.ArcadiaCredentialId
-WHERE (
-    '{{CoverageClientSelect.selectedOptionValues?.join(",") || ""}}' = ''
-    OR aca.IdClient IN (
-      SELECT CAST(value AS INT) FROM STRING_SPLIT('{{CoverageClientSelect.selectedOptionValues?.join(",") || ""}}', ',')
-    )
-)
-ORDER BY c.ClientName, aca.AccountNumber, aca.ArcadiaAccountId
+    ON cs.IdClient = ra.IdClient
+    AND cs.ArcadiaCredentialId = ra.ArcadiaCredentialId
+WHERE ra.RowNum = 1
+ORDER BY c.ClientName, ra.AccountNumber, ra.ArcadiaAccountId
 OFFSET {{(CoverageAccountsTable.pageNo - 1) * 50}} ROWS
 FETCH NEXT 50 ROWS ONLY;

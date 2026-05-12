@@ -1,29 +1,64 @@
+WITH ranked_accounts AS (
+    SELECT
+        aca.IdClient,
+        aca.IdClientAccount,
+        aca.AccountNumber,
+        aca.NormalizedAccountNumber,
+        aca.ArcadiaAccountId,
+        aca.ArcadiaCredentialId,
+        aca.Status,
+        aca.StatusDetail,
+        aca.ProviderName,
+        aca.ProviderId,
+        aca.AccountType,
+        aca.LatestStatementDate,
+        aca.NextExpectedPostDate,
+        aca.IsActive,
+        aca.LastSyncedOn,
+        aca.LastSeenOn,
+        ROW_NUMBER() OVER (
+            PARTITION BY
+                CASE
+                    WHEN aca.IdClientAccount IS NOT NULL THEN CONCAT('client:', CONVERT(NVARCHAR(50), aca.IdClientAccount))
+                    WHEN aca.ArcadiaAccountId IS NOT NULL THEN CONCAT('arcadia:', aca.ArcadiaAccountId)
+                    ELSE CONCAT('fallback:', ISNULL(CONVERT(NVARCHAR(50), aca.IdClient), ''), ':', ISNULL(aca.ArcadiaCredentialId, ''), ':', ISNULL(aca.AccountNumber, ''), ':', ISNULL(aca.ProviderId, ''))
+                END
+            ORDER BY
+                CASE WHEN ISNULL(aca.IsActive, 0) = 1 THEN 0 ELSE 1 END,
+                ISNULL(aca.LastSyncedOn, aca.LastSeenOn) DESC,
+                aca.LastSeenOn DESC,
+                aca.LatestStatementDate DESC,
+                aca.ArcadiaCredentialId DESC,
+                aca.ArcadiaAccountId DESC
+        ) AS RowNum
+    FROM arcadia.ArcadiaCredentialAccount aca
+    INNER JOIN dbo.Client c ON aca.IdClient = c.IdClient
+    WHERE c.ProviderClientId = '{{appsmith.store.accountsSearch?.clientId || ""}}'
+      AND (
+        ('{{appsmith.store.accountsSearch?.source || ""}}' = 'US'
+          AND aca.Status IN ('DATA_ACCESS_FAILURE', 'CONNECTION_IN_PROGRESS'))
+        OR
+        ('{{appsmith.store.accountsSearch?.source || ""}}' = 'Arcadia'
+          AND aca.Status IN ('INACTIVE', 'CONNECTION_DEACTIVATED', 'CONNECTION_IN_PROGRESS'))
+      )
+)
 SELECT
-    aa.AccountNumber AS account_number,
-    aa.NormalizedAccountNumber AS normalized_account_number,
-    aa.ArcadiaAccountId AS arcadia_account_id,
-    aa.Status AS status,
-    aa.StatusDetail AS status_detail,
-    aa.ProviderName AS provider_name,
-    aa.ProviderId AS provider_id,
-    aa.AccountType AS account_type,
-    aa.LatestStatementDate AS latest_statement_date,
-    aa.NextExpectedPostDate AS next_expected_post_date,
-    aa.SummaryAccountId AS summary_account_id,
-    aa.SummaryAccountNumber AS summary_account_number,
-    aa.SyncedOn AS synced_on,
-    aa.VoidedAt AS voided_at,
+    ra.AccountNumber AS account_number,
+    ra.NormalizedAccountNumber AS normalized_account_number,
+    ra.ArcadiaAccountId AS arcadia_account_id,
+    ra.ArcadiaCredentialId AS credential_id,
+    ra.Status AS status,
+    ra.StatusDetail AS status_detail,
+    ra.ProviderName AS provider_name,
+    ra.ProviderId AS provider_id,
+    ra.AccountType AS account_type,
+    ra.LatestStatementDate AS latest_statement_date,
+    ra.NextExpectedPostDate AS next_expected_post_date,
+    ra.LastSyncedOn AS synced_on,
     c.ClientName AS client_name
-FROM dbo.ArcadiaAccounts aa
-INNER JOIN dbo.Client c ON aa.IdClient = c.IdClient
-WHERE c.ProviderClientId = '{{appsmith.store.accountsSearch?.clientId || ""}}'
-  AND (
-    ('{{appsmith.store.accountsSearch?.source || ""}}' = 'US'
-      AND aa.Status IN ('DATA_ACCESS_FAILURE', 'CONNECTION_IN_PROGRESS'))
-    OR
-    ('{{appsmith.store.accountsSearch?.source || ""}}' = 'Arcadia'
-      AND aa.Status IN ('INACTIVE', 'CONNECTION_DEACTIVATED', 'CONNECTION_IN_PROGRESS'))
-  )
-ORDER BY aa.Status, aa.AccountNumber
+FROM ranked_accounts ra
+INNER JOIN dbo.Client c ON c.IdClient = ra.IdClient
+WHERE ra.RowNum = 1
+ORDER BY ra.Status, ra.AccountNumber
 OFFSET {{ErrorsTable.pageOffset}} ROWS
-FETCH NEXT {{ErrorsTable.pageSize}} ROWS ONLY;;
+FETCH NEXT {{ErrorsTable.pageSize}} ROWS ONLY;

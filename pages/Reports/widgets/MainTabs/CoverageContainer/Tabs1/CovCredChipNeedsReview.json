@@ -1,0 +1,61 @@
+{
+  "animateLoading": true,
+  "backgroundColor": "#dbeafe",
+  "borderColor": "#dbeafe",
+  "borderRadius": "9999px",
+  "borderWidth": "1",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    },
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "fontFamily"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.75rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": "{{CoverageClientSelect.selectedOptionValues?.length > 0}}",
+  "key": "k",
+  "leftColumn": 37,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 80,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 37,
+  "mobileRightColumn": 43,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "originalBottomRow": 4,
+  "originalTopRow": 1,
+  "overflow": "NONE",
+  "parentColumnSpace": 15,
+  "parentId": "nn3mddtrva",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 43,
+  "shouldTruncate": false,
+  "text": "{{ 'Needs Review ' + ((GetCoverageCredentialList.data || []).filter(r => (r.activeArcadiaAccountCount || 0) === 0 && (r.status === 'SUCCESS' || r.status === 'CONNECTION_SUCCESS')).length) }}",
+  "textAlign": "CENTER",
+  "textColor": "#1e40af",
+  "topRow": 1,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "icxh1eg6mz",
+  "widgetName": "CovCredChipNeedsReview"
+}

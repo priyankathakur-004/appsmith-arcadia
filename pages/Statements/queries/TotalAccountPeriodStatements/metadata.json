@@ -60,7 +60,7 @@
     ],
     "name": "TotalAccountPeriodStatements",
     "pageId": "Statements",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

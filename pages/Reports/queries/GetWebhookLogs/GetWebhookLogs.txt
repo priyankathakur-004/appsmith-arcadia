@@ -60,12 +60,10 @@ WHERE 1=1
     )
   )
   AND (
-    '{{WebhookStatusSelect.selectedOptionValue || ""}}' = ''
-    OR logs.Status = '{{WebhookStatusSelect.selectedOptionValue || ""}}'
-  )
-  AND (
-    '{{WebhookClientNameInput.text || ""}}' = ''
-    OR mapped.ClientName = '{{WebhookClientNameInput.text || ""}}'
+    '{{WebhookClientSelect.selectedOptionValues?.join(",") || ""}}' = ''
+    OR mapped.ClientName IN (
+      SELECT value FROM STRING_SPLIT('{{WebhookClientSelect.selectedOptionValues?.join(",") || ""}}', ',')
+    )
   )
   AND (
     '{{WebhookAccountNumberInput.text || ""}}' = ''
@@ -80,5 +78,5 @@ WHERE 1=1
     OR logs.ReceivedAtEt <= '{{WebhookToDate.formattedDate || ""}}'
   )
 ORDER BY logs.ReceivedAtEt DESC, logs.Id DESC
-OFFSET {{(WebhookLogsTable.pageNo - 1) * 50}} ROWS
-FETCH NEXT 50 ROWS ONLY;
+OFFSET {{(WebhookLogsTable.pageNo - 1) * WebhookLogsTable.pageSize}} ROWS
+FETCH NEXT {{WebhookLogsTable.pageSize}} ROWS ONLY;

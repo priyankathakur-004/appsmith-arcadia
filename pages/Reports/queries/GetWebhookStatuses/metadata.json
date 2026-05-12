@@ -10,10 +10,10 @@
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": true
+          "value": false
         }
       ],
-      "timeoutInMillisecond": 10000
+      "timeoutInMillisecond": 1000000
     },
     "confirmBeforeExecute": false,
     "datasource": {
@@ -29,7 +29,7 @@
     ],
     "name": "GetWebhookStatuses",
     "pageId": "Reports",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

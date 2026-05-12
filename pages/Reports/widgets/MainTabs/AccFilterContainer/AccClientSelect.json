@@ -2,18 +2,18 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 12,
+  "bottomRow": 11,
   "boxShadow": "none",
   "defaultOptionValue": "[]",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
+      "key": "sourceData"
     },
     {
       "key": "borderRadius"
     },
     {
-      "key": "sourceData"
+      "key": "accentColor"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -61,7 +61,7 @@
   "rightColumn": 20,
   "serverSideFiltering": false,
   "sourceData": "{{GetAccountClients.data || []}}",
-  "topRow": 5,
+  "topRow": 4,
   "type": "MULTI_SELECT_WIDGET_V2",
   "version": 1,
   "widgetId": "mda5dfrqho",

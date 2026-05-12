@@ -5,15 +5,15 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT COUNT(*) AS total\nFROM dbo.ArcadiaAccounts aa\nINNER JOIN dbo.Client c ON aa.IdClient = c.IdClient\nWHERE c.ProviderClientId = '{{appsmith.store.accountsSearch?.clientId || \"\"}}'\n  AND (\n    ('{{appsmith.store.accountsSearch?.source || \"\"}}' = 'US'\n      AND aa.Status IN ('DATA_ACCESS_FAILURE', 'CONNECTION_IN_PROGRESS'))\n    OR\n    ('{{appsmith.store.accountsSearch?.source || \"\"}}' = 'Arcadia'\n      AND aa.Status IN ('INACTIVE', 'CONNECTION_DEACTIVATED', 'CONNECTION_IN_PROGRESS'))\n  );\n",
+      "body": "WITH ranked_accounts AS (\n    SELECT\n        aca.IdClient,\n        aca.IdClientAccount,\n        aca.AccountNumber,\n        aca.ArcadiaAccountId,\n        aca.ArcadiaCredentialId,\n        aca.Status,\n        aca.ProviderId,\n        aca.IsActive,\n        aca.LastSyncedOn,\n        aca.LastSeenOn,\n        aca.LatestStatementDate,\n        ROW_NUMBER() OVER (\n            PARTITION BY\n                CASE\n                    WHEN aca.IdClientAccount IS NOT NULL THEN CONCAT('client:', CONVERT(NVARCHAR(50), aca.IdClientAccount))\n                    WHEN aca.ArcadiaAccountId IS NOT NULL THEN CONCAT('arcadia:', aca.ArcadiaAccountId)\n                    ELSE CONCAT('fallback:', ISNULL(CONVERT(NVARCHAR(50), aca.IdClient), ''), ':', ISNULL(aca.ArcadiaCredentialId, ''), ':', ISNULL(aca.AccountNumber, ''), ':', ISNULL(aca.ProviderId, ''))\n                END\n            ORDER BY\n                CASE WHEN ISNULL(aca.IsActive, 0) = 1 THEN 0 ELSE 1 END,\n                ISNULL(aca.LastSyncedOn, aca.LastSeenOn) DESC,\n                aca.LastSeenOn DESC,\n                aca.LatestStatementDate DESC,\n                aca.ArcadiaCredentialId DESC,\n                aca.ArcadiaAccountId DESC\n        ) AS RowNum\n    FROM arcadia.ArcadiaCredentialAccount aca\n    INNER JOIN dbo.Client c ON aca.IdClient = c.IdClient\n    WHERE c.ProviderClientId = '{{appsmith.store.accountsSearch?.clientId || \"\"}}'\n      AND (\n        ('{{appsmith.store.accountsSearch?.source || \"\"}}' = 'US'\n          AND aca.Status IN ('DATA_ACCESS_FAILURE', 'CONNECTION_IN_PROGRESS'))\n        OR\n        ('{{appsmith.store.accountsSearch?.source || \"\"}}' = 'Arcadia'\n          AND aca.Status IN ('INACTIVE', 'CONNECTION_DEACTIVATED', 'CONNECTION_IN_PROGRESS'))\n      )\n)\nSELECT COUNT(*) AS total\nFROM ranked_accounts ra\nWHERE ra.RowNum = 1;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
         {
-          "value": true
+          "value": false
         }
       ],
-      "timeoutInMillisecond": 10000
+      "timeoutInMillisecond": 1000000
     },
     "confirmBeforeExecute": false,
     "datasource": {

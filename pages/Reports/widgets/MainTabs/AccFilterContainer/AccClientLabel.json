@@ -1,16 +1,10 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 5,
+  "bottomRow": 4,
   "dynamicBindingPathList": [
     {
       "key": "fontFamily"
-    },
-    {
-      "key": "truncateButtonColor"
-    },
-    {
-      "key": "borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -44,7 +38,7 @@
   "text": "Client Name",
   "textAlign": "LEFT",
   "textColor": "#94a3b8",
-  "topRow": 1,
+  "topRow": 0,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

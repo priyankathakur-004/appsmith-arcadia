@@ -1,30 +1,68 @@
+WITH ranked_accounts AS (
+    SELECT
+        aca.IdClient,
+        aca.IdClientAccount,
+        aca.AccountNumber,
+        aca.NormalizedAccountNumber,
+        aca.ArcadiaAccountId,
+        aca.ArcadiaCredentialId,
+        aca.ProviderId,
+        aca.ProviderName,
+        aca.LatestStatementDate,
+        aca.NextExpectedPostDate,
+        aca.Status,
+        aca.StatusDetail,
+        aca.AccountType,
+        aca.IsActive,
+        aca.MissingSince,
+        aca.LastSeenOn,
+        aca.LastSyncedOn,
+        ROW_NUMBER() OVER (
+            PARTITION BY
+                CASE
+                    WHEN aca.IdClientAccount IS NOT NULL THEN CONCAT('client:', CONVERT(NVARCHAR(50), aca.IdClientAccount))
+                    WHEN aca.ArcadiaAccountId IS NOT NULL THEN CONCAT('arcadia:', aca.ArcadiaAccountId)
+                    ELSE CONCAT('fallback:', ISNULL(CONVERT(NVARCHAR(50), aca.IdClient), ''), ':', ISNULL(aca.ArcadiaCredentialId, ''), ':', ISNULL(aca.AccountNumber, ''), ':', ISNULL(aca.ProviderId, ''))
+                END
+            ORDER BY
+                CASE WHEN ISNULL(aca.IsActive, 0) = 1 THEN 0 ELSE 1 END,
+                ISNULL(aca.LastSyncedOn, aca.LastSeenOn) DESC,
+                aca.LastSeenOn DESC,
+                aca.LatestStatementDate DESC,
+                aca.ArcadiaCredentialId DESC,
+                aca.ArcadiaAccountId DESC
+        ) AS RowNum
+    FROM arcadia.ArcadiaCredentialAccount aca
+    INNER JOIN dbo.Client c ON aca.IdClient = c.IdClient
+    WHERE c.ProviderClientId = '{{ appsmith.store.accountsSearch?.clientId || "" }}'
+      AND aca.Status IN (
+        SELECT value FROM STRING_SPLIT('{{ AccountsUtils.getStatusList() }}', ',')
+      )
+)
 SELECT
-    aca.IdClient AS idClient,
+    ra.IdClient AS idClient,
     c.ClientName AS client_name,
-    aca.IdClientAccount AS idClientAccount,
-    aca.AccountNumber AS accountNumber,
-    aca.NormalizedAccountNumber AS normalizedAccountNumber,
-    aca.ArcadiaAccountId AS id,
-    aca.ArcadiaAccountId AS accountId,
-    aca.ArcadiaCredentialId AS credentialId,
-    aca.ProviderId AS providerId,
-    aca.ProviderName AS providerName,
-    aca.LatestStatementDate AS latestStatementDate,
-    aca.NextExpectedPostDate AS nextExpectedPostDate,
-    aca.Status AS status,
-    aca.Status AS accountStatus,
-    aca.StatusDetail AS statusDetail,
-    aca.StatusDetail AS accountStatusDetail,
-    aca.AccountType AS type,
-    aca.AccountType AS accountType,
-    aca.IsActive AS isActive,
-    aca.MissingSince AS missingSince,
-    aca.LastSeenOn AS lastSeenOn,
-    aca.LastSyncedOn AS syncedOn
-FROM arcadia.ArcadiaCredentialAccount aca
-INNER JOIN dbo.Client c ON aca.IdClient = c.IdClient
-WHERE c.ProviderClientId = '{{ appsmith.store.accountsSearch?.clientId || "" }}'
-  AND aca.Status IN (
-    SELECT value FROM STRING_SPLIT('{{ AccountsUtils.getStatusList() }}', ',')
-  )
-ORDER BY aca.Status, aca.AccountNumber;
+    ra.IdClientAccount AS idClientAccount,
+    ra.AccountNumber AS accountNumber,
+    ra.NormalizedAccountNumber AS normalizedAccountNumber,
+    ra.ArcadiaAccountId AS id,
+    ra.ArcadiaAccountId AS accountId,
+    ra.ArcadiaCredentialId AS credentialId,
+    ra.ProviderId AS providerId,
+    ra.ProviderName AS providerName,
+    ra.LatestStatementDate AS latestStatementDate,
+    ra.NextExpectedPostDate AS nextExpectedPostDate,
+    ra.Status AS status,
+    ra.Status AS accountStatus,
+    ra.StatusDetail AS statusDetail,
+    ra.StatusDetail AS accountStatusDetail,
+    ra.AccountType AS type,
+    ra.AccountType AS accountType,
+    ra.IsActive AS isActive,
+    ra.MissingSince AS missingSince,
+    ra.LastSeenOn AS lastSeenOn,
+    ra.LastSyncedOn AS syncedOn
+FROM ranked_accounts ra
+INNER JOIN dbo.Client c ON c.IdClient = ra.IdClient
+WHERE ra.RowNum = 1
+ORDER BY ra.Status, ra.AccountNumber;

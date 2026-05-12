@@ -1,0 +1,43 @@
+{
+  "accentColor": "#86efac",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 19,
+  "defaultCheckedState": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "q9m0mehe7h",
+  "label": "Hide already-existing credentials",
+  "labelPosition": "Left",
+  "labelTextColor": "#f4f4f5",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 19,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 30,
+  "mobileTopRow": 16,
+  "needsErrorInfo": false,
+  "parentColumnSpace": 19.40625,
+  "parentId": "wo3mqx0rh2",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 30,
+  "topRow": 16,
+  "type": "CHECKBOX_WIDGET",
+  "version": 1,
+  "widgetId": "3zabu3d9cb",
+  "widgetName": "CredHideAlreadyExistingCheckbox"
+}

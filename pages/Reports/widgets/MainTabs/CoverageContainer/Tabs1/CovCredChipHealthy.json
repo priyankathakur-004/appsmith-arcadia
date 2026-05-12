@@ -1,0 +1,61 @@
+{
+  "animateLoading": true,
+  "backgroundColor": "#dcfce7",
+  "borderColor": "#dcfce7",
+  "borderRadius": "9999px",
+  "borderWidth": "1",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    },
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "fontFamily"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.75rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": "{{CoverageClientSelect.selectedOptionValues?.length > 0}}",
+  "key": "k",
+  "leftColumn": 58,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 80,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 58,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "originalBottomRow": 4,
+  "originalTopRow": 1,
+  "overflow": "NONE",
+  "parentColumnSpace": 15,
+  "parentId": "nn3mddtrva",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "shouldTruncate": false,
+  "text": "{{ 'Healthy ' + (GetCoverageCredentialSummary.data?.[0]?.connected_in_arcadia || 0) }}",
+  "textAlign": "CENTER",
+  "textColor": "#166534",
+  "topRow": 1,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "sqz2j7z2p0",
+  "widgetName": "CovCredChipHealthy"
+}

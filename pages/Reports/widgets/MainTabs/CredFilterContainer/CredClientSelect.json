@@ -7,13 +7,13 @@
   "defaultOptionValue": "[]",
   "dynamicBindingPathList": [
     {
-      "key": "accentColor"
+      "key": "sourceData"
     },
     {
       "key": "borderRadius"
     },
     {
-      "key": "sourceData"
+      "key": "accentColor"
     }
   ],
   "dynamicHeight": "FIXED",
