@@ -25,6 +25,16 @@ export default {
 		}
 		storeValue('selectedBill', row);
 		storeValue('intervalsAccountId', row.ArcadiaAccountId);
+		// Arcadia's /plug/intervals endpoint requires startAt/endAt — derive a 30-day window
+		// ending at the invoice date (approximates the bill's service period).
+		if (row.InvoiceDate) {
+			const end = new Date(row.InvoiceDate);
+			const start = new Date(end);
+			start.setDate(start.getDate() - 30);
+			const iso = d => d.toISOString().slice(0, 10);
+			storeValue('intervalsStartDate', iso(start));
+			storeValue('intervalsEndDate', iso(end));
+		}
 		await Api_ListMeters.run();
 		const meters = Api_ListMeters.data?.meters || [];
 		if (!meters.length) {

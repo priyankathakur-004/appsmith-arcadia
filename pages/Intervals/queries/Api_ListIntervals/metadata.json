@@ -19,7 +19,10 @@
       "paginationType": "NONE",
       "path": "/plug/intervals/meters/{{appsmith.store.intervalsMeterId}}",
       "pluginSpecifiedTemplates": [{ "value": true }],
-      "queryParameters": [],
+      "queryParameters": [
+        { "key": "startAt", "value": "{{appsmith.store.intervalsStartDate}}" },
+        { "key": "endAt", "value": "{{appsmith.store.intervalsEndDate}}" }
+      ],
       "timeoutInMillisecond": 30000
     },
     "confirmBeforeExecute": false,
@@ -31,7 +34,9 @@
     },
     "dynamicBindingPathList": [
       { "key": "headers[0].value" },
-      { "key": "path" }
+      { "key": "path" },
+      { "key": "queryParameters[0].value" },
+      { "key": "queryParameters[1].value" }
     ],
     "name": "Api_ListIntervals",
     "pageId": "Intervals",
