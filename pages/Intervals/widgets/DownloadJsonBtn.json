@@ -16,7 +16,7 @@
   ],
   "isDisabled": false,
   "isLoading": false,
-  "isVisible": "{{Api_ListIntervals.data?.readings?.length > 0}}",
+  "isVisible": "{{!!appsmith.store.selectedBill && Api_ListIntervals.data?.readings?.length > 0}}",
   "key": "ivldlbtky",
   "leftColumn": 44,
   "maxDynamicHeight": 9000,

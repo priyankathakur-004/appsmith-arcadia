@@ -52,7 +52,7 @@
   "horizontalAlignment": "LEFT",
   "isLoading": false,
   "isSortable": true,
-  "isVisible": "{{Api_ListIntervals.data?.readings?.length > 0}}",
+  "isVisible": "{{!!appsmith.store.selectedBill && Api_ListIntervals.data?.readings?.length > 0}}",
   "isVisibleDownload": true,
   "isVisibleFilters": false,
   "isVisiblePagination": true,
