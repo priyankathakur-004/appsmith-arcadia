@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69b3a04bd659a362092919a3_aca3ab86-6333-4b97-b5f5-765d8363fc94",
-  "id": "Meters_Api_ListAccounts",
+  "gitSyncId": "69b3a04bd659a362092919a3_715fd6a1-95dc-43f0-a869-17506302bed0",
+  "id": "Intervals_Api_ListIntervals",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -24,8 +24,8 @@
       ],
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
-      "paginationType": "PAGE_NO",
-      "path": "/plug/accounts",
+      "paginationType": "NONE",
+      "path": "/plug/intervals/meters/{{appsmith.store.intervalsMeterId}}",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -33,15 +33,15 @@
       ],
       "queryParameters": [
         {
-          "key": "search",
-          "value": "{{ [AccountNumberSelect.filterText ? `normalizedAccountNumber==${AccountNumberSelect.filterText}*` : '', ClientSelect.selectedOptionValue ? `correlationIds==${ClientSelect.selectedOptionValue}*` : ''].filter(Boolean).join(';') }}"
+          "key": "startAt",
+          "value": "{{appsmith.store.intervalsStartDate}}"
         },
         {
-          "key": "size",
-          "value": "200"
+          "key": "endAt",
+          "value": "{{appsmith.store.intervalsEndDate}}"
         }
       ],
-      "timeoutInMillisecond": 10000
+      "timeoutInMillisecond": 30000
     },
     "confirmBeforeExecute": false,
     "datasource": {
@@ -52,18 +52,21 @@
     },
     "dynamicBindingPathList": [
       {
-        "key": "path"
-      },
-      {
         "key": "headers[0].value"
       },
       {
+        "key": "path"
+      },
+      {
         "key": "queryParameters[0].value"
+      },
+      {
+        "key": "queryParameters[1].value"
       }
     ],
-    "name": "Api_ListAccounts",
-    "pageId": "Meters",
-    "runBehaviour": "MANUAL",
+    "name": "Api_ListIntervals",
+    "pageId": "Intervals",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

@@ -1,0 +1,90 @@
+{
+  "backgroundColor": "#1e293b",
+  "borderColor": "#334155",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 52,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "children": [
+    {
+      "bottomRow": 350,
+      "canExtend": true,
+      "detachFromLayout": true,
+      "dynamicBindingPathList": [],
+      "dynamicHeight": "AUTO_HEIGHT",
+      "dynamicTriggerPathList": [],
+      "flexLayers": [],
+      "isLoading": false,
+      "isVisible": true,
+      "key": "ivlbdcank",
+      "leftColumn": 0,
+      "maxDynamicHeight": 9000,
+      "minDynamicHeight": 4,
+      "minHeight": 130,
+      "minWidth": 450,
+      "mobileBottomRow": 220,
+      "mobileLeftColumn": 0,
+      "mobileRightColumn": 268.25,
+      "mobileTopRow": 0,
+      "needsErrorInfo": false,
+      "parentColumnSpace": 1,
+      "parentId": "intvbdc01",
+      "parentRowSpace": 1,
+      "renderMode": "CANVAS",
+      "responsiveBehavior": "fill",
+      "rightColumn": 268.25,
+      "shouldScrollContents": false,
+      "topRow": 0,
+      "type": "CANVAS_WIDGET",
+      "version": 1,
+      "widgetId": "intvbdcanv1",
+      "widgetName": "BillDetailsCanvas"
+    }
+  ],
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "flexVerticalAlignment": "start",
+  "isCanvas": true,
+  "isLoading": false,
+  "isVisible": "{{!!BillSelect.selectedOptionValue}}",
+  "key": "ivlbdckey",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 10,
+  "minWidth": 450,
+  "mobileBottomRow": 32,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 13,
+  "needsErrorInfo": false,
+  "originalBottomRow": 32,
+  "originalTopRow": 13,
+  "parentColumnSpace": 16.765625,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "shouldScrollContents": true,
+  "topRow": 17,
+  "type": "CONTAINER_WIDGET",
+  "version": 1,
+  "widgetId": "intvbdc01",
+  "widgetName": "BillDetailsPanel"
+}

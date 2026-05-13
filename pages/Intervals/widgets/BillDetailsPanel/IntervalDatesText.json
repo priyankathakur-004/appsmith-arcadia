@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 25,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "ivlbdf09k",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 14,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 62,
+  "mobileTopRow": 12,
+  "needsErrorInfo": false,
+  "originalBottomRow": 14,
+  "originalTopRow": 12,
+  "overflow": "NONE",
+  "parentColumnSpace": 16.765625,
+  "parentId": "intvbdcanv1",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "shouldTruncate": false,
+  "text": "{{ (() => { const readings = Api_ListIntervals.data?.readings || []; if (!readings.length) return 'Interval dates: —'; const starts = readings.map(r => r.startAt).filter(Boolean).sort(); const ends = readings.map(r => r.endAt).filter(Boolean).sort(); const first = (starts[0] || '').slice(0, 10) || '—'; const last = (ends[ends.length - 1] || '').slice(0, 10) || '—'; return `Interval dates: ${first} to ${last}  (${readings.length} readings)`; })() }}",
+  "textAlign": "LEFT",
+  "textColor": "#e2e8f0",
+  "topRow": 21,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "intvbdf09",
+  "widgetName": "IntervalDatesText"
+}

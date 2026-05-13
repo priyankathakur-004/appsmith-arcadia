@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 17,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "ivlbdf03k",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 10,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 62,
+  "mobileTopRow": 8,
+  "needsErrorInfo": false,
+  "originalBottomRow": 10,
+  "originalTopRow": 8,
+  "overflow": "NONE",
+  "parentColumnSpace": 16.765625,
+  "parentId": "intvbdcanv1",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "shouldTruncate": false,
+  "text": "{{ (() => { const b = appsmith.store.selectedBill || {}; const m = appsmith.store.selectedMeter || {}; return `Account #: ${b.AccountNumber_Raw || b.AccountNumber || '—'}      Meter #: ${m.meterNumber || m.normalizedMeterNumber || '—'}`; })() }}",
+  "textAlign": "LEFT",
+  "textColor": "#e2e8f0",
+  "topRow": 13,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "intvbdf03",
+  "widgetName": "AccountMeterText"
+}

@@ -2,7 +2,7 @@
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 11,
-  "defaultOptionValue": "SHEETZCORP_P",
+  "defaultOptionValue": "",
   "dynamicBindingPathList": [
     {
       "key": "borderRadius"
@@ -38,7 +38,7 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 4,
   "needsErrorInfo": false,
-  "onOptionChange": "{{resetWidget(\"AccountNumberSelect\", true);}}",
+  "onOptionChange": "{{resetWidget(\"AccountNumberSelect\", true); DS_GetArcadiaAccounts.run();}}",
   "optionLabel": "label",
   "optionValue": "value",
   "options": "{{DS_GetClients.data?.map(c => ({ label: c.client_name, value: c.id_client })) || []}}",
@@ -52,7 +52,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 20,
   "serverSideFiltering": false,
-  "sourceData": "{{DS_AllCustomers.data.map( (obj) =>{ return  {'label': obj.client_name, 'value': obj.client_id_DS } })}}",
+  "sourceData": "{{DS_AllCustomers.data.map( (obj) =>{ return  {'label': obj.client_name, 'value': obj.id_client } })}}",
   "topRow": 4,
   "type": "SELECT_WIDGET",
   "version": 1,

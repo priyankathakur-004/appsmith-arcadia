@@ -1,0 +1,53 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 114,
+  "buttonColor": "#10b981",
+  "buttonVariant": "SECONDARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": "{{!!appsmith.store.selectedBill && Api_ListIntervals.data?.readings?.length > 0}}",
+  "key": "ivldlbtky",
+  "leftColumn": 44,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 120,
+  "mobileBottomRow": 94,
+  "mobileLeftColumn": 44,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 91,
+  "needsErrorInfo": false,
+  "onClick": "{{IntervalsUtils.downloadIntervalsJson()}}",
+  "originalBottomRow": 94,
+  "originalTopRow": 91,
+  "parentColumnSpace": 16.765625,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "text": "⬇ Download intervals JSON",
+  "topRow": 111,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "intvdlbt1",
+  "widgetName": "DownloadJsonBtn"
+}

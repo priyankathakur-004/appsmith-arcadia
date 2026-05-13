@@ -1,0 +1,14 @@
+{
+  "gitSyncId": "69b3a04bd659a362092919a3_6b194969-645f-42dc-8fb9-91b196a79390",
+  "id": "Intervals_TokenManager",
+  "unpublishedCollection": {
+    "name": "TokenManager",
+    "pageId": "Intervals",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      { "name": "tokenData", "value": "{}" },
+      { "name": "_tokenIntervalId", "value": "null" }
+    ]
+  }
+}
