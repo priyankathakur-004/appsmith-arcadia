@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "69b3a04bd659a362092919a3_c6a2024c-a2ab-4e9b-aeae-618fe980f54b",
-  "id": "Statements_TotalAccountPeriodStatements",
+  "gitSyncId": "69b3a04bd659a362092919a3_ea8c5c85-5f1d-499d-a33d-83be2b7851cb",
+  "id": "Meters_Api_ListMeters",
   "pluginId": "restapi-plugin",
   "pluginType": "API",
   "unpublishedAction": {
@@ -25,7 +25,7 @@
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "PAGE_NO",
-      "path": "/plug/statements",
+      "path": "/plug/meters",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -33,12 +33,8 @@
       ],
       "queryParameters": [
         {
-          "key": "size",
-          "value": "1"
-        },
-        {
           "key": "search",
-          "value": "{{StatementUtils.accountFilter() || \"\"}}"
+          "value": "accountId=={{AccountNumberSelect.selectedOptionValue}}"
         }
       ],
       "timeoutInMillisecond": 10000
@@ -55,12 +51,15 @@
         "key": "headers[0].value"
       },
       {
-        "key": "queryParameters[1].value"
+        "key": "path"
+      },
+      {
+        "key": "queryParameters[0].value"
       }
     ],
-    "name": "TotalAccountPeriodStatements",
-    "pageId": "Statements",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "name": "Api_ListMeters",
+    "pageId": "Meters",
+    "runBehaviour": "MANUAL",
+    "userSetOnLoad": true
   }
 }

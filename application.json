@@ -39,11 +39,15 @@
       "isDefault": false
     },
     {
-      "id": "Meter-Intervals",
+      "id": "Meters",
       "isDefault": false
     },
     {
       "id": "Tariff",
+      "isDefault": false
+    },
+    {
+      "id": "Intervals",
       "isDefault": false
     }
   ],
