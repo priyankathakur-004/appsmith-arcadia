@@ -25,8 +25,6 @@ export default {
 		}
 		storeValue('selectedBill', row);
 		storeValue('intervalsAccountId', row.ArcadiaAccountId);
-		if (row.ServiceStart) storeValue('intervalsStartDate', String(row.ServiceStart).slice(0, 10));
-		if (row.ServiceEnd) storeValue('intervalsEndDate', String(row.ServiceEnd).slice(0, 10));
 		await Api_ListMeters.run();
 		const meters = Api_ListMeters.data?.meters || [];
 		if (!meters.length) {
@@ -39,20 +37,23 @@ export default {
 		await Api_ListIntervals.run();
 		const cnt = Api_ListIntervals.data?.readings?.length || 0;
 		showAlert(
-			cnt ? `Loaded ${cnt} interval reading(s) for bill ${row.IdBill}` : `No intervals returned for ${row.ServiceStart || ''} → ${row.ServiceEnd || ''}`,
+			cnt ? `Loaded ${cnt} interval reading(s) for bill ${row.IdBill}` : `No intervals returned for that meter`,
 			cnt ? 'success' : 'warning'
 		);
 	},
 
 	downloadIntervalsJson() {
 		const data = Api_ListIntervals.data;
-		if (!data || !data.readings?.length) {
+		const readings = data?.readings || [];
+		if (!readings.length) {
 			showAlert('No interval data to download yet', 'warning');
 			return;
 		}
 		const meterId = appsmith.store.intervalsMeterId || 'meter';
-		const start = (appsmith.store.intervalsStartDate || '').slice(0, 10) || 'start';
-		const end = (appsmith.store.intervalsEndDate || '').slice(0, 10) || 'end';
-		download(JSON.stringify(data, null, 2), `intervals_${meterId}_${start}_${end}.json`, 'application/json');
+		const starts = readings.map(r => r.startAt).filter(Boolean).sort();
+		const ends = readings.map(r => r.endAt).filter(Boolean).sort();
+		const first = (starts[0] || '').slice(0, 10) || 'start';
+		const last = (ends[ends.length - 1] || '').slice(0, 10) || 'end';
+		download(JSON.stringify(data, null, 2), `intervals_${meterId}_${first}_${last}.json`, 'application/json');
 	}
 }

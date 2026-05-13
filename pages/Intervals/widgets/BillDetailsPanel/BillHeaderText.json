@@ -35,7 +35,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 62,
   "shouldTruncate": false,
-  "text": "{{ (() => { const b = appsmith.store.selectedBill || {}; const fmt = n => n == null ? '—' : '$' + Number(n).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}); return `Bill #${b.IdBill || '—'}   •   Invoice ${b.InvoiceNumber || '—'}   •   Total ${fmt(b.TotalDue)}`; })() }}",
+  "text": "{{ `Bill #${(appsmith.store.selectedBill || {}).IdBill || '—'}` }}",
   "textAlign": "LEFT",
   "textColor": "#e2e8f0",
   "topRow": 0,
