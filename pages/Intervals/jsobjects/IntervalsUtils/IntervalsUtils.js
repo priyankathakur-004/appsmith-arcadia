@@ -31,9 +31,19 @@ export default {
 			showAlert('Arcadia returned no meters for that account', 'warning');
 			return;
 		}
-		const meter = meters.find(m => m && m.meterNumber) || meters[0];
+		const withNumber = meters.filter(m => m && m.meterNumber);
+		const pool = withNumber.length ? withNumber : meters;
+		const enabled = pool.filter(m => m.isIntervalsProductActive);
+		const meter = enabled[0] || pool[0];
 		storeValue('intervalsMeterId', meter.id);
 		storeValue('selectedMeter', meter);
+		if (!meter.isIntervalsProductActive) {
+			showAlert(
+				`Meter ${meter.meterNumber || meter.id} is not enabled for intervals in Arcadia (status: ${meter.status || '—'}). Arcadia will return 403 if we try to fetch — skipping.`,
+				'warning'
+			);
+			return;
+		}
 		await Api_ListIntervals.run();
 		const cnt = Api_ListIntervals.data?.readings?.length || 0;
 		showAlert(
