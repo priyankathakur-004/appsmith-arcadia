@@ -6,17 +6,17 @@
   "buttonVariant": "SECONDARY",
   "dynamicBindingPathList": [
     { "key": "borderRadius" },
-    { "key": "isDisabled" }
+    { "key": "isVisible" }
   ],
   "dynamicPropertyPathList": [
-    { "key": "isDisabled" }
+    { "key": "isVisible" }
   ],
   "dynamicTriggerPathList": [
     { "key": "onClick" }
   ],
-  "isDisabled": "{{!(Api_ListIntervals.data?.readings?.length)}}",
+  "isDisabled": false,
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": "{{Api_ListIntervals.data?.readings?.length > 0}}",
   "key": "ivldlbtky",
   "leftColumn": 44,
   "maxDynamicHeight": 9000,
