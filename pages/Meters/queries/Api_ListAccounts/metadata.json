@@ -63,7 +63,7 @@
     ],
     "name": "Api_ListAccounts",
     "pageId": "Meters",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

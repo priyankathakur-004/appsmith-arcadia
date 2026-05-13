@@ -1,12 +1,20 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 18,
+  "bottomRow": 33,
   "dynamicBindingPathList": [
-    { "key": "truncateButtonColor" },
-    { "key": "fontFamily" },
-    { "key": "borderRadius" },
-    { "key": "text" }
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
@@ -38,7 +46,7 @@
   "text": "{{ `Arcadia meter ID: ${(appsmith.store.selectedMeter || {}).id || appsmith.store.intervalsMeterId || '—'}` }}",
   "textAlign": "LEFT",
   "textColor": "#94a3b8",
-  "topRow": 16,
+  "topRow": 29,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

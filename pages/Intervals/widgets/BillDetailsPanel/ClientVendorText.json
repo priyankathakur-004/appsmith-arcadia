@@ -1,12 +1,20 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 6,
+  "bottomRow": 9,
   "dynamicBindingPathList": [
-    { "key": "truncateButtonColor" },
-    { "key": "fontFamily" },
-    { "key": "borderRadius" },
-    { "key": "text" }
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
@@ -38,7 +46,7 @@
   "text": "{{ (() => { const b = appsmith.store.selectedBill || {}; return `Client: ${b.ClientName || '—'}      Vendor: ${b.VendorName || '—'}`; })() }}",
   "textAlign": "LEFT",
   "textColor": "#e2e8f0",
-  "topRow": 4,
+  "topRow": 5,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

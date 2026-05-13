@@ -3,11 +3,11 @@
   "borderColor": "#334155",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 32,
+  "bottomRow": 52,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
-      "bottomRow": 220,
+      "bottomRow": 350,
       "canExtend": true,
       "detachFromLayout": true,
       "dynamicBindingPathList": [],
@@ -42,19 +42,27 @@
     }
   ],
   "dynamicBindingPathList": [
-    { "key": "borderRadius" },
-    { "key": "boxShadow" },
-    { "key": "isVisible" }
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "isVisible"
+    }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicPropertyPathList": [
-    { "key": "isVisible" }
+    {
+      "key": "isVisible"
+    }
   ],
   "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "start",
   "isCanvas": true,
   "isLoading": false,
-  "isVisible": "{{!!appsmith.store.selectedBill}}",
+  "isVisible": "{{!!BillSelect.selectedOptionValue}}",
   "key": "ivlbdckey",
   "leftColumn": 0,
   "maxDynamicHeight": 9000,
@@ -74,7 +82,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "shouldScrollContents": true,
-  "topRow": 13,
+  "topRow": 17,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "intvbdc01",

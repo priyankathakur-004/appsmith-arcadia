@@ -4,7 +4,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 90,
+  "bottomRow": 110,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -26,24 +26,52 @@
   "columnWidthMap": {},
   "defaultPageSize": 0,
   "defaultSelectedRowIndex": 0,
-  "defaultSelectedRowIndices": [0],
+  "defaultSelectedRowIndices": [
+    0
+  ],
   "delimiter": ",",
   "dynamicBindingPathList": [
-    { "key": "accentColor" },
-    { "key": "borderRadius" },
-    { "key": "boxShadow" },
-    { "key": "tableData" },
-    { "key": "isVisible" },
-    { "key": "primaryColumns.startTime.computedValue" },
-    { "key": "primaryColumns.endTime.computedValue" },
-    { "key": "primaryColumns.kwh.computedValue" },
-    { "key": "primaryColumns.kw.computedValue" },
-    { "key": "primaryColumns.direction.computedValue" },
-    { "key": "primaryColumns.datapoints.computedValue" }
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "primaryColumns.startTime.computedValue"
+    },
+    {
+      "key": "primaryColumns.endTime.computedValue"
+    },
+    {
+      "key": "primaryColumns.kwh.computedValue"
+    },
+    {
+      "key": "primaryColumns.kw.computedValue"
+    },
+    {
+      "key": "primaryColumns.direction.computedValue"
+    },
+    {
+      "key": "primaryColumns.datapoints.computedValue"
+    }
   ],
   "dynamicPropertyPathList": [
-    { "key": "tableData" },
-    { "key": "isVisible" }
+    {
+      "key": "tableData"
+    },
+    {
+      "key": "isVisible"
+    }
   ],
   "dynamicTriggerPathList": [],
   "enableClientSideSearch": true,
@@ -52,7 +80,7 @@
   "horizontalAlignment": "LEFT",
   "isLoading": false,
   "isSortable": true,
-  "isVisible": "{{!!appsmith.store.selectedBill && Api_ListIntervals.data?.readings?.length > 0}}",
+  "isVisible": "{{!!BillSelect.selectedOptionValue && Api_ListIntervals.data?.readings?.length > 0}}",
   "isVisibleDownload": true,
   "isVisibleFilters": false,
   "isVisiblePagination": true,
@@ -72,101 +100,29 @@
   "parentId": "0",
   "parentRowSpace": 10,
   "primaryColumns": {
-    "startTime": {
-      "alias": "startTime",
+    "datapoints": {
+      "alias": "datapoints",
       "allowCellWrapping": false,
-      "columnType": "date",
-      "computedValue": "{{(() => { const tableData = IntervalsDataTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"startTime\"])) : startTime })()}}",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = IntervalsDataTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"datapoints\"])) : datapoints })()}}",
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "id": "startTime",
-      "index": 0,
+      "id": "datapoints",
+      "index": 5,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isEditable": false,
       "isVisible": true,
-      "label": "Start",
-      "originalId": "startTime",
+      "label": "Datapoints",
+      "originalId": "datapoints",
       "sticky": "",
       "textSize": "0.875rem",
       "validation": {},
       "verticalAlignment": "CENTER",
-      "width": 180
-    },
-    "endTime": {
-      "alias": "endTime",
-      "allowCellWrapping": false,
-      "columnType": "date",
-      "computedValue": "{{(() => { const tableData = IntervalsDataTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"endTime\"])) : endTime })()}}",
-      "enableFilter": true,
-      "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "endTime",
-      "index": 1,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isEditable": false,
-      "isVisible": true,
-      "label": "End",
-      "originalId": "endTime",
-      "sticky": "",
-      "textSize": "0.875rem",
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 180
-    },
-    "kwh": {
-      "alias": "kwh",
-      "allowCellWrapping": false,
-      "columnType": "number",
-      "computedValue": "{{(() => { const tableData = IntervalsDataTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"kwh\"])) : kwh })()}}",
-      "enableFilter": true,
-      "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "kwh",
-      "index": 2,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isEditable": false,
-      "isVisible": true,
-      "label": "kWh",
-      "originalId": "kwh",
-      "sticky": "",
-      "textSize": "0.875rem",
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 100
-    },
-    "kw": {
-      "alias": "kw",
-      "allowCellWrapping": false,
-      "columnType": "number",
-      "computedValue": "{{(() => { const tableData = IntervalsDataTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"kw\"])) : kw })()}}",
-      "enableFilter": true,
-      "enableSort": true,
-      "horizontalAlignment": "LEFT",
-      "id": "kw",
-      "index": 3,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isEditable": false,
-      "isVisible": true,
-      "label": "kW",
-      "originalId": "kw",
-      "sticky": "",
-      "textSize": "0.875rem",
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 100
+      "width": 200
     },
     "direction": {
       "alias": "direction",
@@ -192,29 +148,101 @@
       "verticalAlignment": "CENTER",
       "width": 120
     },
-    "datapoints": {
-      "alias": "datapoints",
+    "endTime": {
+      "alias": "endTime",
       "allowCellWrapping": false,
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = IntervalsDataTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"datapoints\"])) : datapoints })()}}",
+      "columnType": "date",
+      "computedValue": "{{(() => { const tableData = IntervalsDataTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"endTime\"])) : endTime })()}}",
       "enableFilter": true,
       "enableSort": true,
       "horizontalAlignment": "LEFT",
-      "id": "datapoints",
-      "index": 5,
+      "id": "endTime",
+      "index": 1,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
       "isDisabled": false,
       "isEditable": false,
       "isVisible": true,
-      "label": "Datapoints",
-      "originalId": "datapoints",
+      "label": "End",
+      "originalId": "endTime",
       "sticky": "",
       "textSize": "0.875rem",
       "validation": {},
       "verticalAlignment": "CENTER",
-      "width": 200
+      "width": 180
+    },
+    "kw": {
+      "alias": "kw",
+      "allowCellWrapping": false,
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = IntervalsDataTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"kw\"])) : kw })()}}",
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "kw",
+      "index": 3,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "kW",
+      "originalId": "kw",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 100
+    },
+    "kwh": {
+      "alias": "kwh",
+      "allowCellWrapping": false,
+      "columnType": "number",
+      "computedValue": "{{(() => { const tableData = IntervalsDataTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"kwh\"])) : kwh })()}}",
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "kwh",
+      "index": 2,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "kWh",
+      "originalId": "kwh",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 100
+    },
+    "startTime": {
+      "alias": "startTime",
+      "allowCellWrapping": false,
+      "columnType": "date",
+      "computedValue": "{{(() => { const tableData = IntervalsDataTable.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"startTime\"])) : startTime })()}}",
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "startTime",
+      "index": 0,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isEditable": false,
+      "isVisible": true,
+      "label": "Start",
+      "originalId": "startTime",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 180
     }
   },
   "renderMode": "CANVAS",
@@ -223,7 +251,7 @@
   "searchKey": "",
   "tableData": "{{IntervalsUtils.normalizeIntervals()}}",
   "textSize": "0.875rem",
-  "topRow": 32,
+  "topRow": 52,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "version": 2,

@@ -1,0 +1,29 @@
+DECLARE @q nvarchar(100) = LTRIM(RTRIM('{{ BillSelect.filterText || "" }}'));
+
+SELECT TOP 50
+    b.IdBill,
+    b.IdClient,
+    c.ClientName,
+    b.IdClientAccount,
+    b.IdVendor,
+    CONVERT(varchar(10), b.InvoiceDate, 23) AS InvoiceDate,
+    ca.AccountNumber,
+    ca.AccountNumber_Raw,
+    v.VendorName,
+    aa.ArcadiaAccountId,
+    aa.ProviderName
+FROM dbo.Bill b
+INNER JOIN dbo.ClientAccount ca ON ca.IdClientAccount = b.IdClientAccount
+LEFT JOIN dbo.Client c ON c.IdClient = b.IdClient
+LEFT JOIN dbo.Vendor v ON v.IdVendor = b.IdVendor
+LEFT JOIN dbo.ArcadiaAccounts aa
+    ON aa.IdClient = b.IdClient
+    AND aa.AccountNumber = ca.AccountNumber_Raw
+WHERE b.InvoiceDate IS NOT NULL
+  AND LEN(@q) >= 2
+  AND (
+      CAST(b.IdBill AS varchar(20)) LIKE @q + '%'
+      OR ca.AccountNumber_Raw LIKE '%' + @q + '%'
+      OR ca.AccountNumber LIKE '%' + @q + '%'
+  )
+ORDER BY b.IdBill DESC;

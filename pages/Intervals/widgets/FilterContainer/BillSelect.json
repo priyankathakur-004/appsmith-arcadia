@@ -2,21 +2,33 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 7,
+  "bottomRow": 9,
   "boxShadow": "none",
   "defaultOptionValue": "",
   "dynamicBindingPathList": [
-    { "key": "accentColor" },
-    { "key": "borderRadius" },
-    { "key": "sourceData" }
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
   ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
-    { "key": "sourceData" }
+    {
+      "key": "sourceData"
+    }
   ],
   "dynamicTriggerPathList": [
-    { "key": "onOptionChange" },
-    { "key": "onFilterUpdate" }
+    {
+      "key": "onOptionChange"
+    },
+    {
+      "key": "onFilterUpdate"
+    }
   ],
   "isDisabled": false,
   "isFilterable": true,
@@ -53,7 +65,7 @@
   "rightColumn": 62,
   "serverSideFiltering": true,
   "sourceData": "{{ (DS_GetBills.data || []).map(b => ({ label: `${b.IdBill} · ${b.AccountNumber_Raw || b.AccountNumber || ''} · ${b.VendorName || ''}`, value: b.IdBill })) }}",
-  "topRow": 3,
+  "topRow": 5,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "intvbsel01",

@@ -3,11 +3,11 @@
   "borderColor": "#334155",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 12,
+  "bottomRow": 16,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
-      "bottomRow": 200,
+      "bottomRow": 110,
       "canExtend": true,
       "detachFromLayout": true,
       "dynamicBindingPathList": [],
@@ -42,8 +42,12 @@
     }
   ],
   "dynamicBindingPathList": [
-    { "key": "boxShadow" },
-    { "key": "borderRadius" }
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "borderRadius"
+    }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
@@ -70,7 +74,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "shouldScrollContents": true,
-  "topRow": 4,
+  "topRow": 5,
   "type": "CONTAINER_WIDGET",
   "version": 1,
   "widgetId": "intvfcont1",

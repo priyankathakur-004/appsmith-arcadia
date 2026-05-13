@@ -1,12 +1,20 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 16,
+  "bottomRow": 29,
   "dynamicBindingPathList": [
-    { "key": "truncateButtonColor" },
-    { "key": "fontFamily" },
-    { "key": "borderRadius" },
-    { "key": "text" }
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
@@ -38,7 +46,7 @@
   "text": "{{ `Arcadia account ID: ${(appsmith.store.selectedBill || {}).ArcadiaAccountId || '—'}` }}",
   "textAlign": "LEFT",
   "textColor": "#94a3b8",
-  "topRow": 14,
+  "topRow": 25,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

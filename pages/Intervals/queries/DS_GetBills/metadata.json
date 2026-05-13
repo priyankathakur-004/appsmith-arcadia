@@ -8,7 +8,11 @@
       "body": "DECLARE @q nvarchar(100) = LTRIM(RTRIM('{{ BillSelect.filterText || \"\" }}'));\n\nSELECT TOP 50\n    b.IdBill,\n    b.IdClient,\n    c.ClientName,\n    b.IdClientAccount,\n    b.IdVendor,\n    CONVERT(varchar(10), b.InvoiceDate, 23) AS InvoiceDate,\n    ca.AccountNumber,\n    ca.AccountNumber_Raw,\n    v.VendorName,\n    aa.ArcadiaAccountId,\n    aa.ProviderName\nFROM dbo.Bill b\nINNER JOIN dbo.ClientAccount ca ON ca.IdClientAccount = b.IdClientAccount\nLEFT JOIN dbo.Client c ON c.IdClient = b.IdClient\nLEFT JOIN dbo.Vendor v ON v.IdVendor = b.IdVendor\nLEFT JOIN dbo.ArcadiaAccounts aa\n    ON aa.IdClient = b.IdClient\n    AND aa.AccountNumber = ca.AccountNumber_Raw\nWHERE b.InvoiceDate IS NOT NULL\n  AND LEN(@q) >= 2\n  AND (\n      CAST(b.IdBill AS varchar(20)) LIKE @q + '%'\n      OR ca.AccountNumber_Raw LIKE '%' + @q + '%'\n      OR ca.AccountNumber LIKE '%' + @q + '%'\n  )\nORDER BY b.IdBill DESC;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
-      "pluginSpecifiedTemplates": [{ "value": false }],
+      "pluginSpecifiedTemplates": [
+        {
+          "value": false
+        }
+      ],
       "timeoutInMillisecond": 1000000
     },
     "confirmBeforeExecute": false,
@@ -18,10 +22,14 @@
       "name": "DSS_Database",
       "pluginId": "mssql-plugin"
     },
-    "dynamicBindingPathList": [{ "key": "body" }],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "name": "DS_GetBills",
     "pageId": "Intervals",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

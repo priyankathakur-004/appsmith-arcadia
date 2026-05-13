@@ -9,19 +9,37 @@
       "body": "",
       "bodyFormData": [],
       "encodeParamsToggle": true,
-      "formData": { "apiContentType": "none" },
+      "formData": {
+        "apiContentType": "none"
+      },
       "headers": [
-        { "key": "Authorization", "value": "Bearer {{appsmith.store.arcadiaAccessToken.accessToken}}" },
-        { "key": "Arcadia-Version", "value": "2024-02-21" }
+        {
+          "key": "Authorization",
+          "value": "Bearer {{appsmith.store.arcadiaAccessToken.accessToken}}"
+        },
+        {
+          "key": "Arcadia-Version",
+          "value": "2024-02-21"
+        }
       ],
       "httpMethod": "GET",
       "httpVersion": "HTTP11",
       "paginationType": "NONE",
       "path": "/plug/intervals/meters/{{appsmith.store.intervalsMeterId}}",
-      "pluginSpecifiedTemplates": [{ "value": true }],
+      "pluginSpecifiedTemplates": [
+        {
+          "value": true
+        }
+      ],
       "queryParameters": [
-        { "key": "startAt", "value": "{{appsmith.store.intervalsStartDate}}" },
-        { "key": "endAt", "value": "{{appsmith.store.intervalsEndDate}}" }
+        {
+          "key": "startAt",
+          "value": "{{appsmith.store.intervalsStartDate}}"
+        },
+        {
+          "key": "endAt",
+          "value": "{{appsmith.store.intervalsEndDate}}"
+        }
       ],
       "timeoutInMillisecond": 30000
     },
@@ -33,14 +51,22 @@
       "pluginId": "restapi-plugin"
     },
     "dynamicBindingPathList": [
-      { "key": "headers[0].value" },
-      { "key": "path" },
-      { "key": "queryParameters[0].value" },
-      { "key": "queryParameters[1].value" }
+      {
+        "key": "headers[0].value"
+      },
+      {
+        "key": "path"
+      },
+      {
+        "key": "queryParameters[0].value"
+      },
+      {
+        "key": "queryParameters[1].value"
+      }
     ],
     "name": "Api_ListIntervals",
     "pageId": "Intervals",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }
