@@ -33,8 +33,9 @@ export default {
 			showAlert('Arcadia returned no meters for that account', 'warning');
 			return;
 		}
-		storeValue('intervalsMeterId', meters[0].id);
-		storeValue('selectedMeter', meters[0]);
+		const meter = meters.find(m => m && m.meterNumber) || meters[0];
+		storeValue('intervalsMeterId', meter.id);
+		storeValue('selectedMeter', meter);
 		await Api_ListIntervals.run();
 		const cnt = Api_ListIntervals.data?.readings?.length || 0;
 		showAlert(
